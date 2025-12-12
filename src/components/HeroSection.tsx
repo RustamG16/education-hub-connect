@@ -1,7 +1,17 @@
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/contexts/LanguageContext";
 import heroImage from "@/assets/hero-student.jpg";
 
 export function HeroSection() {
+  const { t } = useLanguage();
+
+  const scrollToContact = () => {
+    const contactSection = document.getElementById("contact");
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section className="relative pt-20 md:pt-24 overflow-hidden">
       <div className="gradient-hero">
@@ -9,24 +19,32 @@ export function HeroSection() {
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             {/* Text Content */}
             <div className="text-center lg:text-left">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6 animate-fade-in">
-                Study Abroad. Simplified.
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6 opacity-0 animate-fade-in-left">
+                {t.hero.headline}
               </h1>
-              <p className="text-lg md:text-xl text-primary-foreground/90 mb-8 max-w-lg mx-auto lg:mx-0 animate-fade-in" style={{ animationDelay: "0.1s" }}>
-                We help students apply to universities abroad, prepare documents, and move with confidence.
+              <p 
+                className="text-lg md:text-xl text-primary-foreground/90 mb-8 max-w-lg mx-auto lg:mx-0 opacity-0 animate-fade-in-left" 
+                style={{ animationDelay: "0.15s" }}
+              >
+                {t.hero.subheadline}
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-in" style={{ animationDelay: "0.2s" }}>
-                <Button variant="hero" size="lg" className="shadow-button">
-                  Get Free Consultation
-                </Button>
-                <Button variant="heroOutline" size="lg">
-                  How It Works
+              <div 
+                className="opacity-0 animate-fade-in-left" 
+                style={{ animationDelay: "0.3s" }}
+              >
+                <Button 
+                  variant="hero" 
+                  size="lg" 
+                  className="shadow-button"
+                  onClick={scrollToContact}
+                >
+                  {t.hero.cta}
                 </Button>
               </div>
             </div>
 
             {/* Hero Image */}
-            <div className="relative animate-fade-in" style={{ animationDelay: "0.3s" }}>
+            <div className="relative opacity-0 animate-fade-in-right" style={{ animationDelay: "0.2s" }}>
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                 <img
                   src={heroImage}
@@ -36,8 +54,8 @@ export function HeroSection() {
                 <div className="absolute inset-0 bg-gradient-to-t from-navy/20 to-transparent" />
               </div>
               {/* Decorative elements */}
-              <div className="absolute -bottom-4 -left-4 w-24 h-24 bg-teal-light rounded-2xl -z-10" />
-              <div className="absolute -top-4 -right-4 w-16 h-16 bg-primary-foreground/20 rounded-xl -z-10" />
+              <div className="absolute -bottom-4 -left-4 w-24 h-24 bg-teal-light rounded-2xl -z-10 animate-float" />
+              <div className="absolute -top-4 -right-4 w-16 h-16 bg-primary-foreground/20 rounded-xl -z-10 animate-float" style={{ animationDelay: "0.5s" }} />
             </div>
           </div>
         </div>
