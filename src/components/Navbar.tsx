@@ -1,24 +1,32 @@
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Globe, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { useLanguage, Language } from "@/contexts/LanguageContext";
 import logo from "@/assets/logo.png";
-
-const navLinks = [
-  { label: "Home", href: "#" },
-  { label: "How It Works", href: "#how-it-works" },
-  { label: "Destinations", href: "#destinations" },
-  { label: "Contact", href: "#contact" },
-];
 
 export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const { language, setLanguage, t, languageNames } = useLanguage();
+
+  const navLinks = [
+    { label: t.nav.home, href: "#" },
+    { label: t.nav.howItWorks, href: "#how-it-works" },
+    { label: t.nav.destinations, href: "#destinations" },
+    { label: t.nav.contact, href: "#contact" },
+  ];
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
       <div className="container flex items-center justify-between h-16 md:h-20">
         {/* Logo */}
         <a href="#" className="flex items-center gap-2">
-          <img src={logo} alt="Education4Students" className="h-10 md:h-12 w-auto" />
+          <img src={logo} alt="Education4Students" className="h-12 md:h-16 w-auto" />
         </a>
 
         {/* Desktop Nav */}
@@ -34,11 +42,28 @@ export function Navbar() {
           ))}
         </div>
 
-        {/* CTA */}
+        {/* Language Selector */}
         <div className="hidden md:block">
-          <Button variant="default" className="shadow-button">
-            Free Consultation
-          </Button>
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="outline" className="gap-2">
+                <Globe size={18} />
+                <span>{languageNames[language]}</span>
+                <ChevronDown size={16} />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end">
+              {(Object.keys(languageNames) as Language[]).map((lang) => (
+                <DropdownMenuItem
+                  key={lang}
+                  onClick={() => setLanguage(lang)}
+                  className={language === lang ? "bg-accent" : ""}
+                >
+                  {languageNames[lang]}
+                </DropdownMenuItem>
+              ))}
+            </DropdownMenuContent>
+          </DropdownMenu>
         </div>
 
         {/* Mobile Toggle */}
@@ -53,7 +78,7 @@ export function Navbar() {
 
       {/* Mobile Menu */}
       {mobileOpen && (
-        <div className="md:hidden bg-background border-b border-border">
+        <div className="md:hidden bg-background border-b border-border animate-fade-in">
           <div className="container py-4 flex flex-col gap-4">
             {navLinks.map((link) => (
               <a
@@ -65,9 +90,22 @@ export function Navbar() {
                 {link.label}
               </a>
             ))}
-            <Button variant="default" className="w-full shadow-button mt-2">
-              Free Consultation
-            </Button>
+            {/* Mobile Language Selector */}
+            <div className="flex flex-wrap gap-2 pt-2 border-t border-border">
+              {(Object.keys(languageNames) as Language[]).map((lang) => (
+                <Button
+                  key={lang}
+                  variant={language === lang ? "default" : "outline"}
+                  size="sm"
+                  onClick={() => {
+                    setLanguage(lang);
+                    setMobileOpen(false);
+                  }}
+                >
+                  {languageNames[lang]}
+                </Button>
+              ))}
+            </div>
           </div>
         </div>
       )}

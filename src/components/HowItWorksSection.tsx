@@ -1,34 +1,21 @@
-const steps = [
-  {
-    number: "01",
-    title: "Free Consultation",
-    description: "Share your goals and get personalized advice from our experts.",
-  },
-  {
-    number: "02",
-    title: "Personal Study Plan",
-    description: "Receive a tailored roadmap with university options and timelines.",
-  },
-  {
-    number: "03",
-    title: "Application & Documents",
-    description: "We handle paperwork, applications, and visa preparation.",
-  },
-  {
-    number: "04",
-    title: "Admission & Next Steps",
-    description: "Celebrate your acceptance and prepare for your journey abroad.",
-  },
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export function HowItWorksSection() {
+  const { t } = useLanguage();
+
+  const steps = t.howItWorks.steps.map((step, i) => ({
+    number: `0${i + 1}`,
+    title: step.title,
+    description: step.description,
+  }));
+
   return (
     <section id="how-it-works" className="py-20 md:py-28">
       <div className="container">
         <div className="text-center mb-14">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">How It Works</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">{t.howItWorks.title}</h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
-            A simple 4-step process to turn your study abroad dream into reality.
+            {t.howItWorks.subtitle}
           </p>
         </div>
 
@@ -36,16 +23,16 @@ export function HowItWorksSection() {
           {steps.map((step, index) => (
             <div
               key={step.number}
-              className="relative animate-fade-in"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className="relative opacity-0 animate-fade-in"
+              style={{ animationDelay: `${index * 0.15}s` }}
             >
               {/* Connector line */}
               {index < steps.length - 1 && (
                 <div className="hidden lg:block absolute top-8 left-1/2 w-full h-0.5 bg-border" />
               )}
               
-              <div className="relative bg-card rounded-2xl p-6 shadow-card text-center">
-                <div className="w-16 h-16 rounded-full gradient-hero flex items-center justify-center mx-auto mb-4">
+              <div className="relative bg-card rounded-2xl p-6 shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300 text-center">
+                <div className="w-16 h-16 rounded-full gradient-hero flex items-center justify-center mx-auto mb-4 animate-float" style={{ animationDelay: `${index * 0.3}s` }}>
                   <span className="text-xl font-bold text-primary-foreground">{step.number}</span>
                 </div>
                 <h3 className="text-lg font-semibold mb-2">{step.title}</h3>
