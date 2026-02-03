@@ -5,37 +5,37 @@ const destinations = [
     name: "Austria",
     flag: "🇦🇹",
     image: "https://images.unsplash.com/photo-1516550893923-42d28e5677af?w=400&h=250&fit=crop",
-    color: "from-red-500/20 to-red-600/30",
+    programsLink: "#contact",
   },
   {
     name: "Germany",
     flag: "🇩🇪",
     image: "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=400&h=250&fit=crop",
-    color: "from-yellow-500/20 to-black/30",
+    programsLink: "#contact",
   },
   {
     name: "Italy",
     flag: "🇮🇹",
     image: "https://images.unsplash.com/photo-1515542622106-78bda8ba0e5b?w=400&h=250&fit=crop",
-    color: "from-green-500/20 to-red-500/20",
+    programsLink: "#contact",
   },
   {
     name: "Netherlands",
     flag: "🇳🇱",
     image: "https://images.unsplash.com/photo-1534351590666-13e3e96b5017?w=400&h=250&fit=crop",
-    color: "from-orange-500/20 to-blue-500/20",
+    programsLink: "#contact",
   },
   {
     name: "Poland",
     flag: "🇵🇱",
     image: "https://images.unsplash.com/photo-1519197924294-4ba991a11128?w=400&h=250&fit=crop",
-    color: "from-red-500/20 to-white/30",
+    programsLink: "#contact",
   },
   {
     name: "Czech Republic",
     flag: "🇨🇿",
     image: "https://images.unsplash.com/photo-1541849546-216549ae216d?w=400&h=250&fit=crop",
-    color: "from-blue-500/20 to-red-500/20",
+    programsLink: "#contact",
   },
 ];
 
@@ -54,9 +54,10 @@ export function DestinationsSection() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {destinations.map((destination, index) => (
-            <div
+            <a
               key={destination.name}
-              className="group relative overflow-hidden rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-500 cursor-pointer opacity-0 animate-scale-in"
+              href={destination.programsLink}
+              className="group relative overflow-hidden rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-500 cursor-pointer opacity-0 animate-scale-in block"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               {/* Background Image */}
@@ -68,22 +69,25 @@ export function DestinationsSection() {
                 />
               </div>
               
-              {/* Overlay */}
-              <div className={`absolute inset-0 bg-gradient-to-t ${destination.color} to-secondary/60 transition-opacity duration-300`} />
+              {/* Dark gradient overlay for text readability */}
+              <div className="absolute inset-0 bg-gradient-to-t from-secondary/90 via-secondary/40 to-transparent" />
               
-              {/* Content */}
-              <div className="absolute inset-0 flex flex-col items-center justify-center text-white">
-                <span className="text-5xl mb-3 drop-shadow-lg transform transition-transform duration-300 group-hover:scale-125">
+              {/* Content - positioned at bottom */}
+              <div className="absolute inset-x-0 bottom-0 p-4 flex flex-col items-center">
+                <span className="text-4xl mb-2 drop-shadow-lg transform transition-transform duration-300 group-hover:scale-110">
                   {destination.flag}
                 </span>
-                <h3 className="text-xl font-bold tracking-wide drop-shadow-lg">
+                <h3 className="text-lg font-bold tracking-wide text-white">
                   {destination.name}
                 </h3>
+                <span className="text-xs text-white/80 mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  View Programs →
+                </span>
               </div>
               
               {/* Hover effect */}
               <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            </div>
+            </a>
           ))}
         </div>
       </div>
