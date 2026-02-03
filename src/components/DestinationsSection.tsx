@@ -86,9 +86,9 @@ export function DestinationsSection() {
               {/* Dark gradient overlay for text readability */}
               <div className="absolute inset-0 bg-gradient-to-t from-secondary/90 via-secondary/40 to-transparent" />
               
-              {/* Content - positioned at bottom */}
-              <div className="absolute inset-x-0 bottom-0 p-4 flex flex-col items-center">
-                <destination.Flag className="w-10 h-7 mb-2 drop-shadow-lg transform transition-transform duration-300 group-hover:scale-110 rounded-sm" />
+              {/* Content - centered */}
+              <div className="absolute inset-0 flex flex-col items-center justify-center">
+                <destination.Flag className="w-12 h-8 mb-2 drop-shadow-lg transform transition-transform duration-300 group-hover:scale-110 rounded-sm" />
                 <h3 className="text-lg font-bold tracking-wide text-white">
                   {destination.name}
                 </h3>
