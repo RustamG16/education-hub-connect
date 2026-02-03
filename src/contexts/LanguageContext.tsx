@@ -309,18 +309,18 @@ const translations: Record<Language, Translations> = {
   },
 };
 
-const languageFlags: Record<Language, string> = {
-  en: "🇬🇧",
-  az: "🇦🇿",
-  tr: "🇹🇷",
-  ru: "🇷🇺",
+const languageNames: Record<Language, string> = {
+  en: "English",
+  az: "Azərbaycan",
+  tr: "Türkçe",
+  ru: "Русский",
 };
 
 interface LanguageContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
   t: Translations;
-  languageFlags: Record<Language, string>;
+  languageNames: Record<Language, string>;
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
@@ -329,7 +329,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   const [language, setLanguage] = useState<Language>("en");
 
   return (
-    <LanguageContext.Provider value={{ language, setLanguage, t: translations[language], languageFlags }}>
+    <LanguageContext.Provider value={{ language, setLanguage, t: translations[language], languageNames }}>
       {children}
     </LanguageContext.Provider>
   );

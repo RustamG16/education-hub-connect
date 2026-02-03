@@ -1,11 +1,18 @@
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Globe, ChevronDown } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import { useLanguage, Language } from "@/contexts/LanguageContext";
 import logo from "@/assets/logo.png";
 
 export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const { language, setLanguage, t, languageFlags } = useLanguage();
+  const { language, setLanguage, t, languageNames } = useLanguage();
 
   const navLinks = [
     { label: t.nav.home, href: "#" },
@@ -35,17 +42,28 @@ export function Navbar() {
           ))}
         </div>
 
-        <div className="hidden md:flex items-center gap-2">
-          {(Object.keys(languageFlags) as Language[]).map((lang) => (
-            <button
-              key={lang}
-              onClick={() => setLanguage(lang)}
-              className={`text-2xl hover:scale-110 transition-transform ${language === lang ? "ring-2 ring-primary ring-offset-2 rounded-full" : ""}`}
-              aria-label={`Switch to ${lang}`}
-            >
-              {languageFlags[lang]}
-            </button>
-          ))}
+        {/* Language Selector */}
+        <div className="hidden md:block">
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="outline" className="gap-2">
+                <Globe size={18} />
+                <span>{languageNames[language]}</span>
+                <ChevronDown size={16} />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end">
+              {(Object.keys(languageNames) as Language[]).map((lang) => (
+                <DropdownMenuItem
+                  key={lang}
+                  onClick={() => setLanguage(lang)}
+                  className={language === lang ? "bg-accent" : ""}
+                >
+                  {languageNames[lang]}
+                </DropdownMenuItem>
+              ))}
+            </DropdownMenuContent>
+          </DropdownMenu>
         </div>
 
         {/* Mobile Toggle */}
@@ -73,19 +91,19 @@ export function Navbar() {
               </a>
             ))}
             {/* Mobile Language Selector */}
-            <div className="flex flex-wrap gap-3 pt-2 border-t border-border">
-              {(Object.keys(languageFlags) as Language[]).map((lang) => (
-                <button
+            <div className="flex flex-wrap gap-2 pt-2 border-t border-border">
+              {(Object.keys(languageNames) as Language[]).map((lang) => (
+                <Button
                   key={lang}
+                  variant={language === lang ? "default" : "outline"}
+                  size="sm"
                   onClick={() => {
                     setLanguage(lang);
                     setMobileOpen(false);
                   }}
-                  className={`text-2xl hover:scale-110 transition-transform ${language === lang ? "ring-2 ring-primary ring-offset-2 rounded-full" : ""}`}
-                  aria-label={`Switch to ${lang}`}
                 >
-                  {languageFlags[lang]}
-                </button>
+                  {languageNames[lang]}
+                </Button>
               ))}
             </div>
           </div>
