@@ -1,39 +1,53 @@
 import { useLanguage } from "@/contexts/LanguageContext";
+import AT from "country-flag-icons/react/3x2/AT";
+import DE from "country-flag-icons/react/3x2/DE";
+import IT from "country-flag-icons/react/3x2/IT";
+import NL from "country-flag-icons/react/3x2/NL";
+import PL from "country-flag-icons/react/3x2/PL";
+import CZ from "country-flag-icons/react/3x2/CZ";
+import type { FlagComponent } from "country-flag-icons/react/3x2";
 
-const destinations = [
+interface Destination {
+  name: string;
+  Flag: FlagComponent;
+  image: string;
+  programsLink: string;
+}
+
+const destinations: Destination[] = [
   {
     name: "Austria",
-    flag: "🇦🇹",
+    Flag: AT,
     image: "https://images.unsplash.com/photo-1516550893923-42d28e5677af?w=400&h=250&fit=crop",
     programsLink: "#contact",
   },
   {
     name: "Germany",
-    flag: "🇩🇪",
+    Flag: DE,
     image: "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=400&h=250&fit=crop",
     programsLink: "#contact",
   },
   {
     name: "Italy",
-    flag: "🇮🇹",
+    Flag: IT,
     image: "https://images.unsplash.com/photo-1515542622106-78bda8ba0e5b?w=400&h=250&fit=crop",
     programsLink: "#contact",
   },
   {
     name: "Netherlands",
-    flag: "🇳🇱",
+    Flag: NL,
     image: "https://images.unsplash.com/photo-1534351590666-13e3e96b5017?w=400&h=250&fit=crop",
     programsLink: "#contact",
   },
   {
     name: "Poland",
-    flag: "🇵🇱",
+    Flag: PL,
     image: "https://images.unsplash.com/photo-1519197924294-4ba991a11128?w=400&h=250&fit=crop",
     programsLink: "#contact",
   },
   {
     name: "Czech Republic",
-    flag: "🇨🇿",
+    Flag: CZ,
     image: "https://images.unsplash.com/photo-1541849546-216549ae216d?w=400&h=250&fit=crop",
     programsLink: "#contact",
   },
@@ -74,9 +88,7 @@ export function DestinationsSection() {
               
               {/* Content - positioned at bottom */}
               <div className="absolute inset-x-0 bottom-0 p-4 flex flex-col items-center">
-                <span className="text-4xl mb-2 drop-shadow-lg transform transition-transform duration-300 group-hover:scale-110">
-                  {destination.flag}
-                </span>
+                <destination.Flag className="w-10 h-7 mb-2 drop-shadow-lg transform transition-transform duration-300 group-hover:scale-110 rounded-sm" />
                 <h3 className="text-lg font-bold tracking-wide text-white">
                   {destination.name}
                 </h3>
