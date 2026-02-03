@@ -43,6 +43,9 @@ interface Translations {
     email: string;
     submit: string;
     support: string;
+    noHiddenFees: string;
+    personalizedRecommendations: string;
+    supportInYourLanguage: string;
   };
   footer: {
     tagline: string;
@@ -109,6 +112,9 @@ const translations: Record<Language, Translations> = {
       email: "Email",
       submit: "Get Consultation",
       support: "Our team provides personal support at every step. We'll help you navigate the entire process with clarity and confidence.",
+      noHiddenFees: "No hidden fees or obligations",
+      personalizedRecommendations: "Personalized university recommendations",
+      supportInYourLanguage: "Support in your language",
     },
     footer: {
       tagline: "Your trusted partner for studying abroad",
@@ -173,6 +179,9 @@ const translations: Record<Language, Translations> = {
       email: "E-poçt",
       submit: "Məsləhət Alın",
       support: "Komandamız hər addımda fərdi dəstək təqdim edir. Bütün prosesdə aydınlıq və inamla hərəkət etməyinizə kömək edəcəyik.",
+      noHiddenFees: "Gizli ödəniş və öhdəliklər yoxdur",
+      personalizedRecommendations: "Fərdi universitet tövsiyələri",
+      supportInYourLanguage: "Dilinizdə dəstək",
     },
     footer: {
       tagline: "Xaricdə təhsil üçün etibarlı tərəfdaşınız",
@@ -237,6 +246,9 @@ const translations: Record<Language, Translations> = {
       email: "E-posta",
       submit: "Danışmanlık Alın",
       support: "Ekibimiz her adımda kişisel destek sağlar. Tüm süreçte netlik ve güvenle ilerlemenize yardımcı olacağız.",
+      noHiddenFees: "Gizli ücret veya yükümlülük yok",
+      personalizedRecommendations: "Kişiselleştirilmiş üniversite önerileri",
+      supportInYourLanguage: "Dilinizde destek",
     },
     footer: {
       tagline: "Yurtdışında eğitim için güvenilir ortağınız",
@@ -301,6 +313,9 @@ const translations: Record<Language, Translations> = {
       email: "Эл. почта",
       submit: "Получить консультацию",
       support: "Наша команда обеспечивает личную поддержку на каждом этапе. Мы поможем вам пройти весь процесс с ясностью и уверенностью.",
+      noHiddenFees: "Без скрытых платежей и обязательств",
+      personalizedRecommendations: "Персональные рекомендации университетов",
+      supportInYourLanguage: "Поддержка на вашем языке",
     },
     footer: {
       tagline: "Ваш надежный партнер для обучения за рубежом",

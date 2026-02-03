@@ -38,15 +38,15 @@ export function ContactSection() {
             <ul className="space-y-3 text-muted-foreground">
               <li className="flex items-center gap-3">
                 <span className="w-2 h-2 rounded-full bg-primary" />
-                No hidden fees or obligations
+                {t.contact.noHiddenFees}
               </li>
               <li className="flex items-center gap-3">
                 <span className="w-2 h-2 rounded-full bg-primary" />
-                Personalized university recommendations
+                {t.contact.personalizedRecommendations}
               </li>
               <li className="flex items-center gap-3">
                 <span className="w-2 h-2 rounded-full bg-primary" />
-                Support in your language
+                {t.contact.supportInYourLanguage}
               </li>
             </ul>
           </div>
