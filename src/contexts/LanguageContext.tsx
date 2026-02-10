@@ -7,6 +7,7 @@ interface Translations {
     home: string;
     howItWorks: string;
     destinations: string;
+    about: string;
     contact: string;
   };
   hero: {
@@ -50,6 +51,8 @@ interface Translations {
   footer: {
     tagline: string;
     rights: string;
+    phone: string;
+    email: string;
   };
 }
 
@@ -59,6 +62,7 @@ const translations: Record<Language, Translations> = {
       home: "Home",
       howItWorks: "How It Works",
       destinations: "Destinations",
+      about: "About",
       contact: "Contact",
     },
     hero: {
@@ -119,6 +123,8 @@ const translations: Record<Language, Translations> = {
     footer: {
       tagline: "Your trusted partner for studying abroad",
       rights: "All rights reserved.",
+      phone: "Phone",
+      email: "Email",
     },
   },
   az: {
@@ -126,6 +132,7 @@ const translations: Record<Language, Translations> = {
       home: "Ana Səhifə",
       howItWorks: "Necə İşləyir",
       destinations: "Ölkələr",
+      about: "Haqqımızda",
       contact: "Əlaqə",
     },
     hero: {
@@ -186,6 +193,8 @@ const translations: Record<Language, Translations> = {
     footer: {
       tagline: "Xaricdə təhsil üçün etibarlı tərəfdaşınız",
       rights: "Bütün hüquqlar qorunur.",
+      phone: "Telefon",
+      email: "E-poçt",
     },
   },
   tr: {
@@ -193,6 +202,7 @@ const translations: Record<Language, Translations> = {
       home: "Ana Sayfa",
       howItWorks: "Nasıl Çalışır",
       destinations: "Ülkeler",
+      about: "Hakkımızda",
       contact: "İletişim",
     },
     hero: {
@@ -253,6 +263,8 @@ const translations: Record<Language, Translations> = {
     footer: {
       tagline: "Yurtdışında eğitim için güvenilir ortağınız",
       rights: "Tüm hakları saklıdır.",
+      phone: "Telefon",
+      email: "E-posta",
     },
   },
   ru: {
@@ -260,6 +272,7 @@ const translations: Record<Language, Translations> = {
       home: "Главная",
       howItWorks: "Как это работает",
       destinations: "Направления",
+      about: "О нас",
       contact: "Контакты",
     },
     hero: {
@@ -320,6 +333,8 @@ const translations: Record<Language, Translations> = {
     footer: {
       tagline: "Ваш надежный партнер для обучения за рубежом",
       rights: "Все права защищены.",
+      phone: "Телефон",
+      email: "Эл. почта",
     },
   },
 };

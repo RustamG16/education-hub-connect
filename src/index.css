@@ -89,3 +89,61 @@
     box-shadow: var(--shadow-button);
   }
 }
+
+/* Infinite floating carousel */
+@keyframes infinite-carousel-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes infinite-carousel-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.infinite-carousel {
+  position: relative;
+}
+
+.infinite-carousel__viewport {
+  overflow: hidden;
+}
+
+.infinite-carousel__track {
+  display: inline-flex;
+  gap: 1.5rem;
+  width: max-content;
+  will-change: transform;
+  animation-name: infinite-carousel-scroll;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.infinite-carousel:hover .infinite-carousel__track {
+  animation-play-state: paused;
+}
+
+.infinite-carousel__card {
+  flex: 0 0 auto;
+  animation-name: infinite-carousel-float;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-duration: 4s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .infinite-carousel__track,
+  .infinite-carousel__card {
+    animation: none !important;
+  }
+}
+

@@ -14,8 +14,16 @@ export function ContactSection() {
     contact: "",
   });
 
+  const CONSULTATION_EMAIL = "education4students@outlook.com";
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    const subject = encodeURIComponent("Consultation Request - Education4Students");
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\nCountry: ${formData.country}\nDesired study country: ${formData.desiredCountry}\nContact (WhatsApp/Email): ${formData.contact}`
+    );
+    const mailtoUrl = `mailto:${CONSULTATION_EMAIL}?subject=${subject}&body=${body}`;
+    window.location.href = mailtoUrl;
     toast({
       title: "Request Sent!",
       description: "We'll get back to you within 24 hours.",

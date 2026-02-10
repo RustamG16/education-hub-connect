@@ -17,7 +17,8 @@ export function Navbar() {
   const navLinks = [
     { label: t.nav.home, href: "#" },
     { label: t.nav.howItWorks, href: "#how-it-works" },
-    { label: t.nav.destinations, href: "#destinations" },
+    { label: t.nav.destinations, href: "#universities" },
+    { label: t.nav.about, href: "/about" },
     { label: t.nav.contact, href: "#contact" },
   ];
 
@@ -36,6 +37,12 @@ export function Navbar() {
               key={link.label}
               href={link.href}
               className="text-sm font-medium text-muted-foreground hover:text-secondary transition-colors"
+              onClick={(e) => {
+                if (link.href.startsWith("/")) {
+                  e.preventDefault();
+                  window.location.href = link.href;
+                }
+              }}
             >
               {link.label}
             </a>
@@ -85,7 +92,13 @@ export function Navbar() {
                 key={link.label}
                 href={link.href}
                 className="text-sm font-medium text-muted-foreground hover:text-secondary py-2"
-                onClick={() => setMobileOpen(false)}
+                onClick={(e) => {
+                  setMobileOpen(false);
+                  if (link.href.startsWith("/")) {
+                    e.preventDefault();
+                    window.location.href = link.href;
+                  }
+                }}
               >
                 {link.label}
               </a>
