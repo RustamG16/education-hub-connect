@@ -1,4 +1,3 @@
-import { LanguageProvider } from "@/contexts/LanguageContext";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { useNavigate } from "react-router-dom";
@@ -9,9 +8,8 @@ export default function Visa() {
   const navigate = useNavigate();
 
   return (
-    <LanguageProvider>
-      <div className="min-h-screen bg-background">
-        <Navbar />
+    <div className="min-h-screen bg-background">
+      <Navbar />
         <main className="pt-20 md:pt-24">
           <div className="container max-w-4xl py-10 md:py-16">
             <button
@@ -99,6 +97,6 @@ export default function Visa() {
         </main>
         <Footer />
       </div>
-    </LanguageProvider>
   );
 }
+

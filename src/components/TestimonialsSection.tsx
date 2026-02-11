@@ -1,4 +1,5 @@
 import { InfiniteFloatingCarousel } from "@/components/InfiniteFloatingCarousel";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 interface Testimonial {
   name: string;
@@ -76,6 +77,7 @@ const testimonials: Testimonial[] = [
 ];
 
 export function TestimonialsSection() {
+  const { t } = useLanguage();
   const firstRow = testimonials.filter((_, index) => index % 2 === 0);
   const secondRow = testimonials.filter((_, index) => index % 2 === 1);
 
@@ -106,13 +108,12 @@ export function TestimonialsSection() {
   );
 
   return (
-    <section id="students" className="py-20 md:py-28">
+    <section id="students" className="py-16 md:py-[22]">
       <div className="container">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Student results & stories</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">{t.testimonials.title}</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Real examples of students who received offers from European universities. You can later replace these with
-            your own success stories and detailed case studies.
+            {t.testimonials.subtitle}
           </p>
         </div>
 

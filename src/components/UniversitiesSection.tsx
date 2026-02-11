@@ -4,6 +4,8 @@ import { universities, COUNTRY_ORDER } from "@/data/universities";
 import type { UniversityCategory } from "@/data/universities";
 import { getUniversityImageUrl } from "@/data/universityImages";
 import { UniversityImage } from "@/components/UniversityImage";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { getUniversityTranslation } from "@/data/universityTranslations";
 
 type FilterValue = "Our picks" | UniversityCategory;
 
@@ -15,16 +17,22 @@ function getFilteredUniversities(filter: FilterValue) {
 }
 
 export function UniversitiesSection() {
+  const { t, language } = useLanguage();
   const [activeFilter, setActiveFilter] = useState<FilterValue>("Our picks");
   const filtered = getFilteredUniversities(activeFilter);
 
+  const getFilterLabel = (option: FilterValue) => {
+    if (option === "Our picks") return t.universities.ourPicks;
+    return option;
+  };
+
   return (
-    <section id="universities" className="py-20 md:py-28">
+    <section id="universities" className="py-16 md:py-[22]">
       <div className="container">
         <div className="text-center mb-10">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Partner Universities & Programs</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">{t.universities.title}</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Explore universities by country. Each profile includes programs, requirements, and practical information.
+            {t.universities.subtitle}
           </p>
         </div>
 
@@ -44,54 +52,58 @@ export function UniversitiesSection() {
                   : "bg-muted/60 text-muted-foreground hover:bg-muted hover:text-foreground"
               }`}
             >
-              {option}
+              {getFilterLabel(option)}
             </button>
           ))}
         </nav>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-          {filtered.map((uni) => (
-            <Link
-              key={uni.slug}
-              to={`/universities/${uni.slug}`}
-              className="group bg-card rounded-2xl overflow-hidden shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300 flex flex-col"
-            >
-              {getUniversityImageUrl(uni.imageKey) && (
-                <div className="aspect-[16/10] overflow-hidden bg-muted">
-                  <UniversityImage
-                    src={getUniversityImageUrl(uni.imageKey)!}
-                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                  />
-                </div>
-              )}
-              <div className="p-5 flex flex-col flex-1">
-                <h3 className="text-lg font-semibold mb-1 group-hover:text-primary transition-colors">
-                  {uni.name}
-                </h3>
-                {uni.city && (
-                  <p className="text-xs uppercase tracking-wide text-muted-foreground mb-2">
-                    {uni.city}, {uni.country}
-                  </p>
+          {filtered.map((uni) => {
+            const shortDescription = getUniversityTranslation(uni.slug, language, "shortDescription") || uni.shortDescription;
+            
+            return (
+              <Link
+                key={uni.slug}
+                to={`/universities/${uni.slug}`}
+                className="group bg-card rounded-2xl overflow-hidden shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300 flex flex-col"
+              >
+                {getUniversityImageUrl(uni.imageKey) && (
+                  <div className="aspect-[16/10] overflow-hidden bg-muted">
+                    <UniversityImage
+                      src={getUniversityImageUrl(uni.imageKey)!}
+                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    />
+                  </div>
                 )}
-                <p className="text-sm text-muted-foreground mb-4 line-clamp-2 flex-1">
-                  {uni.shortDescription}
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {uni.programs.slice(0, 2).map((program) => (
-                    <span
-                      key={program.name}
-                      className="inline-flex items-center rounded-full border border-border px-2.5 py-1 text-xs text-muted-foreground bg-background/60"
-                    >
-                      {program.level} · {program.field}
-                    </span>
-                  ))}
+                <div className="p-5 flex flex-col flex-1">
+                  <h3 className="text-lg font-semibold mb-1 group-hover:text-primary transition-colors">
+                    {uni.name}
+                  </h3>
+                  {uni.city && (
+                    <p className="text-xs uppercase tracking-wide text-muted-foreground mb-2">
+                      {uni.city}, {uni.country}
+                    </p>
+                  )}
+                  <p className="text-sm text-muted-foreground mb-4 line-clamp-2 flex-1">
+                    {shortDescription}
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {uni.programs.slice(0, 2).map((program) => (
+                      <span
+                        key={program.name}
+                        className="inline-flex items-center rounded-full border border-border px-2.5 py-1 text-xs text-muted-foreground bg-background/60"
+                      >
+                        {program.level} · {program.field}
+                      </span>
+                    ))}
+                  </div>
+                  <span className="mt-4 text-xs font-medium text-primary group-hover:underline inline-block">
+                    {t.universities.viewProfile}
+                  </span>
                 </div>
-                <span className="mt-4 text-xs font-medium text-primary group-hover:underline inline-block">
-                  View university profile →
-                </span>
-              </div>
-            </Link>
-          ))}
+              </Link>
+            );
+          })}
         </div>
 
         {filtered.length === 0 && (

@@ -32,7 +32,7 @@ export function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-20 md:py-28 gradient-subtle">
+    <section id="contact" className="py-16 md:py-[22] gradient-subtle">
       <div className="container">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left - Text */}

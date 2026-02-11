@@ -13,12 +13,12 @@ export function HeroSection() {
   };
 
   return (
-    <section className="relative pt-20 md:pt-24 overflow-hidden">
-      <div className="gradient-hero">
+    <section className="relative">
+      <div className="gradient-hero pt-16 md:pt-20">
         <div className="container py-16 md:py-24 lg:py-32">
-          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start lg:items-center">
             {/* Text Content */}
-            <div className="text-center lg:text-left">
+            <div className="text-center lg:text-left -mt-12 lg:-mt-16">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6 opacity-0 animate-fade-in-left">
                 {t.hero.headline}
               </h1>
@@ -44,12 +44,12 @@ export function HeroSection() {
             </div>
 
             {/* Hero Image */}
-            <div className="relative opacity-0 animate-fade-in-right" style={{ animationDelay: "0.2s" }}>
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+            <div className="relative opacity-0 animate-fade-in-right -mt-6 lg:-mt-8" style={{ animationDelay: "0.2s" }}>
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl aspect-[4/5] max-w-md mx-auto">
                 <img
                   src={heroImage}
                   alt="International student exploring a modern European city"
-                  className="w-full h-auto object-cover"
+                  className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-navy/20 to-transparent" />
               </div>
@@ -59,12 +59,12 @@ export function HeroSection() {
             </div>
           </div>
         </div>
-      </div>
-      {/* Wave decoration */}
-      <div className="absolute bottom-0 left-0 right-0">
-        <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full">
-          <path d="M0 60L1440 60L1440 30C1440 30 1140 0 720 0C300 0 0 30 0 30L0 60Z" fill="hsl(var(--background))" />
-        </svg>
+        {/* Wave decoration */}
+        <div className="relative -mb-px">
+          <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full">
+            <path d="M0 60L1440 60L1440 30C1440 30 1140 0 720 0C300 0 0 30 0 30L0 60Z" fill="hsl(var(--background))" />
+          </svg>
+        </div>
       </div>
     </section>
   );

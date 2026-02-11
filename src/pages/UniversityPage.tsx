@@ -4,10 +4,15 @@ import { getUniversityImageUrl, getUniversityCityImageUrls } from "@/data/univer
 import { Button } from "@/components/ui/button";
 import { UniversityImage } from "@/components/UniversityImage";
 import { GraduationCap, Banknote, Home, MapPin, Globe, Star } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { Navbar } from "@/components/Navbar";
+import { Footer } from "@/components/Footer";
+import { getUniversityTranslation } from "@/data/universityTranslations";
 
 export default function UniversityPage() {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
+  const { t, language } = useLanguage();
 
   const university = universities.find((u) => u.slug === slug);
 
@@ -15,12 +20,11 @@ export default function UniversityPage() {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
         <div className="container max-w-xl text-center">
-          <h1 className="text-2xl font-semibold mb-3">University not found</h1>
+          <h1 className="text-2xl font-semibold mb-3">{t.universityPage.notFound}</h1>
           <p className="text-muted-foreground mb-6">
-            The university profile you are looking for does not exist or has been moved. Please return to the main page
-            to browse available options.
+            {t.universityPage.notFoundDescription}
           </p>
-          <Button onClick={() => navigate("/")}>Back to homepage</Button>
+          <Button onClick={() => navigate("/")}>{t.universityPage.backToHomepage}</Button>
         </div>
       </div>
     );
@@ -28,16 +32,30 @@ export default function UniversityPage() {
 
   const isAustria = university.country === "Austria";
 
+  // Get translated content or fallback to original
+  const shortDescription = getUniversityTranslation(university.slug, language, "shortDescription") || university.shortDescription;
+  const overview = getUniversityTranslation(university.slug, language, "overview") || university.overview;
+  const keyFacts = getUniversityTranslation(university.slug, language, "keyFacts") || university.keyFacts;
+  const requirements = getUniversityTranslation(university.slug, language, "requirements") || university.requirements;
+  const helpfulInfo = getUniversityTranslation(university.slug, language, "helpfulInfo") || university.helpfulInfo;
+  const tuition = getUniversityTranslation(university.slug, language, "tuition") || university.tuition;
+  const livingCosts = getUniversityTranslation(university.slug, language, "livingCosts") || university.livingCosts;
+  const livingCostsBreakdown = getUniversityTranslation(university.slug, language, "livingCostsBreakdown") || university.livingCostsBreakdown;
+  const cityInfo = getUniversityTranslation(university.slug, language, "cityInfo") || university.cityInfo;
+  const whyChoose = getUniversityTranslation(university.slug, language, "whyChoose") || university.whyChoose;
+
   return (
-    <div className="min-h-screen bg-background pt-20 md:pt-24">
-      <div className="container max-w-4xl py-10 md:py-16">
-        <button
-          type="button"
-          onClick={() => navigate(-1)}
-          className="text-sm text-muted-foreground hover:text-foreground mb-4 inline-flex items-center gap-1"
-        >
-          ← Back
-        </button>
+    <div className="min-h-screen bg-background">
+      <Navbar />
+      <main className="pt-20 md:pt-24">
+        <div className="container max-w-4xl py-10 md:py-16">
+          <button
+            type="button"
+            onClick={() => navigate(-1)}
+            className="text-sm text-muted-foreground hover:text-foreground mb-4 inline-flex items-center gap-1"
+          >
+            {t.universityPage.back}
+          </button>
 
         {getUniversityImageUrl(university.imageKey) && (
           <div className="aspect-[21/9] rounded-xl overflow-hidden bg-muted mb-6">
@@ -61,7 +79,7 @@ export default function UniversityPage() {
           {university.country}
         </p>
 
-        <p className="text-base text-muted-foreground mb-8">{university.overview}</p>
+        <p className="text-base text-muted-foreground mb-8">{overview}</p>
 
         {/* Quick info blocks: Programs, Tuition, Living, City, Website, Why choose */}
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 mb-10">
@@ -69,7 +87,7 @@ export default function UniversityPage() {
           <div className="bg-card rounded-2xl p-5 shadow-card">
             <div className="flex items-center gap-2 mb-3">
               <GraduationCap className="w-5 h-5 text-primary" />
-              <h2 className="text-base font-semibold">Programs</h2>
+              <h2 className="text-base font-semibold">{t.universityPage.programs}</h2>
             </div>
             <ul className="space-y-1.5 text-sm text-muted-foreground">
               {university.programs.slice(0, 6).map((p) => (
@@ -78,33 +96,33 @@ export default function UniversityPage() {
                 </li>
               ))}
               {university.programs.length > 6 && (
-                <li className="text-xs">+{university.programs.length - 6} more programmes</li>
+                <li className="text-xs">+{university.programs.length - 6} {t.universityPage.moreProgrammes}</li>
               )}
             </ul>
           </div>
 
           {/* Tuition */}
-          {university.tuition && (
+          {tuition && (
             <div className="bg-card rounded-2xl p-5 shadow-card">
               <div className="flex items-center gap-2 mb-3">
                 <Banknote className="w-5 h-5 text-primary" />
-                <h2 className="text-base font-semibold">Tuition</h2>
+                <h2 className="text-base font-semibold">{t.universityPage.tuition}</h2>
               </div>
-              <p className="text-sm text-muted-foreground">{university.tuition}</p>
+              <p className="text-sm text-muted-foreground">{tuition}</p>
             </div>
           )}
 
           {/* Living cost */}
-          {university.livingCosts && (
+          {livingCosts && (
             <div className="bg-card rounded-2xl p-5 shadow-card">
               <div className="flex items-center gap-2 mb-3">
                 <Home className="w-5 h-5 text-primary" />
-                <h2 className="text-base font-semibold">Living cost</h2>
+                <h2 className="text-base font-semibold">{t.universityPage.livingCost}</h2>
               </div>
-              <p className="text-sm text-muted-foreground mb-2">{university.livingCosts}</p>
-              {university.livingCostsBreakdown && university.livingCostsBreakdown.length > 0 && (
+              <p className="text-sm text-muted-foreground mb-2">{livingCosts}</p>
+              {livingCostsBreakdown && livingCostsBreakdown.length > 0 && (
                 <ul className="text-xs text-muted-foreground space-y-1">
-                  {university.livingCostsBreakdown.map((line) => (
+                  {livingCostsBreakdown.map((line) => (
                     <li key={line}>{line}</li>
                   ))}
                 </ul>
@@ -113,13 +131,13 @@ export default function UniversityPage() {
           )}
 
           {/* City info */}
-          {university.cityInfo && (
+          {cityInfo && (
             <div className="bg-card rounded-2xl p-5 shadow-card">
               <div className="flex items-center gap-2 mb-3">
                 <MapPin className="w-5 h-5 text-primary" />
-                <h2 className="text-base font-semibold">City</h2>
+                <h2 className="text-base font-semibold">{t.universityPage.city}</h2>
               </div>
-              <p className="text-sm text-muted-foreground">{university.cityInfo}</p>
+              <p className="text-sm text-muted-foreground">{cityInfo}</p>
             </div>
           )}
 
@@ -128,7 +146,7 @@ export default function UniversityPage() {
             <div className="bg-card rounded-2xl p-5 shadow-card">
               <div className="flex items-center gap-2 mb-3">
                 <Globe className="w-5 h-5 text-primary" />
-                <h2 className="text-base font-semibold">Official website</h2>
+                <h2 className="text-base font-semibold">{t.universityPage.officialWebsite}</h2>
               </div>
               <a
                 href={university.website}
@@ -142,14 +160,14 @@ export default function UniversityPage() {
           )}
 
           {/* Why choose */}
-          {university.whyChoose && university.whyChoose.length > 0 && (
+          {whyChoose && whyChoose.length > 0 && (
             <div className="bg-card rounded-2xl p-5 shadow-card sm:col-span-2 lg:col-span-1">
               <div className="flex items-center gap-2 mb-3">
                 <Star className="w-5 h-5 text-primary" />
-                <h2 className="text-base font-semibold">Why choose this uni</h2>
+                <h2 className="text-base font-semibold">{t.universityPage.whyChoose}</h2>
               </div>
               <ul className="space-y-1.5 text-sm text-muted-foreground">
-                {university.whyChoose.map((item) => (
+                {whyChoose.map((item) => (
                   <li key={item} className="flex gap-2">
                     <span className="text-primary">•</span> {item}
                   </li>
@@ -162,13 +180,13 @@ export default function UniversityPage() {
         {/* Austria: reality numbers block */}
         {isAustria && (
           <div className="bg-accent/50 rounded-2xl p-6 mb-10 border border-primary/10">
-            <h2 className="text-lg font-semibold mb-3">Reality numbers – studying in Austria</h2>
+            <h2 className="text-lg font-semibold mb-3">{t.universityPage.realityNumbers}</h2>
             <ul className="grid gap-2 sm:grid-cols-2 text-sm text-muted-foreground">
-              <li><strong className="text-foreground">Average student living costs:</strong> {AUSTRIA_LIVING_COSTS.range}</li>
+              <li><strong className="text-foreground">{t.universityPage.averageLivingCosts}</strong> {AUSTRIA_LIVING_COSTS.range}</li>
               <li>{AUSTRIA_LIVING_COSTS.noteVienna}</li>
               <li>{AUSTRIA_LIVING_COSTS.noteSmaller}</li>
-              <li><strong className="text-foreground">Accommodation:</strong> Dorm {AUSTRIA_LIVING_COSTS.accommodation.dorm}, shared flat {AUSTRIA_LIVING_COSTS.accommodation.sharedFlat}</li>
-              <li><strong className="text-foreground">Tuition (public universities):</strong> {AUSTRIA_LIVING_COSTS.tuitionPublic}</li>
+              <li><strong className="text-foreground">{t.universityPage.accommodation}</strong> {t.universityPage.dorm} {AUSTRIA_LIVING_COSTS.accommodation.dorm}, {t.universityPage.sharedFlat} {AUSTRIA_LIVING_COSTS.accommodation.sharedFlat}</li>
+              <li><strong className="text-foreground">{t.universityPage.tuitionPublic}</strong> {AUSTRIA_LIVING_COSTS.tuitionPublic}</li>
             </ul>
           </div>
         )}
@@ -176,17 +194,17 @@ export default function UniversityPage() {
         {/* Key facts & Requirements */}
         <div className="grid gap-8 md:grid-cols-2 mb-10">
           <div>
-            <h2 className="text-lg font-semibold mb-3">Key facts</h2>
+            <h2 className="text-lg font-semibold mb-3">{t.universityPage.keyFacts}</h2>
             <ul className="list-disc list-inside space-y-1 text-sm text-muted-foreground">
-              {university.keyFacts.map((fact) => (
+              {keyFacts.map((fact) => (
                 <li key={fact}>{fact}</li>
               ))}
             </ul>
           </div>
           <div>
-            <h2 className="text-lg font-semibold mb-3">Typical entry requirements</h2>
+            <h2 className="text-lg font-semibold mb-3">{t.universityPage.entryRequirements}</h2>
             <ul className="list-disc list-inside space-y-1 text-sm text-muted-foreground">
-              {university.requirements.map((item) => (
+              {requirements.map((item) => (
                 <li key={item}>{item}</li>
               ))}
             </ul>
@@ -195,7 +213,7 @@ export default function UniversityPage() {
 
         {/* All programs (expandable list) */}
         <div className="mb-10">
-          <h2 className="text-lg font-semibold mb-3">Programmes</h2>
+          <h2 className="text-lg font-semibold mb-3">{t.universityPage.programmes}</h2>
           <div className="grid gap-4 sm:grid-cols-2">
             {university.programs.map((program) => (
               <div key={program.name} className="bg-card rounded-xl p-4 shadow-card">
@@ -214,9 +232,9 @@ export default function UniversityPage() {
 
         {/* Useful information */}
         <div className="mb-10">
-          <h2 className="text-lg font-semibold mb-3">Useful information</h2>
+          <h2 className="text-lg font-semibold mb-3">{t.universityPage.usefulInformation}</h2>
           <ul className="list-disc list-inside space-y-1 text-sm text-muted-foreground">
-            {university.helpfulInfo.map((item) => (
+            {helpfulInfo.map((item) => (
               <li key={item}>{item}</li>
             ))}
           </ul>
@@ -230,7 +248,7 @@ export default function UniversityPage() {
               rel="noreferrer"
               className="text-sm font-medium text-primary hover:underline"
             >
-              Visit official university website →
+              {t.universityPage.visitWebsite}
             </a>
           )}
           <Button
@@ -244,10 +262,12 @@ export default function UniversityPage() {
               window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
             }}
           >
-            Ask us about this university
+            {t.universityPage.askAboutUniversity}
           </Button>
         </div>
-      </div>
+        </div>
+      </main>
+      <Footer />
     </div>
   );
 }

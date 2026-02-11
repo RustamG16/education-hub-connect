@@ -49,7 +49,7 @@ export function ServicesSection() {
   };
 
   return (
-    <section className="py-20 md:py-28">
+    <section className="py-16 md:py-[22]">
       <div className="container">
         <div className="text-center mb-14">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">{t.services.title}</h2>
