@@ -1,6 +1,7 @@
+import { useState, useMemo } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { universities, AUSTRIA_LIVING_COSTS } from "@/data/universities";
-import { getUniversityImageUrl, getUniversityCityImageUrls } from "@/data/universityImages";
+import { getUniversityImageUrl, getUniversityGalleryUrls } from "@/data/universityImages";
 import { Button } from "@/components/ui/button";
 import { UniversityImage } from "@/components/UniversityImage";
 import { GraduationCap, Banknote, Home, MapPin, Globe, Star } from "lucide-react";
@@ -15,6 +16,15 @@ export default function UniversityPage() {
   const { t, language } = useLanguage();
 
   const university = universities.find((u) => u.slug === slug);
+
+  const mainImageUrl = university ? getUniversityImageUrl(university.imageKey) : undefined;
+  const allImageUrls = useMemo(
+    () => (university ? getUniversityGalleryUrls(university.imageKey) : []),
+    [university?.imageKey]
+  );
+
+  const [selectedImageUrl, setSelectedImageUrl] = useState<string | null>(null);
+  const displayImageUrl = selectedImageUrl ?? mainImageUrl ?? allImageUrls[0];
 
   if (!university) {
     return (
@@ -57,18 +67,29 @@ export default function UniversityPage() {
             {t.universityPage.back}
           </button>
 
-        {getUniversityImageUrl(university.imageKey) && (
+        {displayImageUrl && (
           <div className="aspect-[21/9] rounded-xl overflow-hidden bg-muted mb-6">
-            <UniversityImage src={getUniversityImageUrl(university.imageKey)!} className="w-full h-full object-cover" />
+            <UniversityImage
+              src={displayImageUrl}
+              className="w-full h-full object-contain"
+              alt=""
+            />
           </div>
         )}
 
-        {getUniversityCityImageUrls(university.imageKey).length > 0 && (
-          <div className="flex gap-2 overflow-x-auto pb-2 mb-6 scrollbar-thin">
-            {getUniversityCityImageUrls(university.imageKey).map((url, i) => (
-              <div key={i} className="flex-shrink-0 w-48 sm:w-56 aspect-video rounded-lg overflow-hidden bg-muted">
-                <UniversityImage src={url} className="w-full h-full object-cover" />
-              </div>
+        {allImageUrls.length > 0 && (
+          <div className="flex gap-2 overflow-x-auto pb-2 mb-6 scrollbar-thin" role="tablist" aria-label="Image gallery">
+            {allImageUrls.map((url, i) => (
+              <button
+                key={i}
+                type="button"
+                onClick={() => setSelectedImageUrl(url)}
+                className={`flex-shrink-0 w-24 sm:w-28 aspect-video rounded-lg overflow-hidden bg-muted border-2 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-ring ${
+                  url === displayImageUrl ? "border-primary ring-2 ring-primary/30" : "border-transparent hover:border-muted-foreground/40"
+                }`}
+              >
+                <UniversityImage src={url} className="w-full h-full object-cover" alt="" />
+              </button>
             ))}
           </div>
         )}

@@ -1,0 +1,2389 @@
+[
+  {
+    "slug": "vorarlberg-university-of-education",
+    "name": "Vorarlberg University of Education",
+    "country": "Austria",
+    "city": "Feldkirch",
+    "imageKey": "feldkirch",
+    "shortDescription": "Teacher education; public with low fees; scenic location.",
+    "overview": "Smaller town in Vorarlberg (~35,000); near Lake Constance, Alps; relaxed, nature-oriented (~€800–1,100/month; accommodation €300–500). Why Choose This University?: Teacher education; public with low fees; scenic location.",
+    "keyFacts": [
+      "Standard/low ~€726.72/semester + ÖH €25.",
+      "Living: ~€800–1,100/month",
+      "Teacher education; public with low fees; scenic location."
+    ],
+    "programs": [
+      {
+        "name": "Rare; mostly German for teacher education.",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      }
+    ],
+    "requirements": [
+      "Check official website for admission requirements."
+    ],
+    "helpfulInfo": [
+      "Address: Liechtensteiner Strasse 33-37, 6800 Feldkirch, Austria.",
+      "Practical teaching focus.",
+      "Phone: +43 5522 31199-0; Email: office@ph-vorarlberg.ac.at."
+    ],
+    "website": "https://www.ph-vorarlberg.ac.at",
+    "tuition": "Standard/low ~€726.72/semester + ÖH €25.",
+    "livingCosts": "€800–1,100/month",
+    "cityInfo": "Smaller town in Vorarlberg (~35,000); near Lake Constance, Alps; relaxed, nature-oriented (~€800–1,100/month; accommodation €300–500).",
+    "whyChoose": [
+      "Teacher education",
+      "public with low fees"
+    ]
+  },
+  {
+    "slug": "university-of-graz",
+    "name": "University of Graz",
+    "country": "Austria",
+    "city": "Graz",
+    "imageKey": "graz",
+    "shortDescription": "Focus on humanities, social sciences, law; relaxed, cultural hub with sunny southern vibe; 30,000+ students; international flair; affordable living; strong employability; UNESCO heritage site for vibrant student life.",
+    "overview": "Styria's capital (~290,000 people). UNESCO old town (largest preserved in Central Europe), Mediterranean feel (sunny, hilly), arts/film festivals (Diagonale), Mur River island, affordable/student-friendly (~€1,000–1,300/month in 2026; accommodation from €300, food €300, transport €50). Why Choose This University?: Focus on humanities, social sciences, law; relaxed, cultural hub with sunny southern vibe; 30,000+ students; international flair; affordable living; strong employability; UNESCO heritage site for vibrant student life.",
+    "keyFacts": [
+      "~€726.72/semester + ÖH €25.",
+      "Living: ~€1,000–1,300/month in 2026",
+      "Focus on humanities, social sciences, law; relaxed, cultural hub with sunny southern vibe; 30,000+ students; internation…"
+    ],
+    "programs": [
+      {
+        "name": "English and American Studies (MA)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Arqus Joint Master's Programme European Studies",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Southeast European Studies (MA)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Joint Master's Programme in Translation (Slovene/German/English)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      }
+    ],
+    "requirements": [
+      "Standard equivalence, English proficiency where needed, direct application."
+    ],
+    "helpfulInfo": [
+      "Address: Universitätsplatz 3, 8010 Graz, Austria.",
+      "No on-campus housing; proof of funds ~€11,904/year for visa.",
+      "Phone: +43 316 380-0; Email: studienabteilung@uni-graz.at (admissions); welcome@uni-graz.at (international)."
+    ],
+    "website": "https://www.uni-graz.at",
+    "tuition": "~€726.72/semester + ÖH €25.",
+    "livingCosts": "€1,000–1,300/month in 2026",
+    "cityInfo": "Styria's capital (~290,000 people). UNESCO old town (largest preserved in Central Europe), Mediterranean feel (sunny, hilly), arts/film festivals (Diagonale), Mur River island, affordable/student-friendly (~€1,000–1,300/month in 2026; accommodation from €300, food €300, transport €50).",
+    "whyChoose": [
+      "Focus on humanities, social sciences, law",
+      "relaxed, cultural hub with sunny southern vibe",
+      "30,000+ students",
+      "international flair",
+      "affordable living"
+    ]
+  },
+  {
+    "slug": "graz-university-of-technology",
+    "name": "Graz University of Technology",
+    "country": "Austria",
+    "city": "Graz",
+    "imageKey": "graz",
+    "shortDescription": "Renowned engineering/architecture; innovative; student-friendly city.",
+    "overview": "As above (~€1,000–1,300/month). Why Choose This University?: Renowned engineering/architecture; innovative; student-friendly city.",
+    "keyFacts": [
+      "Standard ~€726.72/semester + ÖH €25.",
+      "Living: ~€1,000–1,300/month",
+      "Renowned engineering/architecture; innovative; student-friendly city."
+    ],
+    "programs": [
+      {
+        "name": "Various English-taught programmes",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      }
+    ],
+    "requirements": [
+      "Check official website for admission requirements."
+    ],
+    "helpfulInfo": [
+      "Address: Rechbauerstraße 12, 8010 Graz, Austria.",
+      "Research-oriented.",
+      "Phone: +43 316 873-0; Email: info@tugraz.at."
+    ],
+    "website": "https://www.tugraz.at",
+    "tuition": "Standard ~€726.72/semester + ÖH €25.",
+    "livingCosts": "€1,000–1,300/month",
+    "cityInfo": "As above (~€1,000–1,300/month).",
+    "whyChoose": [
+      "Renowned engineering/architecture",
+      "student-friendly city"
+    ]
+  },
+  {
+    "slug": "medical-university-of-graz",
+    "name": "Medical University of Graz",
+    "country": "Austria",
+    "city": "Graz",
+    "imageKey": "graz",
+    "shortDescription": "Medicine, dentistry, biomedical; top research; competitive with high employability.",
+    "overview": "As above (~€1,000–1,300/month). Why Choose This University?: Medicine, dentistry, biomedical; top research; competitive with high employability.",
+    "keyFacts": [
+      "Standard ~€726.72/semester + ÖH €25.",
+      "Living: ~€1,000–1,300/month",
+      "Medicine, dentistry, biomedical; top research; competitive with high employability."
+    ],
+    "programs": [
+      {
+        "name": "Limited; mostly German (MedAT exam); some biomedical Master's/PhD in English.",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      }
+    ],
+    "requirements": [
+      "Competitive."
+    ],
+    "helpfulInfo": [
+      "Address: Neue Stiftingtalstraße 6, 8010 Graz, Austria.",
+      "Research-oriented health.",
+      "Phone: +43 316 385-0; Email: studium@medunigraz.at."
+    ],
+    "website": "https://www.medunigraz.at",
+    "tuition": "Standard ~€726.72/semester + ÖH €25.",
+    "livingCosts": "€1,000–1,300/month",
+    "cityInfo": "As above (~€1,000–1,300/month).",
+    "whyChoose": [
+      "Medicine, dentistry, biomedical",
+      "competitive with high employability"
+    ]
+  },
+  {
+    "slug": "university-of-music-and-performing-arts-graz",
+    "name": "University of Music and Performing Arts Graz",
+    "country": "Austria",
+    "city": "Graz",
+    "imageKey": "graz",
+    "shortDescription": "Performing arts and music education; heaven for musical talents; affordable city.",
+    "overview": "As above (~€1,000–1,300/month). Why Choose This University?: Performing arts and music education; heaven for musical talents; affordable city.",
+    "keyFacts": [
+      "Standard/low ~€726.72/semester + ÖH €25.",
+      "Living: ~€1,000–1,300/month",
+      "Performing arts and music education; heaven for musical talents; affordable city."
+    ],
+    "programs": [
+      {
+        "name": "Various English-taught programmes",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      }
+    ],
+    "requirements": [
+      "Highly selective (auditions/portfolios)."
+    ],
+    "helpfulInfo": [
+      "Address: Leonhardstraße 15, 8010 Graz, Austria.",
+      "Programs for instruments, jazz, chamber music.",
+      "Phone: +43 316 389-0; Email: info@kug.ac.at."
+    ],
+    "website": "https://www.kug.ac.at",
+    "tuition": "Standard/low ~€726.72/semester + ÖH €25.",
+    "livingCosts": "€1,000–1,300/month",
+    "cityInfo": "As above (~€1,000–1,300/month).",
+    "whyChoose": [
+      "Performing arts and music education",
+      "heaven for musical talents"
+    ]
+  },
+  {
+    "slug": "university-of-innsbruck",
+    "name": "University of Innsbruck",
+    "country": "Austria",
+    "city": "Innsbruck",
+    "imageKey": "innsbruck",
+    "shortDescription": "Founded 1669, strong in physics (quantum research), law, alpine/mountain studies; located in heart of Alps for outdoor activities; 28,000 students (international focus); excellent conditions for research/education; short distances, affordable housing; ideal for nature lovers with access to ski resorts/lakes; high em...",
+    "overview": "Alpine gem in Tyrol (~130,000 people). Surrounded by mountains (Nordkette range), skiing/hiking year-round, historic old town (Golden Roof, Imperial Palace), river Inn, lively student vibe (~30,000 students), festivals, outdoor sports culture, cozy cafes. Nature-focused, adventurous, more affordable than Vienna (~€900–1,400/month in 2026; accommodation €450–700, food €300, transport €50). Why Choose This University?: Founded 1669, strong in physics (quantum research), law, alpine/mountain studies; located in heart of Alps for outdoor activities; 28,000 students (international focus); excellent conditions for research/education; short distances, affordable housing; ideal for nature lovers with access to ski resorts/lakes; high employability in innovative fields.",
+    "keyFacts": [
+      "Standard ~€726.72/semester + ÖH €25.",
+      "Living: ~€900–1,400/month in 2026",
+      "Founded 1669, strong in physics (quantum research), law, alpine/mountain studies; located in heart of Alps for outdoor a…"
+    ],
+    "programs": [
+      {
+        "name": "English and American Studies (MA)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Ancient Worlds (MA)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "History (MA)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      }
+    ],
+    "requirements": [
+      "Relevant prior degree, English B2+ (proof at application for English programs), apply online. Deadlines: e.g., Jul–Oct for winter; Jan–Mar for summer."
+    ],
+    "helpfulInfo": [
+      "Address: Innrain 52, 6020 Innsbruck, Austria.",
+      "Great for outdoor enthusiasts; financial support options like scholarships; proof of funds ~€11,904/year for visa.",
+      "Phone: +43 512 507-0; Email: studienabteilung@uibk.ac.at (admissions); studienberatung@uibk.ac.at (advisory)."
+    ],
+    "website": "https://www.uibk.ac.at",
+    "tuition": "Standard ~€726.72/semester + ÖH €25.",
+    "livingCosts": "€900–1,400/month in 2026",
+    "cityInfo": "Alpine gem in Tyrol (~130,000 people). Surrounded by mountains (Nordkette range), skiing/hiking year-round, historic old town (Golden Roof, Imperial Palace), river Inn, lively student vibe (~30,000 students), festivals, outdoor sports culture, cozy cafes. Nature-focused, adventurous, more affordable than Vienna (~€900–1,400/month in 2026; accommodation €450–700, food €300, transport €50).",
+    "whyChoose": [
+      "Founded 1669, strong in physics (quantum research), law, alpine/mountain studies",
+      "located in heart of Alps for outdoor activities",
+      "28,000 students (international focus)",
+      "excellent conditions for research/education",
+      "short distances, affordable housing"
+    ]
+  },
+  {
+    "slug": "medical-university-of-innsbruck",
+    "name": "Medical University of Innsbruck",
+    "country": "Austria",
+    "city": "Innsbruck",
+    "imageKey": "innsbruck",
+    "shortDescription": "Health/biomedical research; alpine location for balanced life.",
+    "overview": "As above (~€900–1,400/month). Why Choose This University?: Health/biomedical research; alpine location for balanced life.",
+    "keyFacts": [
+      "Standard ~€726.72/semester + ÖH €25.",
+      "Living: ~€900–1,400/month",
+      "Health/biomedical research; alpine location for balanced life."
+    ],
+    "programs": [
+      {
+        "name": "Limited; mostly German (MedAT exam); some biomedical Master's/PhD in English.",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      }
+    ],
+    "requirements": [
+      "Competitive."
+    ],
+    "helpfulInfo": [
+      "Address: Innrain 52, 6020 Innsbruck, Austria.",
+      "Strong in medical fields.",
+      "Phone: +43 512 9003-0; Email: studienangelegenheiten@i-med.ac.at."
+    ],
+    "website": "https://www.i-med.ac.at",
+    "tuition": "Standard ~€726.72/semester + ÖH €25.",
+    "livingCosts": "€900–1,400/month",
+    "cityInfo": "As above (~€900–1,400/month).",
+    "whyChoose": [
+      "Health/biomedical research",
+      "alpine location for balanced life"
+    ]
+  },
+  {
+    "slug": "university-of-klagenfurt",
+    "name": "University of Klagenfurt",
+    "country": "Austria",
+    "city": "Klagenfurt",
+    "imageKey": "klagenfurt",
+    "shortDescription": "Interdisciplinary in education, cultural studies; smaller/intimate setting; nature/lake-focused; good for informatics/management.",
+    "overview": "Lakeside in Carinthia (~100,000 people). Warm summers, Lake Wörthersee (beaches/sailing), southern relaxed vibe, mountains/outdoors (~€900–1,200/month inferred; accommodation €350–500). Why Choose This University?: Interdisciplinary in education, cultural studies; smaller/intimate setting; nature/lake-focused; good for informatics/management.",
+    "keyFacts": [
+      "Standard ~€726.72/semester + ÖH €25.",
+      "Living: ~€900–1,200/month inferred",
+      "Interdisciplinary in education, cultural studies; smaller/intimate setting; nature/lake-focused; good for informatics/ma…"
+    ],
+    "programs": [
+      {
+        "name": "Various English-taught programmes",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      }
+    ],
+    "requirements": [
+      "Standard process."
+    ],
+    "helpfulInfo": [
+      "Address: Universitätsstraße 65-67, 9020 Klagenfurt, Austria.",
+      "Relaxed environment.",
+      "Phone: +43 463 2700; Email: welcome@aau.at."
+    ],
+    "website": "https://www.aau.at",
+    "tuition": "Standard ~€726.72/semester + ÖH €25.",
+    "livingCosts": "€900–1,200/month inferred",
+    "cityInfo": "Lakeside in Carinthia (~100,000 people). Warm summers, Lake Wörthersee (beaches/sailing), southern relaxed vibe, mountains/outdoors (~€900–1,200/month inferred; accommodation €350–500).",
+    "whyChoose": [
+      "Interdisciplinary in education, cultural studies",
+      "smaller/intimate setting",
+      "nature/lake-focused",
+      "good for informatics/management"
+    ]
+  },
+  {
+    "slug": "university-of-leoben",
+    "name": "University of Leoben",
+    "country": "Austria",
+    "city": "Leoben",
+    "imageKey": "leoben",
+    "shortDescription": "Specialized mining, materials, metallurgy; niche for raw materials/energy; affordable small-town living.",
+    "overview": "Smaller Styrian town (~25,000), mountains/industrial (~€700–1,000/month; rooms from €350). Why Choose This University?: Specialized mining, materials, metallurgy; niche for raw materials/energy; affordable small-town living.",
+    "keyFacts": [
+      "Standard ~€726.72/semester + ÖH €25.",
+      "Living: ~€700–1,000/month",
+      "Specialized mining, materials, metallurgy; niche for raw materials/energy; affordable small-town living."
+    ],
+    "programs": [
+      {
+        "name": "Some Master's in resources engineering, mining, materials, metallurgy.",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      }
+    ],
+    "requirements": [
+      "Field-specific."
+    ],
+    "helpfulInfo": [
+      "Address: Franz-Josef-Straße 18, 8700 Leoben, Austria.",
+      "Grant for new residents (€250 vouchers).",
+      "Phone: +43 3842 402-0; Email: info@unileoben.ac.at."
+    ],
+    "website": "https://www.unileoben.ac.at",
+    "tuition": "Standard ~€726.72/semester + ÖH €25.",
+    "livingCosts": "€700–1,000/month",
+    "cityInfo": "Smaller Styrian town (~25,000), mountains/industrial (~€700–1,000/month; rooms from €350).",
+    "whyChoose": [
+      "Specialized mining, materials, metallurgy",
+      "niche for raw materials/energy",
+      "affordable small-town living"
+    ]
+  },
+  {
+    "slug": "johannes-kepler-university-linz",
+    "name": "Johannes Kepler University Linz",
+    "country": "Austria",
+    "city": "Linz",
+    "imageKey": "linz",
+    "shortDescription": "Emphasis on business, engineering, social sciences; innovative/practical with industry links; 23,000 students; forward-thinking in AI, bio-chemistry; affordable city with good job prospects in tech/startups.",
+    "overview": "Modern Danube city (~200,000 people). Industrial/art hub (Ars Electronica Center for tech/art/festivals), museums, riverside promenades, growing startup/tech scene, affordable (~€800–1,200/month in 2026; accommodation €350–550, food €300). Why Choose This University?: Emphasis on business, engineering, social sciences; innovative/practical with industry links; 23,000 students; forward-thinking in AI, bio-chemistry; affordable city with good job prospects in tech/startups.",
+    "keyFacts": [
+      "Standard ~€726.72/semester + ÖH €25.",
+      "Living: ~€800–1,200/month in 2026",
+      "Emphasis on business, engineering, social sciences; innovative/practical with industry links; 23,000 students; forward-t…"
+    ],
+    "programs": [
+      {
+        "name": "Artificial Intelligence (MSc)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Biological Chemistry (MSc)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Chemistry and Chemical Technology (MSc)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Comparative Social Policy and Welfare (MSc)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Computational Mathematics (MSc)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Computer Science (MSc)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Economic and Business Analytics (MSc)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Economics (MSc)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Industrial Mathematics (MSc)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Leadership and Innovation in Organizations (MSc)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Management (MSc)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Management in Chemical Technologies (MSc)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Management in Polymer Technologies (MSc)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Molecular Biology (MSc)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Physics (MSc)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Polymer Engineering and Science (MSc)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Statistics and Data Science (MSc)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Sustainability and Plastics Management (MSc)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      }
+    ],
+    "requirements": [
+      "International qualifications check, English proof for relevant programs, register via portal. Deadlines flexible (e.g., extended to Mar in cases)."
+    ],
+    "helpfulInfo": [
+      "Address: Altenberger Straße 69, 4040 Linz, Austria.",
+      "Practical, industry-linked; dorms available.",
+      "Phone: +43 732 2468 0; Email: studium@jku.at (admissions)."
+    ],
+    "website": "https://www.jku.at",
+    "tuition": "Standard ~€726.72/semester + ÖH €25.",
+    "livingCosts": "€800–1,200/month in 2026",
+    "cityInfo": "Modern Danube city (~200,000 people). Industrial/art hub (Ars Electronica Center for tech/art/festivals), museums, riverside promenades, growing startup/tech scene, affordable (~€800–1,200/month in 2026; accommodation €350–550, food €300).",
+    "whyChoose": [
+      "Emphasis on business, engineering, social sciences",
+      "innovative/practical with industry links",
+      "forward-thinking in AI, bio-chemistry",
+      "affordable city with good job prospects in tech/startups"
+    ]
+  },
+  {
+    "slug": "university-of-art-and-design-linz",
+    "name": "University of Art and Design Linz",
+    "country": "Austria",
+    "city": "Linz",
+    "imageKey": "linz",
+    "shortDescription": "Contemporary art and media design; artistic/technical/cultural studies; short distances in city.",
+    "overview": "As above (~€800–1,200/month). Why Choose This University?: Contemporary art and media design; artistic/technical/cultural studies; short distances in city.",
+    "keyFacts": [
+      "Standard/low ~€726.72/semester + ÖH €25.",
+      "Living: ~€800–1,200/month",
+      "Contemporary art and media design; artistic/technical/cultural studies; short distances in city."
+    ],
+    "programs": [
+      {
+        "name": "Various English-taught programmes",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      }
+    ],
+    "requirements": [
+      "Highly selective (auditions/portfolios)."
+    ],
+    "helpfulInfo": [
+      "Address: Hauptplatz 6, 4020 Linz, Austria.",
+      "Vibrant student life; sports/classes available.",
+      "Phone: +43 732 7898-0; Email: info@kunstuni-linz.at."
+    ],
+    "website": "https://www.kunstuni-linz.at",
+    "tuition": "Standard/low ~€726.72/semester + ÖH €25.",
+    "livingCosts": "€800–1,200/month",
+    "cityInfo": "As above (~€800–1,200/month).",
+    "whyChoose": [
+      "Contemporary art and media design",
+      "artistic/technical/cultural studies",
+      "short distances in city"
+    ]
+  },
+  {
+    "slug": "anton-bruckner-private-university",
+    "name": "Anton Bruckner Private University",
+    "country": "Austria",
+    "city": "Linz",
+    "imageKey": "linz",
+    "shortDescription": "Music and drama; low fees; one of five unis in Linz; moderate tuition compared to similar.",
+    "overview": "As above (~€800–1,200/month). Why Choose This University?: Music and drama; low fees; one of five unis in Linz; moderate tuition compared to similar.",
+    "keyFacts": [
+      "~€300–1,000/semester (semi-private; additional for multiple majors €150).",
+      "Living: ~€800–1,200/month",
+      "Music and drama; low fees; one of five unis in Linz; moderate tuition compared to similar."
+    ],
+    "programs": [
+      {
+        "name": "Various English-taught programmes",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      }
+    ],
+    "requirements": [
+      "Highly selective (auditions/portfolios)."
+    ],
+    "helpfulInfo": [
+      "Address: Alice-Harnoncourt-Platz 1, 4040 Linz, Austria.",
+      "Follows public model; music-focused.",
+      "Phone: +43 732 701000-0; Email: studium@bruckneruni.ac.at."
+    ],
+    "website": "https://www.bruckneruni.at",
+    "tuition": "~€300–1,000/semester (semi-private; additional for multiple majors €150).",
+    "livingCosts": "€800–1,200/month",
+    "cityInfo": "As above (~€800–1,200/month).",
+    "whyChoose": [
+      "one of five unis in Linz",
+      "moderate tuition compared to similar"
+    ]
+  },
+  {
+    "slug": "university-of-education-upper-austria",
+    "name": "University of Education Upper Austria",
+    "country": "Austria",
+    "city": "Linz",
+    "imageKey": "linz",
+    "shortDescription": "Teacher training; one of largest in Austria; central location.",
+    "overview": "As above (~€800–1,200/month). Why Choose This University?: Teacher training; one of largest in Austria; central location.",
+    "keyFacts": [
+      "Standard/low ~€726.72/semester + ÖH €25.",
+      "Living: ~€800–1,200/month",
+      "Teacher training; one of largest in Austria; central location."
+    ],
+    "programs": [
+      {
+        "name": "Rare; mostly German.",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      }
+    ],
+    "requirements": [
+      "Check official website for admission requirements."
+    ],
+    "helpfulInfo": [
+      "Address: Kaplanhofstrasse 40, 4020 Linz, Austria.",
+      "Focus on education programs.",
+      "Phone: +43 732 7470-0; Email: office@ph-ooe.at."
+    ],
+    "website": "https://www.ph-ooe.at",
+    "tuition": "Standard/low ~€726.72/semester + ÖH €25.",
+    "livingCosts": "€800–1,200/month",
+    "cityInfo": "As above (~€800–1,200/month).",
+    "whyChoose": [
+      "Teacher training",
+      "one of largest in Austria",
+      "central location"
+    ]
+  },
+  {
+    "slug": "university-of-salzburg",
+    "name": "University of Salzburg",
+    "country": "Austria",
+    "city": "Salzburg",
+    "imageKey": "salzburg",
+    "shortDescription": "Known for law, psychology, geosciences; cultural/music hub; 18,000 students; strong interdisciplinary English options; high quality of life in scenic location.",
+    "overview": "Mozart's city (~155,000 people). Baroque architecture, Sound of Music sites, Alps/Salzburg Festival (world-famous classical music/theater), lakes/rivers, charming/touristy yet student-vibrant (~€900–1,400/month in 2026; accommodation €400–600, food €300). Why Choose This University?: Known for law, psychology, geosciences; cultural/music hub; 18,000 students; strong interdisciplinary English options; high quality of life in scenic location.",
+    "keyFacts": [
+      "Standard ~€726.72/semester + ÖH €25.",
+      "Living: ~€900–1,400/month in 2026",
+      "Known for law, psychology, geosciences; cultural/music hub; 18,000 students; strong interdisciplinary English options; h…"
+    ],
+    "programs": [
+      {
+        "name": "English Language Sciences (MA)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "European Union Studies (MA)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Applied Geoinformatics (MSc)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Applied Image and Signal Processing (MSc, joint)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Communication, Culture & Participation (MA)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Computer Science (MSc)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Copernicus Master in Digital Earth (MSc, joint)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Human Computer Interaction (MSc, joint)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Literary and Cultural Studies in English/American Studies (MA)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Philosophy (MA, partial)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Political Science – Integration and Government (MA, joint)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      }
+    ],
+    "requirements": [
+      "Relevant Bachelor's, English proficiency, apply direct."
+    ],
+    "helpfulInfo": [
+      "Address: Kapitelgasse 4, 5020 Salzburg, Austria.",
+      "Funding options available.",
+      "Phone: +43 662 8044-0; Email: studium@sbg.ac.at (admissions)."
+    ],
+    "website": "https://www.plus.ac.at",
+    "tuition": "Standard ~€726.72/semester + ÖH €25.",
+    "livingCosts": "€900–1,400/month in 2026",
+    "cityInfo": "Mozart's city (~155,000 people). Baroque architecture, Sound of Music sites, Alps/Salzburg Festival (world-famous classical music/theater), lakes/rivers, charming/touristy yet student-vibrant (~€900–1,400/month in 2026; accommodation €400–600, food €300).",
+    "whyChoose": [
+      "Known for law, psychology, geosciences",
+      "cultural/music hub",
+      "strong interdisciplinary English options",
+      "high quality of life in scenic location"
+    ]
+  },
+  {
+    "slug": "university-of-vienna",
+    "name": "University of Vienna",
+    "country": "Austria",
+    "city": "Vienna",
+    "imageKey": "vienna",
+    "shortDescription": "Oldest German-speaking uni (1365), top-ranked globally (~top 150–200 QS in 2026), excellent research with international visibility, wide variety of degree programs (over 180), vibrant community in one of Europe's most livable cities (ranked #1 by Mercer/EIU), strong in humanities, sciences, law, social sciences; att...",
+    "overview": "Austria's capital and cultural powerhouse (~2 million people). Imperial grandeur (Habsburg palaces like Schönbrunn/Hofburg, St. Stephen's Cathedral), world-class museums (Kunsthistorisches, Albertina), opera/ball season, classical music (Vienna Philharmonic), coffeehouses, diverse neighborhoods (e.g., trendy Neubau, historic Innere Stadt), vibrant international student scene (~200,000 students citywide), parks (Prater), Danube River activities. High quality of life but expensive living (~€1,200–1,600/month in 2026 estimates; accommodation €450–900, food €350–380, transport €30–50, personal €400+). Why Choose This University?: Oldest German-speaking uni (1365), top-ranked globally (~top 150–200 QS in 2026), excellent research with international visibility, wide variety of degree programs (over 180), vibrant community in one of Europe's most livable cities (ranked #1 by Mercer/EIU), strong in humanities, sciences, law, social sciences; attracts 85,000+ students (20% international), fosters innovation and interdisciplinary work; alumni include Nobel laureates; affordable tuition with waivers for developing countries/Ukrainians.",
+    "keyFacts": [
+      "~€726.72/semester + ÖH €25 (waivers possible for Ukrainians/developing countries).",
+      "Living: ~€1,200–1,600/month in 2026 estimates",
+      "Oldest German-speaking uni (1365), top-ranked globally (~top 150–200 QS in 2026), excellent research with international …"
+    ],
+    "programs": [
+      {
+        "name": "Anglophone Literatures and Cultures (MA)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Applied Economics",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Applied Linguistics",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Arabic Linguistics",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Astronomy",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Banking and Finance",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Molecular Biology",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Quantitative Finance",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Astrophysics",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Data Science",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "International Relations variants",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      }
+    ],
+    "requirements": [
+      "Recognized qualification (high school/Bachelor's equivalence), English proficiency (IELTS 6.5–7.0/TOEFL 90–100+ for English programs), motivation letter/CV for some Master's. Deadlines: e.g., Nov 2025–Jan 2026 for summer 2026; June–Sep for winter 2026/27. Apply via u:find portal; some selection procedures."
+    ],
+    "helpfulInfo": [
+      "Address: Universitätsring 1, 1010 Vienna, Austria.",
+      "Highly international; exemptions for standard study duration +2 semesters; proof of funds",
+      "Phone: +43 1 4277-0; Email: info@univie.ac.at (general); studienabteilung@univie.ac.at (admissions)."
+    ],
+    "website": "https://www.univie.ac.at",
+    "tuition": "~€726.72/semester + ÖH €25 (waivers possible for Ukrainians/developing countries).",
+    "livingCosts": "€1,200–1,600/month in 2026 estimates",
+    "cityInfo": "Austria's capital and cultural powerhouse (~2 million people). Imperial grandeur (Habsburg palaces like Schönbrunn/Hofburg, St. Stephen's Cathedral), world-class museums (Kunsthistorisches, Albertina), opera/ball season, classical music (Vienna Philharmonic), coffeehouses, diverse neighborhoods (e.g., trendy Neubau, historic Innere Stadt), vibrant international student scene (~200,000 students citywide), parks (Prater), Danube River activities.",
+    "whyChoose": [
+      "Oldest German-speaking uni (1365), top-ranked globally (~top 150–200 QS in 2026), excellent research with international visibility, wide variety of degree programs (over 180), vibrant community in one of Europe's most livable cities (ranked #1 by Mercer/EIU), strong in humanities, sciences, law, social sciences",
+      "attracts 85,000+ students (20% international), fosters innovation and interdisciplinary work",
+      "alumni include Nobel laureates",
+      "affordable tuition with waivers for developing countries/Ukrainians"
+    ]
+  },
+  {
+    "slug": "medical-university-of-vienna",
+    "name": "Medical University of Vienna",
+    "country": "Austria",
+    "city": "Vienna",
+    "imageKey": "vienna",
+    "shortDescription": "Specialized in medicine/health sciences; top research hospital; competitive programs; high employability in healthcare.",
+    "overview": "As above (~€1,200–1,600/month). Why Choose This University?: Specialized in medicine/health sciences; top research hospital; competitive programs; high employability in healthcare.",
+    "keyFacts": [
+      "Standard for available programs ~€726.72/semester + ÖH €25.",
+      "Living: ~€1,200–1,600/month",
+      "Specialized in medicine/health sciences; top research hospital; competitive programs; high employability in healthcare."
+    ],
+    "programs": [
+      {
+        "name": "Various English-taught programmes",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      }
+    ],
+    "requirements": [
+      "Competitive exams/quotas for core programs; direct for Master's/PhD."
+    ],
+    "helpfulInfo": [
+      "Address: Spitalgasse 23, 1090 Vienna, Austria.",
+      "Highly selective for clinical fields.",
+      "Phone: +43 1 40160-0; Email: studium@meduniwien.ac.at."
+    ],
+    "website": "https://www.meduniwien.ac.at",
+    "tuition": "Standard for available programs ~€726.72/semester + ÖH €25.",
+    "livingCosts": "€1,200–1,600/month",
+    "cityInfo": "As above (~€1,200–1,600/month).",
+    "whyChoose": [
+      "Specialized in medicine/health sciences",
+      "top research hospital",
+      "competitive programs",
+      "high employability in healthcare"
+    ]
+  },
+  {
+    "slug": "tu-wien",
+    "name": "TU Wien",
+    "country": "Austria",
+    "city": "Vienna",
+    "imageKey": "vienna",
+    "shortDescription": "Leading engineering/tech uni; strong industry ties; innovative research; unmatched quality of living in Vienna.",
+    "overview": "As above (~€1,200–1,600/month). Why Choose This University?: Leading engineering/tech uni; strong industry ties; innovative research; unmatched quality of living in Vienna.",
+    "keyFacts": [
+      "~€726.72/semester + ÖH €25.",
+      "Living: ~€1,200–1,600/month",
+      "Leading engineering/tech uni; strong industry ties; innovative research; unmatched quality of living in Vienna."
+    ],
+    "programs": [
+      {
+        "name": "Various English-taught programmes",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      }
+    ],
+    "requirements": [
+      "Often restricted/grades-based."
+    ],
+    "helpfulInfo": [
+      "Address: Karlsplatz 13, 1040 Vienna, Austria.",
+      "Strong STEM focus.",
+      "Phone: +43 1 58801-0; Email: info@tuwien.ac.at."
+    ],
+    "website": "https://www.tuwien.ac.at",
+    "tuition": "~€726.72/semester + ÖH €25.",
+    "livingCosts": "€1,200–1,600/month",
+    "cityInfo": "As above (~€1,200–1,600/month).",
+    "whyChoose": [
+      "Leading engineering/tech uni",
+      "strong industry ties",
+      "innovative research",
+      "unmatched quality of living in Vienna"
+    ]
+  },
+  {
+    "slug": "university-of-natural-resources-and-life-sciences-vienna",
+    "name": "University of Natural Resources and Life Sciences, Vienna",
+    "country": "Austria",
+    "city": "Vienna",
+    "imageKey": "vienna",
+    "shortDescription": "Agriculture/forestry/environmental; sustainability/green focus; leading in life sciences; graduates highly employable.",
+    "overview": "As above (~€1,200–1,600/month). Why Choose This University?: Agriculture/forestry/environmental; sustainability/green focus; leading in life sciences; graduates highly employable.",
+    "keyFacts": [
+      "Standard ~€726.72/semester + ÖH €25.",
+      "Living: ~€1,200–1,600/month",
+      "Agriculture/forestry/environmental; sustainability/green focus; leading in life sciences; graduates highly employable."
+    ],
+    "programs": [
+      {
+        "name": "Various English-taught programmes",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      }
+    ],
+    "requirements": [
+      "Check official website for admission requirements."
+    ],
+    "helpfulInfo": [
+      "Address: Gregor-Mendel-Straße 33, 1180 Vienna, Austria.",
+      "Green campus.",
+      "Phone: +43 1 47654-0; Email: info@boku.ac.at."
+    ],
+    "website": "https://www.boku.ac.at",
+    "tuition": "Standard ~€726.72/semester + ÖH €25.",
+    "livingCosts": "€1,200–1,600/month",
+    "cityInfo": "As above (~€1,200–1,600/month).",
+    "whyChoose": [
+      "Agriculture/forestry/environmental",
+      "sustainability/green focus",
+      "leading in life sciences",
+      "graduates highly employable"
+    ]
+  },
+  {
+    "slug": "university-of-veterinary-medicine-vienna",
+    "name": "University of Veterinary Medicine, Vienna",
+    "country": "Austria",
+    "city": "Vienna",
+    "imageKey": "vienna",
+    "shortDescription": "Animal health/veterinary specialist; research excellence.",
+    "overview": "As above (~€1,200–1,600/month). Why Choose This University?: Animal health/veterinary specialist; research excellence.",
+    "keyFacts": [
+      "Standard ~€726.72/semester + ÖH €25.",
+      "Living: ~€1,200–1,600/month",
+      "Animal health/veterinary specialist; research excellence."
+    ],
+    "programs": [
+      {
+        "name": "Mostly German; some courses in English for veterinary/animal health.",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      }
+    ],
+    "requirements": [
+      "Entrance exam."
+    ],
+    "helpfulInfo": [
+      "Address: Veterinärplatz 1, 1210 Vienna, Austria.",
+      "Specialized.",
+      "Phone: +43 1 25077-0; Email: info@vetmeduni.ac.at."
+    ],
+    "website": "https://www.vetmeduni.ac.at",
+    "tuition": "Standard ~€726.72/semester + ÖH €25.",
+    "livingCosts": "€1,200–1,600/month",
+    "cityInfo": "As above (~€1,200–1,600/month).",
+    "whyChoose": [
+      "Animal health/veterinary specialist",
+      "research excellence"
+    ]
+  },
+  {
+    "slug": "university-of-applied-arts-vienna",
+    "name": "University of Applied Arts Vienna",
+    "country": "Austria",
+    "city": "Vienna",
+    "imageKey": "vienna",
+    "shortDescription": "Art, design, architecture; innovative; selective with portfolio focus.",
+    "overview": "As above (~€1,200–1,600/month). Why Choose This University?: Art, design, architecture; innovative; selective with portfolio focus.",
+    "keyFacts": [
+      "Standard/low ~€726.72/semester + ÖH €25.",
+      "Living: ~€1,200–1,600/month",
+      "Art, design, architecture; innovative; selective with portfolio focus."
+    ],
+    "programs": [
+      {
+        "name": "Various English-taught programmes",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      }
+    ],
+    "requirements": [
+      "Highly selective (auditions/portfolios)."
+    ],
+    "helpfulInfo": [
+      "Address: Oskar-Kokoschka-Platz 2, 1010 Vienna, Austria.",
+      "Prestigious creative education.",
+      "Phone: +43 1 71133-0; Email: info@uni-ak.ac.at."
+    ],
+    "website": "https://www.dieangewandte.at",
+    "tuition": "Standard/low ~€726.72/semester + ÖH €25.",
+    "livingCosts": "€1,200–1,600/month",
+    "cityInfo": "As above (~€1,200–1,600/month).",
+    "whyChoose": [
+      "Art, design, architecture",
+      "selective with portfolio focus"
+    ]
+  },
+  {
+    "slug": "university-of-music-and-performing-arts-vienna",
+    "name": "University of Music and Performing Arts Vienna",
+    "country": "Austria",
+    "city": "Vienna",
+    "imageKey": "vienna",
+    "shortDescription": "Music, theater, film; world-class performing arts.",
+    "overview": "As above (~€1,200–1,600/month). Why Choose This University?: Music, theater, film; world-class performing arts.",
+    "keyFacts": [
+      "Standard/low ~€726.72/semester + ÖH €25.",
+      "Living: ~€1,200–1,600/month",
+      "Music, theater, film; world-class performing arts."
+    ],
+    "programs": [
+      {
+        "name": "Various English-taught programmes",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      }
+    ],
+    "requirements": [
+      "Highly selective (auditions/portfolios)."
+    ],
+    "helpfulInfo": [
+      "Address: Anton-von-Webern-Platz 1, 1030 Vienna, Austria.",
+      "Renowned for music education.",
+      "Phone: +43 1 71155-0; Email: info@mdw.ac.at."
+    ],
+    "website": "https://www.mdw.ac.at",
+    "tuition": "Standard/low ~€726.72/semester + ÖH €25.",
+    "livingCosts": "€1,200–1,600/month",
+    "cityInfo": "As above (~€1,200–1,600/month).",
+    "whyChoose": [
+      "Music, theater, film",
+      "world-class performing arts"
+    ]
+  },
+  {
+    "slug": "academy-of-fine-arts-vienna",
+    "name": "Academy of Fine Arts Vienna",
+    "country": "Austria",
+    "city": "Vienna",
+    "imageKey": "vienna",
+    "shortDescription": "Fine arts and visual studies; innovative approach; ranked ~top 5000 globally.",
+    "overview": "As above (~€1,200–1,600/month). Why Choose This University?: Fine arts and visual studies; innovative approach; ranked ~top 5000 globally.",
+    "keyFacts": [
+      "Standard/low ~€726.72/semester + ÖH €25.",
+      "Living: ~€1,200–1,600/month",
+      "Fine arts and visual studies; innovative approach; ranked ~top 5000 globally."
+    ],
+    "programs": [
+      {
+        "name": "Various English-taught programmes",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      }
+    ],
+    "requirements": [
+      "Highly selective (auditions/portfolios)."
+    ],
+    "helpfulInfo": [
+      "Address: Schillerplatz 3, 1010 Vienna, Austria.",
+      "Focus on creativity/interdisciplinary.",
+      "Phone: +43 1 58816-0; Email: info@akbild.ac.at."
+    ],
+    "website": "https://www.akbild.ac.at",
+    "tuition": "Standard/low ~€726.72/semester + ÖH €25.",
+    "livingCosts": "€1,200–1,600/month",
+    "cityInfo": "As above (~€1,200–1,600/month).",
+    "whyChoose": [
+      "Fine arts and visual studies",
+      "innovative approach",
+      "ranked ~top 5000 globally"
+    ]
+  },
+  {
+    "slug": "rwth-aachen-university",
+    "name": "RWTH Aachen University",
+    "country": "Germany",
+    "city": "Aachen",
+    "imageKey": "aachen",
+    "shortDescription": "One of Germany's top technical universities (TU9 member, Excellence University), ~47,000 students (high international share), ranked top in engineering/sciences globally (~top 100–150 QS/THE). Renowned for engineering (mechanical, electrical, automotive, materials), computer science, physics, and interdisciplinary r...",
+    "overview": "A historic border city in western Germany (~250,000 people), right at the triangle with Belgium and Netherlands. Known as \"City of Emperors\" (Charlemagne's capital), with stunning Aachen Cathedral (UNESCO World Heritage), medieval old town, thermal springs (Carolinus Thermen), and modern vibe. Lively student scene (~50,000 students across unis), international (many from Benelux), green parks/hiking in nearby Eifel hills, famous Christmas market, and easy travel (high-speed trains to Cologne/Brussels). Relaxed yet energetic, affordable compared to big cities, with strong tech/engineering culture (close to industry hubs like Jülich research center). Why Choose This University?: One of Germany's top technical universities (TU9 member, Excellence University), ~47,000 students (high international share), ranked top in engineering/sciences globally (~top 100–150 QS/THE). Renowned for engineering (mechanical, electrical, automotive, materials), computer science, physics, and interdisciplinary research (e.g., Industry 4.0, sustainable tech). Strong industry ties (nearby clusters in automotive, energy), no tuition fees (public uni), modern facilities/labs, and Aachen's central European location for cross-border opportunities. Ideal for STEM-focused students wanting practical, research-driven education in a welcoming, historic-yet-innovative city.",
+    "keyFacts": [
+      "One of Germany's top technical universities (TU9 member, Excellence University), ~47,000 students (high international sh…"
+    ],
+    "programs": [
+      {
+        "name": "Applied Geophysics (M.Sc., joint with Delft/ETH Zurich)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Automotive Engineering (M.Sc.)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Battery Science and Technology in Engineering (M.Sc.)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Biomedical Engineering (M.Sc.)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Biomedical Systems Engineering (M.Sc.)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Cognitive, Digital and Empirical English Studies (M.A.)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Communications Engineering (M.Sc.)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Computer Engineering (M.Sc.)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Computer Science (M.Sc.)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Data Science (M.Sc.)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Materials Engineering (M.Sc.)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Micro- and Nanoelectronics (variants)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Transforming City Regions (M.Sc.)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      }
+    ],
+    "requirements": [
+      "Recognized qualification (high school/Bachelor's equivalence via uni-assist VPD for many).",
+      "English proficiency: IELTS 6.5+/TOEFL 90+ (or equivalent) for English programs (exemptions for degrees from UK/US/etc.).",
+      "Motivation letter/CV sometimes; aptitude tests/points for restricted programs.",
+      "Apply via RWTHonline portal (international applicants: uni-assist often required). Deadlines: Non-EU/EEA for open Master's: March 1 (winter), September 1 (summer) for some; earlier for restricted (check per program). Winter 2026/27 applications ongoing/open.",
+      "No tuition fees; semester fee ~€300–350 (includes public transport ticket NRW-wide, student services). Non-EU: Proof of funds €11,904/year (blocked account) for visa."
+    ],
+    "helpfulInfo": [
+      "Address: Templergraben 55, 52062 Aachen, Germany (main historic campus in city center; modern extensions in Melaten/Horbach areas for engineering/sciences). International Office: SuperC building, Templergraben 57.",
+      "International Office/Admissions: Phone: +49 241 80-1 (general) or specific via portal; Email: international@rwth-aachen.de or studienberatung@rwth-aachen.de. International Admissions: Check rwth-aachen.de/go/id/rcx for contacts."
+    ],
+    "website": "https://www.rwth-aachen.de",
+    "cityInfo": "A historic border city in western Germany (~250,000 people), right at the triangle with Belgium and Netherlands. Known as \"City of Emperors\" (Charlemagne's capital), with stunning Aachen Cathedral (UNESCO World Heritage), medieval old town, thermal springs (Carolinus Thermen), and modern vibe. Lively student scene (~50,000 students across unis), international (many from Benelux), green parks/hiking in nearby Eifel hills, famous Christmas market, and easy travel (high-speed trains to Cologne/Brussels).",
+    "whyChoose": [
+      "One of Germany's top technical universities (TU9 member, Excellence University), ~47,000 students (high international share), ranked top in engineering/sciences globally (~top 100–150 QS/THE)",
+      "Renowned for engineering (mechanical, electrical, automotive, materials), computer science, physics, and interdisciplinary research (e",
+      "0, sustainable tech)",
+      "Strong industry ties (nearby clusters in automotive, energy), no tuition fees (public uni), modern facilities/labs, and Aachen's central European location for cross-border opportunities",
+      "Ideal for STEM-focused students wanting practical, research-driven education in a welcoming, historic-yet-innovative city"
+    ]
+  },
+  {
+    "slug": "freie-universitaet-berlin",
+    "name": "Freie Universität Berlin",
+    "country": "Germany",
+    "city": "Berlin",
+    "imageKey": "berlin",
+    "shortDescription": "Founded 1948 in West Berlin (with U.S. support during Cold War), it's one of Germany's top research universities (Excellence Initiative/Cluster status), highly international (~20% foreign students from 130+ countries), strong global outlook (part of Berlin University Alliance).",
+    "overview": "Germany's capital and one of Europe's most dynamic, international cities (~3.8 million people). Iconic landmarks (Brandenburg Gate, Berlin Wall remnants, Reichstag), world-class museums (Museum Island UNESCO site, Pergamon), diverse neighborhoods (Kreuzberg for street art/alternative scene, Prenzlauer Berg for cafes/family vibe, Mitte for history/nightlife), legendary clubs (Berghain), festivals (Berlinale film, Carnival of Cultures), parks (Tiergarten), and endless cultural events. Extremely international (~20% foreign students), English widely spoken in student/academic circles, vibrant startup/tech/creative scene, excellent public transport (U-Bahn/S-Bahn), bike-friendly. Safe, progressive, with rich history and endless opportunities—but higher living costs than smaller German cities. Why Choose This University?: Founded 1948 in West Berlin (with U.S. support during Cold War), it's one of Germany's top research universities (Excellence Initiative/Cluster status), highly international (~20% foreign students from 130+ countries), strong global outlook (part of Berlin University Alliance). Ranked top in Germany for humanities/social sciences, sciences, and international reputation. Large campus (Dahlem: green, historic buildings), excellent libraries (e.g., Philological Library), research facilities. No tuition fees (public uni), vibrant Berlin location for internships/jobs (tech, NGOs, media), and strong support for internationals (orientation, language courses). Ideal for h",
+    "keyFacts": [
+      "Founded 1948 in West Berlin (with U.S. support during Cold War), it's one of Germany's top research universities (Excell…"
+    ],
+    "programs": [
+      {
+        "name": "Pharmaceutical Research (M.Sc.)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Data Science (M.Sc.)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "International Relations (various, e.g., Global History or related)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "English Studies: Literature, Language, Culture (M.A.)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Computational Sciences",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "International Health",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "North American Studies",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Polymer Science (joint with HU/TU/Potsdam)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      }
+    ],
+    "requirements": [
+      "Recognized high school diploma (Bachelor's) or Bachelor's degree (Master's) — equivalence via uni-assist (VPD/preliminary review, fee ~€75–200).",
+      "English proficiency: IELTS 6.5+/TOEFL 90+ (or equivalent) for English programs.",
+      "Motivation letter, CV, sometimes references/interview for Master's.",
+      "Apply via uni-assist (for most internationals) or direct portal; deadlines: Winter semester (Oct start) often May–July; Summer (Apr start) Jan–March; Master's often Dec 1–Jan 15 or program-specific.",
+      "No tuition, but semester fee ~€300–400 (includes public transport ticket, admin, student services). Non-EU: Proof of funds ~€11,904/year (blocked account) for visa."
+    ],
+    "helpfulInfo": [
+      "Address: Kaiserswerther Str. 16-18, 14195 Berlin, Germany (main campus in Dahlem, green suburban south-west Berlin). Admissions/Student Services: Iltisstr. 1 & 4, 14195 Berlin.",
+      "Phone: +49 30 838-70000; Email: info-service@fu-berlin.de (general/Info-Service Studium); studienberatung@fu-berlin.de or specific admissions emails via portal. Admissions Office for internationals: +49 30 838-70000 (international applicants)."
+    ],
+    "website": "https://www.fu-berlin.de",
+    "cityInfo": "Germany's capital and one of Europe's most dynamic, international cities (~3.8 million people). Iconic landmarks (Brandenburg Gate, Berlin Wall remnants, Reichstag), world-class museums (Museum Island UNESCO site, Pergamon), diverse neighborhoods (Kreuzberg for street art/alternative scene, Prenzlauer Berg for cafes/family vibe, Mitte for history/nightlife), legendary clubs (Berghain), festivals (Berlinale film, Carnival of Cultures), parks (Tiergarten), and endless cultural events.",
+    "whyChoose": [
+      "Founded 1948 in West Berlin (with U",
+      "support during Cold War), it's one of Germany's top research universities (Excellence Initiative/Cluster status), highly international (~20% foreign students from 130+ countries), strong global outlook (part of Berlin University Alliance)",
+      "Ranked top in Germany for humanities/social sciences, sciences, and international reputation",
+      "Large campus (Dahlem: green, historic buildings), excellent libraries (e",
+      ", Philological Library), research facilities"
+    ]
+  },
+  {
+    "slug": "technische-universitaet-berlin",
+    "name": "Technische Universität Berlin",
+    "country": "Germany",
+    "city": "Berlin",
+    "imageKey": "berlin",
+    "shortDescription": "One of Germany's leading technical universities (TU9 member, University of Excellence), ~35,000 students (diverse/international), strong industry ties (startups, Siemens, BMW, tech hubs). Unique for a tech uni: combines engineering/tech with planning sciences, economics, social sciences, humanities.",
+    "overview": "Germany's capital and one of Europe's most exciting, international cities (~3.8 million people). Iconic landmarks (Brandenburg Gate, Berlin Wall remnants, Reichstag), world-class museums (Museum Island UNESCO site), diverse neighborhoods (Kreuzberg for street art/alternative scene, Prenzlauer Berg for cafes, Mitte for history/nightlife), legendary clubs (Berghain), festivals (Berlinale film, Carnival of Cultures), parks (Tiergarten), and endless cultural events. Extremely international (~20–30% foreign students at TU Berlin), English widely spoken in student/academic circles, vibrant startup/tech/creative scene, excellent public transport (U-Bahn/S-Bahn), bike-friendly. Safe, progressive, with rich history and endless opportunities—but higher living costs than smaller cities. Why Choose This University?: One of Germany's leading technical universities (TU9 member, University of Excellence), ~35,000 students (diverse/international), strong industry ties (startups, Siemens, BMW, tech hubs). Unique for a tech uni: combines engineering/tech with planning sciences, economics, social sciences, humanities. Top in mechanical/electrical engineering, computer science, urban planning, sustainability. No tuition fees (public uni), vibrant Berlin location for internships/jobs (tech/media/NGOs), excellent facilities/research. Ideal for STEM/engineering with practical focus, innovative programs, and Berlin's dynamic energy—great career prospects in Europe.",
+    "keyFacts": [
+      "One of Germany's leading technical universities (TU9 member, University of Excellence), ~35,000 students (diverse/intern…"
+    ],
+    "programs": [
+      {
+        "name": "Architecture Typology (M.Sc.)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Computational Mechanics of Materials and Structures (M.Sc.)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Computer Science (M.Sc.)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Global Production Engineering (M.Sc.)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Information Systems Management (M.Sc.)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Innovation Management and Entrepreneurship (M.Sc.)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Polymer Science (M.Sc., joint)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Scientific Computing (M.Sc.)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Urban Management (M.Sc.)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      }
+    ],
+    "requirements": [
+      "Recognized qualification (high school for Bachelor's—uni-assist VPD/equivalence; Bachelor's degree for Master's).",
+      "English proficiency: IELTS 6.5+/TOEFL 90+ (or equivalent) for English programs.",
+      "Motivation letter/CV sometimes; aptitude tests/points system for restricted programs.",
+      "Apply via TU Berlin portal (e.g., for Master's: often Dec 1–Feb/May deadlines depending on restricted/open; uni-assist for many internationals). Winter 2026/27 deadlines: e.g., restricted English Master's April–May 2025 (check exact).",
+      "No tuition fees; semester fee ~€360 (includes public transport ticket, admin, student services; rising slightly in 2026). Non-EU: Proof of funds €11,904/year (blocked account) for visa."
+    ],
+    "helpfulInfo": [
+      "Address: Straße des 17. Juni 135, 10623 Berlin, Germany (main campus in Charlottenburg, central-west Berlin near Tiergarten; urban, accessible location).",
+      "International Office/Student Mobility & International Students: Phone: +49 30 314-24067 or +49 30 314-25648; Email: studentmobility@international.tu-berlin.de or international@tu-berlin.de. General info: +49 30 314-0. Office in main building H (ground floor). Admissions/Student Services: Campus Center H 0030."
+    ],
+    "website": "https://www.tu.berlin",
+    "cityInfo": "Germany's capital and one of Europe's most exciting, international cities (~3.8 million people). Iconic landmarks (Brandenburg Gate, Berlin Wall remnants, Reichstag), world-class museums (Museum Island UNESCO site), diverse neighborhoods (Kreuzberg for street art/alternative scene, Prenzlauer Berg for cafes, Mitte for history/nightlife), legendary clubs (Berghain), festivals (Berlinale film, Carnival of Cultures), parks (Tiergarten), and endless cultural events.",
+    "whyChoose": [
+      "One of Germany's leading technical universities (TU9 member, University of Excellence), ~35,000 students (diverse/international), strong industry ties (startups, Siemens, BMW, tech hubs)",
+      "Unique for a tech uni: combines engineering/tech with planning sciences, economics, social sciences, humanities",
+      "Top in mechanical/electrical engineering, computer science, urban planning, sustainability",
+      "No tuition fees (public uni), vibrant Berlin location for internships/jobs (tech/media/NGOs), excellent facilities/research",
+      "Ideal for STEM/engineering with practical focus, innovative programs, and Berlin's dynamic energy—great career prospects in Europe"
+    ]
+  },
+  {
+    "slug": "rheinische-friedrich-wilhelms-universitaet-bonn",
+    "name": "Rheinische Friedrich-Wilhelms-Universität Bonn",
+    "country": "Germany",
+    "city": "Bonn",
+    "imageKey": "bonn",
+    "shortDescription": "Founded 1818, one of Germany's top research universities (Excellence Initiative, strong clusters in mathematics, life sciences, humanities), ~38,000 students (international focus), highly ranked globally (~top 100–200 QS/THE). Renowned for research (e.g.",
+    "overview": "Former capital of West Germany (1949–1990), now a UN city with 19+ UN agencies (e.g., UN Climate Change Secretariat, UN Volunteers) and ~150 international organizations, giving it a strong global, diplomatic vibe. Picturesque on the Rhine River, historic old town (Beethoven's birthplace—annual Beethovenfest), museums (Haus der Geschichte, Beethoven House), botanical gardens, Poppelsdorfer Palace (university campus), and nearby Siebengebirge hills for hiking. Relaxed, green, family-friendly, multicultural (large expat/UN community), excellent public transport (train hub to Cologne/Frankfurt). Smaller than Berlin/Munich (~330,000 people), safer/quieter, with a mix of historic charm and modern international energy. Student population ~35,000–38,000, making it lively but not overwhelming. Why Choose This University?: Founded 1818, one of Germany's top research universities (Excellence Initiative, strong clusters in mathematics, life sciences, humanities), ~38,000 students (international focus), highly ranked globally (~top 100–200 QS/THE). Renowned for research (e.g., Hausdorff Center for Mathematics, Argelander Institute for Astronomy), Nobel laureates (e.g., in physics/chemistry), and interdisciplinary strengths. No tuition fees (public uni), beautiful historic campuses (Poppelsdorfer Schloss), vibrant international community, proximity to UN/EU institutions for internships/networking (great for IR, economics, sciences). Affordable Rhine location with high quality of life, Beet",
+    "keyFacts": [
+      "Founded 1818, one of Germany's top research universities (Excellence Initiative, strong clusters in mathematics, life sc…"
+    ],
+    "programs": [
+      {
+        "name": "Astrophysics (M.Sc.)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "English Literatures and Cultures (M.A.)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Applied Linguistics (M.A.)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "English (M.A. or M.Ed. variants, e.g., for teaching)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Mathematics (M.Sc., research-oriented, international profile)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Economics (various, e.g., Quantitative Economics M.Sc.)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Molecular Biology/Biochemistry (M.Sc.)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Computer Science/Informatics variants",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Geography/Environmental Sciences (some)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      }
+    ],
+    "requirements": [
+      "Recognized qualification (high school for Bachelor's—often uni-assist VPD/equivalence; Bachelor's degree for Master's).",
+      "English proficiency: IELTS 6.5+/TOEFL 90+ (or equivalent) for English programs.",
+      "Motivation letter/CV sometimes; aptitude tests for restricted fields.",
+      "Apply via uni-bonn.de portal or uni-assist (for many); deadlines: Winter (Oct start) often July 15; Summer (Apr start) Jan 15; Master's program-specific (earlier, e.g., Dec–Mar). Non-EU: Special paperwork (e.g., APS for some countries).",
+      "No tuition fees; semester fee ~€300–345 (includes public transport ticket, student services, social contribution). Non-EU: Proof of funds €11,904/year (blocked account) for visa."
+    ],
+    "helpfulInfo": [
+      "Address: Main campus: Regina-Pacis-Weg 3, 53113 Bonn (historic center); International Office: Poppelsdorfer Allee 53 & 102, 53115 Bonn (key for internationals).",
+      "International Office/International Service Point: Phone: +49 228 73-5544; Email: study@uni-bonn.de or international@uni-bonn.de. Central Study Advisory: +49 228 73-7080; zsb-int@verwaltung.uni-bonn.de. Admissions for internationals: intstud@verwaltung.uni-bonn.de (Student Registry). Office hours: Mon–Fri 08:00–16:00."
+    ],
+    "website": "https://www.uni-bonn.de",
+    "cityInfo": "Former capital of West Germany (1949–1990), now a UN city with 19+ UN agencies (e.g., UN Climate Change Secretariat, UN Volunteers) and ~150 international organizations, giving it a strong global, diplomatic vibe. Picturesque on the Rhine River, historic old town (Beethoven's birthplace—annual Beethovenfest), museums (Haus der Geschichte, Beethoven House), botanical gardens, Poppelsdorfer Palace (university campus), and nearby Siebengebirge hills for hiking.",
+    "whyChoose": [
+      "Founded 1818, one of Germany's top research universities (Excellence Initiative, strong clusters in mathematics, life sciences, humanities), ~38,000 students (international focus), highly ranked globally (~top 100–200 QS/THE)",
+      "Renowned for research (e",
+      ", Hausdorff Center for Mathematics, Argelander Institute for Astronomy), Nobel laureates (e",
+      ", in physics/chemistry), and interdisciplinary strengths",
+      "No tuition fees (public uni), beautiful historic campuses (Poppelsdorfer Schloss), vibrant international community, proximity to UN/EU institutions for internships/networking (great for IR, economics, sciences)"
+    ]
+  },
+  {
+    "slug": "technische-universitaet-dortmund",
+    "name": "Technische Universität Dortmund",
+    "country": "Germany",
+    "city": "Dortmund",
+    "imageKey": "dortmund",
+    "shortDescription": "Founded 1968 (one of Germany's younger technical unis), TU Dortmund has a strong practical/research profile (~30,000 students, 19–20% international from 120+ countries). Excellent in engineering, sciences, IT, automation/robotics, chemistry, and interdisciplinary fields (e.g., Industry 4.0 focus).",
+    "overview": "A major city in the Ruhr region (~590,000 people), once an industrial powerhouse (steel/coal) now transformed into a modern, green, and cultural hub. Features include the Signal Iduna Park (famous Borussia Dortmund football stadium), Phoenix See lake (former steelworks turned waterfront with cafes/parks), Zeche Zollern industrial museum, art/culture scene (Theater Dortmund, museums), festivals, and easy access to nature (Emscher Park trails). Student-friendly (~35,000 students at TU Dortmund), multicultural (large international community), affordable living, excellent public transport (trains to Essen/Cologne/Düsseldorf), and vibrant nightlife (pubs, clubs in city center). Less hectic than Berlin/Munich, with a practical, down-to-earth Ruhr vibe—great for sports fans, industrial heritage enthusiasts, and those wanting big-city access without extreme costs. Why Choose This University?: Founded 1968 (one of Germany's younger technical unis), TU Dortmund has a strong practical/research profile (~30,000 students, 19–20% international from 120+ countries). Excellent in engineering, sciences, IT, automation/robotics, chemistry, and interdisciplinary fields (e.g., Industry 4.0 focus). Part of the University Alliance Ruhr (with Bochum/Essen-Duisburg) for broader resources. No tuition fees (public uni), modern campus with good facilities (labs, sports), strong industry links (Ruhr region's economy), and growing English programs for internationals. Affordable city with high quality of ",
+    "keyFacts": [
+      "Founded 1968 (one of Germany's younger technical unis), TU Dortmund has a strong practical/research profile (~30,000 stu…"
+    ],
+    "programs": [
+      {
+        "name": "Various English-taught programmes",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      }
+    ],
+    "requirements": [
+      "Recognized qualification (high school for Bachelor's—uni-assist VPD/equivalence; Bachelor's degree for Master's).",
+      "English proficiency: IELTS 6.5+/TOEFL 90+ (or equivalent) for English programs.",
+      "Motivation letter/CV sometimes; aptitude tests for restricted fields.",
+      "Apply via uni-assist (for many internationals) or TU portal; deadlines: Winter (Oct start) often July 15; Summer (Apr start) Jan 15; Master's program-specific (earlier for some). Contact admission.inquiries@tu-dortmund.de for queries (no pre-review of docs).",
+      "No tuition fees; semester fee ~€300–350 (includes public transport ticket, student services, theater flat access). Non-EU: Proof of funds €11,904/year (blocked account) for visa."
+    ],
+    "helpfulInfo": [
+      "Address: Emil-Figge-Straße 50, 44227 Dortmund, Germany (main campus in Dortmund-Eichlinghofen, modern/suburban south; International Office at Emil-Figge-Str. 61, 44227 Dortmund).",
+      "International Office/Admissions & Enrollment: Phone: +49 231 755-6349 (admissions inquiries) or +49 231 755-6350; Email: admission.inquiries@tu-dortmund.de or international@tu-dortmund.de. Office hours: Phone support Mon–Fri (specific days/times vary; in-person Tuesdays 1–3:30 pm by appointment via terminland.de). General: +49 231 755-1."
+    ],
+    "website": "https://www.tu-dortmund.de",
+    "cityInfo": "A major city in the Ruhr region (~590,000 people), once an industrial powerhouse (steel/coal) now transformed into a modern, green, and cultural hub. Features include the Signal Iduna Park (famous Borussia Dortmund football stadium), Phoenix See lake (former steelworks turned waterfront with cafes/parks), Zeche Zollern industrial museum, art/culture scene (Theater Dortmund, museums), festivals, and easy access to nature (Emscher Park trails).",
+    "whyChoose": [
+      "Founded 1968 (one of Germany's younger technical unis), TU Dortmund has a strong practical/research profile (~30,000 students, 19–20% international from 120+ countries)",
+      "Excellent in engineering, sciences, IT, automation/robotics, chemistry, and interdisciplinary fields (e",
+      "Part of the University Alliance Ruhr (with Bochum/Essen-Duisburg) for broader resources",
+      "No tuition fees (public uni), modern campus with good facilities (labs, sports), strong industry links (Ruhr region's economy), and growing English programs for internationals",
+      "Affordable city with high quality of life, football culture, and easy regional travel"
+    ]
+  },
+  {
+    "slug": "heinrich-heine-university-duesseldorf",
+    "name": "Heinrich Heine University Düsseldorf",
+    "country": "Germany",
+    "city": "Düsseldorf",
+    "imageKey": "dsseldorf",
+    "shortDescription": "Founded 1965, ~35,000 students, strong in life sciences (biology, medicine, chemistry), quantitative fields, and humanities. Growing international focus with several English programs; research-oriented (e.g., AI, data science, biology).",
+    "overview": "Fashion and business hub in North Rhine-Westphalia (~620,000 people). Modern, affluent city with luxury shopping (Königsallee), Rhine River promenade, art museums (Kunstsammlung NRW), vibrant nightlife (Altstadt pubs), international vibe (many expats), and easy access to Cologne/Netherlands. Student-friendly (~35,000 students), safe, green parks (Hofgarten), but higher costs than smaller cities. Why Choose This University?: Founded 1965, ~35,000 students, strong in life sciences (biology, medicine, chemistry), quantitative fields, and humanities. Growing international focus with several English programs; research-oriented (e.g., AI, data science, biology). Modern facilities, central location for internships (business/fashion/pharma hubs), and welcoming for internationals.",
+    "keyFacts": [
+      "No tuition; semester fee ~€300–350.",
+      "Founded 1965, ~35,000 students, strong in life sciences (biology, medicine, chemistry), quantitative fields, and humanit…"
+    ],
+    "programs": [
+      {
+        "name": "Master's: Stronger selection, e.g.:",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Artificial Intelligence and Data Science (M.Sc.)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Comparative Studies in English and American Language, Literature and Culture (M.A.)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Translational Neuroscience (M.Sc.)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      }
+    ],
+    "requirements": [
+      "Uni-assist VPD for equivalence, English proof (IELTS 6.5+/TOEFL 90+), motivation/CV sometimes. Deadlines: Winter July 15; Summer Jan 15 (program-specific)."
+    ],
+    "helpfulInfo": [
+      "Address: Universitätsstraße 1, 40225 Düsseldorf, Germany (main campus in southern Düsseldorf).",
+      "Many programs restricted (NC/grades); growing English portfolio.",
+      "International Office: Phone: +49 211 81-10800; Email: international@hhu.de or admissions-specific."
+    ],
+    "website": "https://www.hhu.de",
+    "tuition": "No tuition; semester fee ~€300–350.",
+    "cityInfo": "Fashion and business hub in North Rhine-Westphalia (~620,000 people). Modern, affluent city with luxury shopping (Königsallee), Rhine River promenade, art museums (Kunstsammlung NRW), vibrant nightlife (Altstadt pubs), international vibe (many expats), and easy access to Cologne/Netherlands. Student-friendly (~35,000 students), safe, green parks (Hofgarten), but higher costs than smaller cities.",
+    "whyChoose": [
+      "Founded 1965, ~35,000 students, strong in life sciences (biology, medicine, chemistry), quantitative fields, and humanities",
+      "Growing international focus with several English programs",
+      "research-oriented (e",
+      ", AI, data science, biology)",
+      "Modern facilities, central location for internships (business/fashion/pharma hubs), and welcoming for internationals"
+    ]
+  },
+  {
+    "slug": "university-of-hamburg",
+    "name": "University of Hamburg",
+    "country": "Germany",
+    "city": "Hamburg",
+    "imageKey": "hamburg",
+    "shortDescription": "Founded 1919, ~43,000 students, comprehensive with strengths in social sciences, law, natural sciences, business, and humanities. Highly international, many English Master's (~50+ options), urban location for internships (port/media/NGOs), no tuition, and vibrant city life.",
+    "overview": "Germany's second-largest city (~1.85 million), major port with cosmopolitan vibe. Historic Speicherstadt (UNESCO), Elbphilharmonie concert hall, diverse neighborhoods (St. Pauli nightlife, Altona hipster scene), lakes/rivers, international flair, festivals, and strong job market (media, logistics, tech). Very student-oriented (~100,000+ students citywide), English common. Why Choose This University?: Founded 1919, ~43,000 students, comprehensive with strengths in social sciences, law, natural sciences, business, and humanities. Highly international, many English Master's (~50+ options), urban location for internships (port/media/NGOs), no tuition, and vibrant city life.",
+    "keyFacts": [
+      "No tuition; semester fee ~€300–350.",
+      "Founded 1919, ~43,000 students, comprehensive with strengths in social sciences, law, natural sciences, business, and hu…"
+    ],
+    "programs": [
+      {
+        "name": "Master's: Diverse, e.g.:",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "African Languages & Cultures (M.A.)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "International Business Administration (M.Sc.)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Peace and Security Studies",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      }
+    ],
+    "requirements": [
+      "Uni-assist for many, English proof (IELTS/TOEFL), motivation for some. Deadlines: Winter May–June (changing); Summer Dec–Jan."
+    ],
+    "helpfulInfo": [
+      "Address: Mittelweg 177, 20148 Hamburg, Germany (main campus central; multiple sites).",
+      "Many consecutive Master's; some non-consecutive.",
+      "International Office: Phone: +49 40 42838-0; Email: international@uni-hamburg.de or campuscenter@uni-hamburg.de."
+    ],
+    "website": "https://www.uni-hamburg.de",
+    "tuition": "No tuition; semester fee ~€300–350.",
+    "cityInfo": "Germany's second-largest city (~1.85 million), major port with cosmopolitan vibe. Historic Speicherstadt (UNESCO), Elbphilharmonie concert hall, diverse neighborhoods (St. Pauli nightlife, Altona hipster scene), lakes/rivers, international flair, festivals, and strong job market (media, logistics, tech). Very student-oriented (~100,000+ students citywide), English common.",
+    "whyChoose": [
+      "Founded 1919, ~43,000 students, comprehensive with strengths in social sciences, law, natural sciences, business, and humanities",
+      "Highly international, many English Master's (~50+ options), urban location for internships (port/media/NGOs), no tuition, and vibrant city life"
+    ]
+  },
+  {
+    "slug": "philipps-universitaet-marburg",
+    "name": "Philipps-Universität Marburg",
+    "country": "Germany",
+    "city": "Marburg",
+    "imageKey": "marburg",
+    "shortDescription": "Founded 1527 (Germany's oldest Protestant uni), ~22,000 students, strong in humanities (e.g., theology, languages), social sciences, medicine, and economics. Research-focused (e.g., Middle East studies), intimate town atmosphere, no tuition, welcoming for internationals, and scenic location for relaxed studies.",
+    "overview": "Charming university town in Hesse (~80,000 people), medieval old town (half-timbered houses, Landgrafenschloss castle), fairy-tale vibe (Brothers Grimm connections), Lahn River, hills for hiking. Very student-dominated (~50% students), relaxed, affordable, safe, with cozy cafes/pubs and cultural events. Smaller/intimate feel, green/nature access. Why Choose This University?: Founded 1527 (Germany's oldest Protestant uni), ~22,000 students, strong in humanities (e.g., theology, languages), social sciences, medicine, and economics. Research-focused (e.g., Middle East studies), intimate town atmosphere, no tuition, welcoming for internationals, and scenic location for relaxed studies.",
+    "keyFacts": [
+      "No tuition; semester fee ~€300–350.",
+      "Founded 1527 (Germany's oldest Protestant uni), ~22,000 students, strong in humanities (e.g., theology, languages), soci…"
+    ],
+    "programs": [
+      {
+        "name": "Bachelor's: Very limited fully English; most German-taught.",
+        "level": "Bachelor",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Master's: Good range, e.g.:",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Economics & Institutions (M.Sc., English)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Economics of the Middle East (M.Sc., English)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "International Political Economy (M.Sc., English; double degree)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "International Business Management (M.Sc., German/English)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Computer Science (M.Sc.)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Business Informatics (M.Sc.)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      }
+    ],
+    "requirements": [
+      "Uni-assist often, English proof (IELTS/TOEFL), motivation. Deadlines: Winter July 15; Summer Jan 15."
+    ],
+    "helpfulInfo": [
+      "Address: Biegenstraße 10, 35037 Marburg, Germany (historic upper/lower town campuses).",
+      "Strong international Master's in economics/political economy.",
+      "International Office: Phone: +49 6421 28-27012; Email: international@uni-marburg.de."
+    ],
+    "website": "https://www.uni-marburg.de",
+    "tuition": "No tuition; semester fee ~€300–350.",
+    "cityInfo": "Charming university town in Hesse (~80,000 people), medieval old town (half-timbered houses, Landgrafenschloss castle), fairy-tale vibe (Brothers Grimm connections), Lahn River, hills for hiking. Very student-dominated (~50% students), relaxed, affordable, safe, with cozy cafes/pubs and cultural events. Smaller/intimate feel, green/nature access.",
+    "whyChoose": [
+      "Founded 1527 (Germany's oldest Protestant uni), ~22,000 students, strong in humanities (e",
+      ", theology, languages), social sciences, medicine, and economics",
+      "Research-focused (e",
+      ", Middle East studies), intimate town atmosphere, no tuition, welcoming for internationals, and scenic location for relaxed studies"
+    ]
+  },
+  {
+    "slug": "ludwig-maximilians-universitaet-muenchen",
+    "name": "Ludwig-Maximilians-Universität München",
+    "country": "Germany",
+    "city": "Munich",
+    "imageKey": "munich",
+    "shortDescription": "Founded 1472, one of Germany's oldest/largest (~50,000 students), top-ranked (often top 50–100 globally QS/THE), Excellence University status with strong research (life sciences, physics, humanities, economics). Comprehensive \"universitas\" (all fields except engineering—TU Munich covers that).",
+    "overview": "Bavaria's capital and one of Germany's most prosperous, high-quality-of-life cities (~1.6 million people). Iconic sights (Marienplatz, English Garden, Nymphenburg Palace, BMW Welt), world-class museums (Pinakothek trio, Deutsches Museum), beer gardens/Oktoberfest, vibrant cultural scene (theater, opera, film festivals), Alps nearby for day trips (hiking/skiing), tech/startup hub (UnternehmerTUM), and international flair (many expats). Student-heavy (~100,000+ students citywide), safe, clean, efficient public transport (MVV network). Extremely expensive city—highest living costs in Germany. Why Choose This University?: Founded 1472, one of Germany's oldest/largest (~50,000 students), top-ranked (often top 50–100 globally QS/THE), Excellence University status with strong research (life sciences, physics, humanities, economics). Comprehensive \"universitas\" (all fields except engineering—TU Munich covers that). Highly international (many English Master's), vibrant Munich location for culture/jobs (BMW, Siemens, startups), no tuition fees (public uni), excellent libraries/facilities, and alumni network (Nobel winners, thinkers like Habermas). Ideal for research-oriented studies in sciences/humanities/social sciences; competitive admission for popular fields (e.g., medicine/psychology NC-restricted).",
+    "keyFacts": [
+      "Founded 1472, one of Germany's oldest/largest (~50,000 students), top-ranked (often top 50–100 globally QS/THE), Excelle…"
+    ],
+    "programs": [
+      {
+        "name": "American History, Culture and Society (MA)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Ancient Oriental Studies (MA)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Astrophysics (MSc)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Biochemistry (MSc)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Bioinformatics (MSc)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Chemistry (MSc)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Digital Cultural Heritage (MA)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Epidemiology (MSc, winter start)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "History (various MA)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Informatics/Computer Science variants",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Mathematics (MSc)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Munich English Studies (MA)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Physics (MSc)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Quantitative Economics (MSc, winter start)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Sociology (MSc, winter start)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Statistics & Data Science (MSc)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      }
+    ],
+    "requirements": [
+      "Recognized qualification (high school for Bachelor's—often via uni-assist VPD; Bachelor's degree for Master's—equivalence check).",
+      "English proficiency: IELTS 6.5+/TOEFL 90+ (or equivalent) for English programs.",
+      "Motivation letter/CV/references sometimes; aptitude tests/interviews for some (e.g., restricted Master's).",
+      "Apply via International Office (zulassung.international@lmu.de) or portals like MoveIN (for many Master's: Nov 15, 2025–Jan 15, 2026 for winter 2026/27). Deadlines: Winter often July 15; Summer Jan 15; program-specific (earlier for internationals).",
+      "No tuition fees (public uni); semester fee ~€85–150 (includes student union, basic transport ticket—rising slightly to ~€97 from summer 2026 in Bavaria). Non-EU: Proof of funds ~€11,904/year (blocked account) for visa."
+    ],
+    "helpfulInfo": [
+      "Address: Geschwister-Scholl-Platz 1, 80539 Munich, Germany (main campus in Maxvorstadt, central near museums/English Garden; multiple sites including HighTechCampus Martinsried for life sciences).",
+      "International Office/Admissions: Phone: +49 89 2180-2823 or subject-specific numbers; Email: zulassung.international@lmu.de (admissions internationals) or international@lmu.de (general). International Office for counseling/Zoom hours. Website has subject list for direct contacts."
+    ],
+    "website": "https://www.lmu.de",
+    "cityInfo": "Bavaria's capital and one of Germany's most prosperous, high-quality-of-life cities (~1.6 million people). Iconic sights (Marienplatz, English Garden, Nymphenburg Palace, BMW Welt), world-class museums (Pinakothek trio, Deutsches Museum), beer gardens/Oktoberfest, vibrant cultural scene (theater, opera, film festivals), Alps nearby for day trips (hiking/skiing), tech/startup hub (UnternehmerTUM), and international flair (many expats).",
+    "whyChoose": [
+      "Founded 1472, one of Germany's oldest/largest (~50,000 students), top-ranked (often top 50–100 globally QS/THE), Excellence University status with strong research (life sciences, physics, humanities, economics)",
+      "Comprehensive \"universitas\" (all fields except engineering—TU Munich covers that)",
+      "Highly international (many English Master's), vibrant Munich location for culture/jobs (BMW, Siemens, startups), no tuition fees (public uni), excellent libraries/facilities, and alumni network (Nobel winners, thinkers like Habermas)",
+      "Ideal for research-oriented studies in sciences/humanities/social sciences",
+      "competitive admission for popular fields (e"
+    ]
+  },
+  {
+    "slug": "university-of-bologna",
+    "name": "University of Bologna",
+    "country": "Italy",
+    "city": "Bologna",
+    "imageKey": "bologna",
+    "shortDescription": "The world's oldest university in continuous operation (founded 1088), ~90,000 students, top-ranked in Italy (~top 150–200 globally), strong in humanities, law, sciences, engineering, medicine, and social sciences.",
+    "overview": "Italy's culinary capital and a vibrant university city (~390,000 people), known as \"la dotta\" (the learned) for its academic heritage. Historic center with medieval towers (Asinelli/Garisenda), porticoed streets (UNESCO), lively piazzas (Piazza Maggiore), markets (Quadrilatero food district), and nightlife (student bars/pubs in via Zamboni area). Student-dominated (~100,000+ students), multicultural, walkable/bike-friendly, with excellent public transport (buses/trains to Milan/Rome/Florence). Relaxed yet energetic vibe—perfect for foodies (pasta, mortadella, gelato), culture (museums, theaters), and affordable living compared to Rome/Milan. Why Choose This University?: The world's oldest university in continuous operation (founded 1088), ~90,000 students, top-ranked in Italy (~top 150–200 globally), strong in humanities, law, sciences, engineering, medicine, and social sciences. Vast offerings (over 260 programs, 200+ in foreign languages), highly international (~10,000 foreign students), research excellence (e.g., AI, innovation, classics), no/low tuition for many (income-based), scholarships/exemptions available (merit, developing countries), and Bologna's unbeatable student life (food capital, vibrant, central Italy location for travel). Ideal for broad studies with English options, cultural immersion, and affordability in a historic, lively city.",
+    "keyFacts": [
+      "The world's oldest university in continuous operation (founded 1088), ~90,000 students, top-ranked in Italy (~top 150–20…"
+    ],
+    "programs": [
+      {
+        "name": "Business and Economics (CLABE, B.Sc.)",
+        "level": "Bachelor",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Genomics (B.Sc.)",
+        "level": "Bachelor",
+        "field": "Various",
+        "duration": "3 years",
+        "language": "English"
+      },
+      {
+        "name": "International Relations and Diplomatic Affairs (B.A.)",
+        "level": "Bachelor",
+        "field": "Various",
+        "duration": "3 years",
+        "language": "English"
+      },
+      {
+        "name": "Statistical Sciences (B.Sc.)",
+        "level": "Bachelor",
+        "field": "Various",
+        "duration": "3 years",
+        "language": "English"
+      },
+      {
+        "name": "Economics and Finance (B.Sc.)",
+        "level": "Bachelor",
+        "field": "Various",
+        "duration": "3 years",
+        "language": "English"
+      },
+      {
+        "name": "Artificial Intelligence (M.Sc.)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Artificial Intelligence and Innovation Management (Professional Master)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Civil Engineering variants",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Automation Engineering",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Communications Engineering",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Offshore Engineering",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "International Management (various)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Economics and Finance",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      }
+    ],
+    "requirements": [
+      "Recognized qualification (high school for Bachelor's—equivalence via CIMEA or uni check; Bachelor's degree for Master's).",
+      "English proficiency: IELTS/TOEFL often required (B2–C1; program-specific; multiple certificates accepted like PTE, Cambridge).",
+      "Motivation letter/CV sometimes; entrance exam/interview/test for some (e.g., GRE/GMAT for business).",
+      "Non-EU: Apply via uni portal or Universitaly (pre-enrollment for visa); deadlines vary by program (e.g., intakes Nov–May for some Master's; earlier for non-EU visa). Application fee ~€50–100.",
+      "Tuition: Income-based (ISEE system): Minimum ~€157 (first installment) + max ~€3,000/year depending on program/income (non-EU often pay full unless exemptions; reduced fixed fee for citizens of developing/non-EU-OECD countries). Scholarships/exemptions available (e.g., merit, low income)."
+    ],
+    "helpfulInfo": [
+      "Address: Rectorate/Main: Via Zamboni 33, 40126 Bologna, Italy (historic center; faculties spread across Bologna and campuses in Cesena, Forlì, Ravenna, Rimini). International Desk/Admissions: Various; central inquiries via site.",
+      "General/Prospective Students: Phone: +39 051 208 8111 or specific via portal; Email: internationaldesk@unibo.it or info@unibo.it. International Relations/Admissions: Check faculty pages or unibo.it/en/contactsforinternationalstudents."
+    ],
+    "website": "https://www.unibo.it",
+    "cityInfo": "Italy's culinary capital and a vibrant university city (~390,000 people), known as \"la dotta\" (the learned) for its academic heritage. Historic center with medieval towers (Asinelli/Garisenda), porticoed streets (UNESCO), lively piazzas (Piazza Maggiore), markets (Quadrilatero food district), and nightlife (student bars/pubs in via Zamboni area). Student-dominated (~100,000+ students), multicultural, walkable/bike-friendly, with excellent public transport (buses/trains to Milan/Rome/Florence).",
+    "whyChoose": [
+      "The world's oldest university in continuous operation (founded 1088), ~90,000 students, top-ranked in Italy (~top 150–200 globally), strong in humanities, law, sciences, engineering, medicine, and social sciences",
+      "Vast offerings (over 260 programs, 200+ in foreign languages), highly international (~10,000 foreign students), research excellence (e",
+      ", AI, innovation, classics), no/low tuition for many (income-based), scholarships/exemptions available (merit, developing countries), and Bologna's unbeatable student life (food capital, vibrant, central Italy location for travel)",
+      "Ideal for broad studies with English options, cultural immersion, and affordability in a historic, lively city"
+    ]
+  },
+  {
+    "slug": "sapienza-universit-di-roma",
+    "name": "Sapienza Università di Roma",
+    "country": "Italy",
+    "city": "Rome",
+    "imageKey": "rome",
+    "shortDescription": "Founded 1303, Europe's largest university (~110,000–120,000 students), top-ranked in Italy/Southern Europe (~top 130–170 QS/THE 2026), strong research (Excellence in classics, archaeology, physics, engineering, medicine).",
+    "overview": "Italy's eternal capital (~2.8 million people), a living museum with ancient ruins (Colosseum, Roman Forum, Pantheon), Renaissance/Vatican treasures (Sistine Chapel, St. Peter's), vibrant neighborhoods (Trastevere for nightlife/food, Testaccio for authentic cuisine), endless cafes/gelato, fashion/art scene, and Mediterranean climate. Student-heavy (~150,000+ across unis), international (tourists/expats everywhere), chaotic yet romantic—walkable historic center, excellent public transport (metro/buses/trams), but crowded/expensive housing. Iconic for history/culture lovers; daily life mixes ancient vibes with modern energy (events, festivals like Estate Romana). Why Choose This University?: Founded 1303, Europe's largest university (~110,000–120,000 students), top-ranked in Italy/Southern Europe (~top 130–170 QS/THE 2026), strong research (Excellence in classics, archaeology, physics, engineering, medicine). Vast programs (hundreds in Italian + many English), historic campuses in Rome's heart (immersive cultural experience), international focus (thousands of foreign students), no/low tuition for many, scholarships/regional aid available. Ideal for humanities, classics, sciences, engineering, with Rome's unbeatable location for internships (UN agencies, embassies, tourism/tech). Affordable public uni with high prestige; great for history/art/archaeology lovers.",
+    "keyFacts": [
+      "Founded 1303, Europe's largest university (~110,000–120,000 students), top-ranked in Italy/Southern Europe (~top 130–170…"
+    ],
+    "programs": [
+      {
+        "name": "Applied Computer Science and Artificial Intelligence (BSc)",
+        "level": "Bachelor",
+        "field": "Various",
+        "duration": "3 years",
+        "language": "English"
+      },
+      {
+        "name": "Bioinformatics (BSc)",
+        "level": "Bachelor",
+        "field": "Various",
+        "duration": "3 years",
+        "language": "English"
+      },
+      {
+        "name": "Business Sciences (BSc)",
+        "level": "Bachelor",
+        "field": "Various",
+        "duration": "3 years",
+        "language": "English"
+      },
+      {
+        "name": "Classics (BA)",
+        "level": "Bachelor",
+        "field": "Various",
+        "duration": "3 years",
+        "language": "English"
+      },
+      {
+        "name": "Economics and Finance (BSc)",
+        "level": "Bachelor",
+        "field": "Various",
+        "duration": "3 years",
+        "language": "English"
+      },
+      {
+        "name": "Global Humanities (BA)",
+        "level": "Bachelor",
+        "field": "Various",
+        "duration": "3 years",
+        "language": "English"
+      },
+      {
+        "name": "Sustainable Building Engineering (BSc)",
+        "level": "Bachelor",
+        "field": "Various",
+        "duration": "3 years",
+        "language": "English"
+      },
+      {
+        "name": "Applied Dynamic and Clinical Psychology (MSc)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Architecture (Conservation) (MSc)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Architecture - Urban Regeneration (MSc)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Artificial Intelligence and Robotics (MSc)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Astrophysics and Cosmology (MSc)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Atmospheric Science and Technology for Meteorology & Climate (MSc, joint)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Biochemistry (MSc)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Business Management (MSc)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Chemical Engineering (MSc)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Cognitive Neuroscience (MSc)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Computer Science (MSc)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Control Engineering (MSc)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Cultural Heritage in the Near and Middle East, and in Africa (MA)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      }
+    ],
+    "requirements": [
+      "Recognized qualification (high school for Bachelor's, Bachelor's degree for Master's; equivalence via CIMEA/DiploME or uni check).",
+      "English proficiency: IELTS/TOEFL often required (B2–C1 level, program-specific; some no mandatory test).",
+      "Pre-selection via MoveIN platform (non-EU visa-seekers: Dec 22, 2025–May 15, 2026; €30 application fee per program, max 2). Then Universitaly registration by June end.",
+      "Motivation/CV sometimes; entrance tests for restricted fields.",
+      "Deadlines: Pre-selection ends May 15, 2026 for visa non-EU; Italian-taught options later. Apply via uniroma1.it/en/admissions.",
+      "Tuition: Income-based ~€300–€2,900/year (average ~€1,000–1,600 for non-EU; lower with scholarships/ISEE if applicable; installments possible). No fixed high fees like private unis."
+    ],
+    "helpfulInfo": [
+      "Address: Main Campus: Piazzale Aldo Moro 5, 00185 Rome, Italy (central historic area near Termini station; multiple buildings/campuses across city, e.g., San Lorenzo for engineering).",
+      "International Student Office/Admissions: Phone: +39 06 49911 (general); Email: international.admissions@uniroma1.it or study@uniroma1.it; International Office in Ortopedia Building (CU016), Third Floor, Piazzale Aldo Moro 5. Website has program-specific contacts."
+    ],
+    "website": "https://www.uniroma1.it",
+    "cityInfo": "Italy's eternal capital (~2.8 million people), a living museum with ancient ruins (Colosseum, Roman Forum, Pantheon), Renaissance/Vatican treasures (Sistine Chapel, St. Peter's), vibrant neighborhoods (Trastevere for nightlife/food, Testaccio for authentic cuisine), endless cafes/gelato, fashion/art scene, and Mediterranean climate.",
+    "whyChoose": [
+      "Founded 1303, Europe's largest university (~110,000–120,000 students), top-ranked in Italy/Southern Europe (~top 130–170 QS/THE 2026), strong research (Excellence in classics, archaeology, physics, engineering, medicine)",
+      "Vast programs (hundreds in Italian + many English), historic campuses in Rome's heart (immersive cultural experience), international focus (thousands of foreign students), no/low tuition for many, scholarships/regional aid available",
+      "Ideal for humanities, classics, sciences, engineering, with Rome's unbeatable location for internships (UN agencies, embassies, tourism/tech)",
+      "Affordable public uni with high prestige",
+      "great for history/art/archaeology lovers"
+    ]
+  },
+  {
+    "slug": "university-of-cologne",
+    "name": "University of Cologne",
+    "country": "Czech Republic",
+    "city": "Cologne (Köln)",
+    "imageKey": "cologne-kln",
+    "shortDescription": "Historic prestige (oldest in Central Europe, alumni include Kafka, Einstein connections), top-ranked in region, comprehensive offerings (over 850 programs, 200+ in foreign languages), strong research (e.g.",
+    "overview": "One of Germany's oldest and most vibrant cities (~1.1 million people), famous for its massive Gothic cathedral (Kölner Dom, UNESCO site), Rhine River views, carnival (world-famous Rosenmontag parades), Kölsch beer culture, museums (Chocolate Museum, Romano-Germanic Museum), and lively neighborhoods (Belgisches Viertel for trendy cafes/bars, Ehrenfeld for street art/alternative scene). Student-heavy (~100,000+ students across unis), international (large expat community), with excellent public transport (trains to Düsseldorf/Cologne airport), festivals, and a fun, open vibe. Historic yet modern, safe, and walkable—great for culture, nightlife, and Rhine cruises. Why Choose This University?: Historic prestige (oldest in Central Europe, alumni include Kafka, Einstein connections), top-ranked in region, comprehensive offerings (over 850 programs, 200+ in foreign languages), strong research (e.g., medicine, humanities, sciences), highly international (~12,000 foreign students from 140+ countries), Prague's unbeatable cultural immersion (history/art/lifestyle), affordable tuition compared to Western Europe, scholarships/reductions available (merit-based after year 1, government for developing countries), and vibrant student life in a safe, beautiful city. Ideal for medicine/humanities/social sciences with English options and no/low fees in Czech (free for all if you learn Czech).",
+    "keyFacts": [
+      "Historic prestige (oldest in Central Europe, alumni include Kafka, Einstein connections), top-ranked in region, comprehe…"
+    ],
+    "programs": [
+      {
+        "name": "Computer Science/Informatics (some faculties)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Economics/Business (partial or specific tracks)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Humanities/Social Sciences (e.g., Global Humanities or similar)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Master's (typically 2 years; strong selection): Examples:",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Anglophone Literatures and Cultures (M.A.)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Economics and Finance (M.Sc.)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "International Economic and Political Studies",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Computer Science variants",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Astrophysics/Cosmology",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Biochemistry",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      },
+      {
+        "name": "Medicine-related (some advanced)",
+        "level": "Master",
+        "field": "Various",
+        "duration": "2 years",
+        "language": "English"
+      }
+    ],
+    "requirements": [
+      "Recognized prior qualification (high school for Bachelor's, Bachelor's for Master's; equivalence check via CIMEA or faculty).",
+      "English proficiency: Often IELTS/TOEFL (B2–C1 level; program-specific; some no mandatory test if prior English education).",
+      "Entrance exam/motivation letter/CV for many; some document-based.",
+      "Apply via faculty portals or central system; deadlines vary by faculty/program (Feb–June/July for English; earlier for non-EU visa time—e.g., April 30 for some like Math/Physics). Application fee ~€60–150.",
+      "Tuition: Free in Czech (for all nationalities); English/foreign-language: €1,000–24,000/year (median ~€6,000; varies by faculty/program, e.g., medicine higher ~€10,000–20,000). Reductions/scholarships available (merit, developing countries)."
+    ],
+    "helpfulInfo": [
+      "Address: Rectorate/Main: Ovocný trh 560/5, 116 36 Prague 1, Czech Republic (historic center; faculties spread across city, e.g., First Faculty of Medicine in Albertov area).",
+      "General/Prospective Students: Phone: +420 224 491 850; Email: info@cuni.cz. International Relations Office/Admissions: Varies by faculty; central inquiries via info@cuni.cz or faculty sites."
+    ],
+    "website": "https://www.cuni.cz",
+    "cityInfo": "One of Germany's oldest and most vibrant cities (~1.1 million people), famous for its massive Gothic cathedral (Kölner Dom, UNESCO site), Rhine River views, carnival (world-famous Rosenmontag parades), Kölsch beer culture, museums (Chocolate Museum, Romano-Germanic Museum), and lively neighborhoods (Belgisches Viertel for trendy cafes/bars, Ehrenfeld for street art/alternative scene).",
+    "whyChoose": [
+      "Historic prestige (oldest in Central Europe, alumni include Kafka, Einstein connections), top-ranked in region, comprehensive offerings (over 850 programs, 200+ in foreign languages), strong research (e",
+      ", medicine, humanities, sciences), highly international (~12,000 foreign students from 140+ countries), Prague's unbeatable cultural immersion (history/art/lifestyle), affordable tuition compared to Western Europe, scholarships/reductions available (merit-based after year 1, government for developing countries), and vibrant student life in a safe, beautiful city",
+      "Ideal for medicine/humanities/social sciences with English options and no/low fees in Czech (free for all if you learn Czech)"
+    ]
+  }
+]

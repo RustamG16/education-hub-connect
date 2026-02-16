@@ -3,7 +3,6 @@ import AT from "country-flag-icons/react/3x2/AT";
 import DE from "country-flag-icons/react/3x2/DE";
 import IT from "country-flag-icons/react/3x2/IT";
 import NL from "country-flag-icons/react/3x2/NL";
-import PL from "country-flag-icons/react/3x2/PL";
 import CZ from "country-flag-icons/react/3x2/CZ";
 import type { FlagComponent } from "country-flag-icons/react/3x2";
 
@@ -37,12 +36,6 @@ const destinations: Destination[] = [
     name: "Netherlands",
     Flag: NL,
     image: "https://images.unsplash.com/photo-1534351590666-13e3e96b5017?w=400&h=250&fit=crop",
-    programsLink: "#contact",
-  },
-  {
-    name: "Poland",
-    Flag: PL,
-    image: "https://images.unsplash.com/photo-1519197924294-4ba991a11128?w=400&h=250&fit=crop",
     programsLink: "#contact",
   },
   {

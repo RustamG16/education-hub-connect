@@ -1,5 +1,6 @@
 import { GraduationCap, FileText, Plane, MapPin, ArrowRight } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { ScrollReveal } from "@/components/ScrollReveal";
 
 export function ServicesSection() {
   const { t } = useLanguage();
@@ -49,35 +50,35 @@ export function ServicesSection() {
   };
 
   return (
-    <section className="py-16 md:py-[22]">
+    <section className="py-20 md:py-28 gradient-hero-to-bg">
       <div className="container">
-        <div className="text-center mb-14">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">{t.services.title}</h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+        <ScrollReveal className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold mb-5">{t.services.title}</h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
             {t.services.subtitle}
           </p>
-        </div>
+        </ScrollReveal>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((service, index) => (
-            <button
-              key={index}
-              type="button"
-              onClick={() => handleClick(service.href, service.isExternal)}
-              className="group bg-card rounded-2xl p-6 shadow-card hover:shadow-card-hover hover:-translate-y-2 transition-all duration-300 opacity-0 animate-fade-in text-left cursor-pointer"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <div className="w-12 h-12 rounded-xl bg-accent flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                <service.icon className="w-6 h-6 text-primary" />
-              </div>
-              <h3 className="text-lg font-semibold mb-2 group-hover:text-primary transition-colors">
-                {service.title}
-              </h3>
-              <p className="text-sm text-muted-foreground mb-3">{service.description}</p>
-              <div className="flex items-center gap-1 text-xs font-medium text-primary opacity-0 group-hover:opacity-100 transition-opacity">
-                Learn more <ArrowRight className="w-3 h-3" />
-              </div>
-            </button>
+            <ScrollReveal key={index} delay={index * 0.1}>
+              <button
+                type="button"
+                onClick={() => handleClick(service.href, service.isExternal)}
+                className="group gradient-hero rounded-2xl p-6 shadow-card hover:shadow-card-hover hover:-translate-y-2 transition-all duration-300 text-left cursor-pointer w-full"
+              >
+                <div className="w-12 h-12 rounded-xl bg-primary-foreground/20 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
+                  <service.icon className="w-6 h-6 text-primary-foreground" />
+                </div>
+                <h3 className="text-lg font-semibold mb-2 text-primary-foreground group-hover:opacity-90 transition-opacity">
+                  {service.title}
+                </h3>
+                <p className="text-sm text-primary-foreground/80 mb-4 leading-relaxed">{service.description}</p>
+                <div className="flex items-center gap-1 text-xs font-medium text-primary-foreground opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:translate-x-1">
+                  Learn more <ArrowRight className="w-3 h-3" />
+                </div>
+              </button>
+            </ScrollReveal>
           ))}
         </div>
       </div>

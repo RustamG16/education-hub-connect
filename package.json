@@ -8,7 +8,11 @@
     "build": "vite build",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "universities:parse": "node scripts/parse-universities.mjs",
+    "universities:ts": "node scripts/generate-universities-ts.mjs",
+    "universities:translations": "node scripts/generate-translations.mjs",
+    "universities:update": "npm run universities:parse && npm run universities:ts && npm run universities:translations"
   },
   "dependencies": {
     "@fontsource/manrope": "^5.2.8",
@@ -47,7 +51,9 @@
     "country-flag-icons": "^1.6.12",
     "date-fns": "^3.6.0",
     "embla-carousel-react": "^8.6.0",
+    "framer-motion": "^12.34.0",
     "input-otp": "^1.4.2",
+    "lottie-react": "^2.4.1",
     "lucide-react": "^0.462.0",
     "next-themes": "^0.3.0",
     "react": "^18.3.1",

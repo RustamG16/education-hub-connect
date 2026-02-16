@@ -7,6 +7,10 @@ import { TestimonialsSection } from "@/components/TestimonialsSection";
 import { ContactSection } from "@/components/ContactSection";
 import { Footer } from "@/components/Footer";
 
+const SectionDivider = () => (
+  <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+);
+
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
@@ -15,8 +19,10 @@ const Index = () => {
         <HeroSection />
         <ServicesSection />
         <HowItWorksSection />
+        <SectionDivider />
         <UniversitiesSection />
         <TestimonialsSection />
+        <SectionDivider />
         <ContactSection />
       </main>
       <Footer />

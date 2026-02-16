@@ -1,5 +1,6 @@
 import { InfiniteFloatingCarousel } from "@/components/InfiniteFloatingCarousel";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { ScrollReveal } from "@/components/ScrollReveal";
 
 interface Testimonial {
   name: string;
@@ -84,7 +85,7 @@ export function TestimonialsSection() {
   const renderCard = (t: Testimonial) => (
     <div
       key={t.name}
-      className="relative bg-card rounded-2xl px-5 py-4 shadow-card hover:shadow-card-hover transition-all duration-300 w-64 md:w-72"
+      className="relative glass rounded-2xl px-5 py-4 shadow-card hover:shadow-card-hover transition-all duration-300 w-64 md:w-72"
     >
       <div className="flex items-center gap-3 mb-3">
         <div className="relative">
@@ -108,21 +109,22 @@ export function TestimonialsSection() {
   );
 
   return (
-    <section id="students" className="py-16 md:py-[22]">
+    <section id="students" className="py-20 md:py-28 gradient-hero">
       <div className="container">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">{t.testimonials.title}</h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+        <ScrollReveal className="text-center mb-14">
+          <h2 className="text-3xl md:text-4xl font-bold mb-5 text-primary-foreground">{t.testimonials.title}</h2>
+          <p className="text-primary-foreground/90 max-w-2xl mx-auto text-lg">
             {t.testimonials.subtitle}
           </p>
-        </div>
+        </ScrollReveal>
 
-        <div className="space-y-8 max-w-5xl mx-auto">
-          <InfiniteFloatingCarousel items={firstRow.map(renderCard)} speedPxPerSec={35} />
-          <InfiniteFloatingCarousel items={secondRow.map(renderCard)} speedPxPerSec={42} />
-        </div>
+        <ScrollReveal delay={0.15}>
+          <div className="space-y-8 max-w-5xl mx-auto">
+            <InfiniteFloatingCarousel items={firstRow.map(renderCard)} speedPxPerSec={35} />
+            <InfiniteFloatingCarousel items={secondRow.map(renderCard)} speedPxPerSec={42} />
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );
 }
-

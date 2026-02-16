@@ -80,7 +80,7 @@ export default function Visa() {
                     <strong>Italy:</strong> Student visa application, financial documentation, accommodation proof
                   </li>
                   <li>
-                    <strong>Other countries:</strong> Specific requirements for Czech Republic, Poland, and other
+                    <strong>Other countries:</strong> Specific requirements for Czech Republic and other
                     destinations
                   </li>
                 </ul>
