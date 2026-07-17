@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
-import Lottie, { LottieRefCurrentProps } from "lottie-react";
 import { Link } from "react-router-dom";
+import Lottie, { LottieRefCurrentProps } from "lottie-react";
 import logo from "@/assets/logo.png";
 import loadingAnimation from "@/assets/loading.json";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -14,17 +14,13 @@ export function Footer() {
   const showLottie = isMobile || logoHover;
 
   return (
-    <footer className="relative bg-background">
-      {/* Gradient top border */}
-      <div className="h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
-
-      <div className="container py-12">
-        <div className="grid md:grid-cols-2 gap-8 items-start">
-          {/* Left - Brand */}
-          <div className="flex flex-col gap-3">
+    <footer className="bg-depth text-white">
+      <div className="page-shell section-fluid-y !pb-10">
+        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-12 lg:gap-20 mb-16 md:mb-20">
+          <div>
             <Link
               to="/"
-              className="relative inline-flex h-16 md:h-20 w-20 md:w-24 items-center justify-center shrink-0"
+              className="relative inline-flex h-16 w-20 items-center justify-center mb-8"
               onMouseEnter={() => {
                 setLogoHover(true);
                 lottieRef.current?.play();
@@ -37,7 +33,7 @@ export function Footer() {
               <img
                 src={logo}
                 alt="Education4Students"
-                className={`h-16 md:h-20 w-auto max-w-[260px] object-contain object-left transition-opacity duration-200 ${showLottie ? "opacity-0 absolute left-0" : "opacity-100"}`}
+                className={`h-16 w-auto transition-opacity duration-200 ${showLottie ? "opacity-0 absolute" : "opacity-100"}`}
               />
               <span
                 className={`pointer-events-none absolute inset-0 flex items-center justify-center transition-opacity duration-200 ${showLottie ? "opacity-100" : "opacity-0"}`}
@@ -48,35 +44,27 @@ export function Footer() {
                   animationData={loadingAnimation}
                   loop
                   autoplay={isMobile}
-                  className="h-14 w-14 md:h-[4.5rem] md:w-[4.5rem]"
+                  className="h-14 w-14"
                 />
               </span>
             </Link>
-            <p className="text-sm text-muted-foreground max-w-xs">
-              {t.footer.tagline}
+            <p className="font-display font-bold text-[clamp(2.5rem,5vw,4.5rem)] leading-none tracking-tight max-w-lg">
+              Education4Students
             </p>
+            <p className="text-lead text-white/55 mt-6 max-w-md">{t.footer.tagline}</p>
           </div>
 
-          {/* Right - Contact info */}
-          <div className="flex flex-col items-start md:items-end gap-3 text-sm text-muted-foreground">
-            <a
-              href="tel:+436763492193"
-              className="hover:text-foreground transition-colors"
-              aria-label="Phone"
-            >
+          <div className="flex flex-col gap-4 text-lead text-white/65">
+            <a href="tel:+436763492193" className="hover:text-white transition-colors">
               {t.footer.phone}: +43 676 349 2193
             </a>
-            <a
-              href="mailto:education4students@outlook.com"
-              className="hover:text-foreground transition-colors"
-              aria-label="Email"
-            >
+            <a href="mailto:education4students@outlook.com" className="hover:text-white transition-colors">
               {t.footer.email}: education4students@outlook.com
             </a>
           </div>
         </div>
 
-        <div className="mt-10 pt-6 border-t border-border/60 text-center text-sm text-muted-foreground">
+        <div className="pt-8 border-t border-white/10 text-sm text-white/40">
           &copy; {new Date().getFullYear()} Education4Students. {t.footer.rights}
         </div>
       </div>

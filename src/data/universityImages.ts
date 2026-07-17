@@ -339,6 +339,35 @@ const byKey = byKeyFromGlob();
 const cityGallery = cityGalleryFromGlob();
 const universityGallery = universityGalleryFromGlob();
 
+const AUSTRIA_SLIDESHOW_KEY_PREFIXES = [
+  "vienna-",
+  "graz-",
+  "innsbruck-",
+  "klagenfurt-",
+  "leoben",
+  "linz-",
+  "salzburg-",
+  "feldkirch",
+];
+
+/** One cover image per Austria university — used for the services hero slideshow. */
+export function getAustriaUniversitySlideshowUrls(): string[] {
+  const seen = new Set<string>();
+  const urls: string[] = [];
+  for (const [key, url] of Object.entries(byKey)) {
+    const isAustria = AUSTRIA_SLIDESHOW_KEY_PREFIXES.some(
+      (prefix) => key === prefix || key.startsWith(prefix),
+    );
+    if (!isAustria || seen.has(url)) continue;
+    seen.add(url);
+    urls.push(url);
+  }
+  return urls;
+}
+
+/** Max thumbnails shown on a university detail page (avoids loading huge Vienna city galleries). */
+export const UNIVERSITY_GALLERY_MAX = 12;
+
 /** City base from imageKey: "vienna-boku" -> "vienna", "graz-ug" -> "graz", "berlin-freib" -> "berlin", etc. */
 function cityBaseFromImageKey(imageKey: string | undefined): string | undefined {
   if (!imageKey) return undefined;
@@ -443,22 +472,22 @@ export function getUniversityGalleryUrls(imageKey: string | undefined): string[]
   const marburgCity = cityGallery["marburg"] ?? [];
   const munichCity = cityGallery["munich"] ?? [];
   const urls = universityGallery[key];
-  if (key === "vienna") return viennaCity;
-  if (key === "graz") return grazCity;
-  if (key === "innsbruck") return innsbruckCity;
-  if (key === "klagenfurt") return klagenfurtCity;
-  if (key === "leoben") return [...(urls ?? []), ...leobenCity];
-  if (key === "feldkirch") return [...(urls ?? []), ...feldkirchCity];
-  if (key === "linz") return linzCity;
-  if (key === "salzburg") return salzburgCity;
-  if (key === "berlin") return berlinCity;
-  if (urls && urls.length > 0 && isViennaKey(key)) return [...urls, ...viennaCity];
-  if (urls && urls.length > 0 && isGrazKey(key)) return [...urls, ...grazCity];
-  if (urls && urls.length > 0 && isInnsbruckKey(key)) return [...urls, ...innsbruckCity];
-  if (urls && urls.length > 0 && isKlagenfurtKey(key)) return [...urls, ...klagenfurtCity];
-  if (urls && urls.length > 0 && isLinzKey(key)) return [...urls, ...linzCity];
-  if (urls && urls.length > 0 && isSalzburgKey(key)) return [...urls, ...salzburgCity];
-  if (urls && urls.length > 0 && isBerlinKey(key)) return [...urls, ...berlinCity];
+  if (key === "vienna") return viennaCity.slice(0, UNIVERSITY_GALLERY_MAX);
+  if (key === "graz") return grazCity.slice(0, UNIVERSITY_GALLERY_MAX);
+  if (key === "innsbruck") return innsbruckCity.slice(0, UNIVERSITY_GALLERY_MAX);
+  if (key === "klagenfurt") return klagenfurtCity.slice(0, UNIVERSITY_GALLERY_MAX);
+  if (key === "leoben") return [...(urls ?? []), ...leobenCity].slice(0, UNIVERSITY_GALLERY_MAX);
+  if (key === "feldkirch") return [...(urls ?? []), ...feldkirchCity].slice(0, UNIVERSITY_GALLERY_MAX);
+  if (key === "linz") return linzCity.slice(0, UNIVERSITY_GALLERY_MAX);
+  if (key === "salzburg") return salzburgCity.slice(0, UNIVERSITY_GALLERY_MAX);
+  if (key === "berlin") return berlinCity.slice(0, UNIVERSITY_GALLERY_MAX);
+  if (urls && urls.length > 0 && isViennaKey(key) && key !== "vienna") return urls.slice(0, UNIVERSITY_GALLERY_MAX);
+  if (urls && urls.length > 0 && isGrazKey(key)) return [...urls, ...grazCity].slice(0, UNIVERSITY_GALLERY_MAX);
+  if (urls && urls.length > 0 && isInnsbruckKey(key)) return [...urls, ...innsbruckCity].slice(0, UNIVERSITY_GALLERY_MAX);
+  if (urls && urls.length > 0 && isKlagenfurtKey(key)) return [...urls, ...klagenfurtCity].slice(0, UNIVERSITY_GALLERY_MAX);
+  if (urls && urls.length > 0 && isLinzKey(key)) return [...urls, ...linzCity].slice(0, UNIVERSITY_GALLERY_MAX);
+  if (urls && urls.length > 0 && isSalzburgKey(key)) return [...urls, ...salzburgCity].slice(0, UNIVERSITY_GALLERY_MAX);
+  if (urls && urls.length > 0 && isBerlinKey(key)) return [...urls, ...berlinCity].slice(0, UNIVERSITY_GALLERY_MAX);
   if (urls && urls.length > 0 && key === "aachen") return [...urls, ...aachenCity];
   if (urls && urls.length > 0 && key === "bonn") return [...urls, ...bonnCity];
   if (urls && urls.length > 0 && key === "dortmund") return [...urls, ...dortmundCity];

@@ -43,13 +43,8 @@ export interface University {
   whyChoose?: string[];
 }
 
-/** Display order for countries: Austria (focus), then Germany, Italy, Czech Republic. */
-export const COUNTRY_ORDER: UniversityCategory[] = [
-  "Austria",
-  "Germany",
-  "Italy",
-  "Czech Republic",
-];
+/** Austria-only focus for Education4Students. */
+export const COUNTRY_ORDER: UniversityCategory[] = ["Austria"];
 
 export const universities: University[] = [
   {
@@ -2409,3 +2404,44 @@ export const universities: University[] = [
     ]
   }
 ];
+
+export const austriaUniversities = universities.filter((u) => u.country === "Austria");
+
+/** Display order for Austrian university city groups. */
+export const AUSTRIA_CITY_ORDER = [
+  "Vienna",
+  "Graz",
+  "Innsbruck",
+  "Linz",
+  "Salzburg",
+  "Klagenfurt",
+  "Leoben",
+  "Feldkirch",
+] as const;
+
+export type AustriaCity = (typeof AUSTRIA_CITY_ORDER)[number];
+
+export function getAustriaUniversitiesByCity(): { city: string; universities: University[] }[] {
+  const grouped = new Map<string, University[]>();
+
+  for (const uni of austriaUniversities) {
+    const city = uni.city ?? "Other";
+    const list = grouped.get(city) ?? [];
+    list.push(uni);
+    grouped.set(city, list);
+  }
+
+  const ordered: { city: string; universities: University[] }[] = [];
+
+  for (const city of AUSTRIA_CITY_ORDER) {
+    const list = grouped.get(city);
+    if (list?.length) ordered.push({ city, universities: list });
+    grouped.delete(city);
+  }
+
+  for (const [city, list] of grouped) {
+    ordered.push({ city, universities: list });
+  }
+
+  return ordered;
+}

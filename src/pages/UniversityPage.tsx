@@ -1,5 +1,5 @@
-import { useState, useMemo } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useState, useMemo, useRef } from "react";
+import { useParams, useNavigate, useLocation } from "react-router-dom";
 import { universities, AUSTRIA_LIVING_COSTS } from "@/data/universities";
 import { getUniversityImageUrl, getUniversityGalleryUrls } from "@/data/universityImages";
 import { Button } from "@/components/ui/button";
@@ -9,283 +9,330 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { getUniversityTranslation } from "@/data/universityTranslations";
+import { useGSAP } from "@gsap/react";
+import { gsap, prefersReducedMotion } from "@/lib/scroll";
+
+function InfoBlock({
+  icon: Icon,
+  title,
+  children,
+}: {
+  icon: typeof GraduationCap;
+  title: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <div className="bg-canvas rounded-2xl p-6 md:p-8">
+      <div className="flex items-center gap-3 mb-4">
+        <Icon className="w-6 h-6 text-primary shrink-0" />
+        <h2 className="text-lg font-bold text-ink">{title}</h2>
+      </div>
+      {children}
+    </div>
+  );
+}
 
 export default function UniversityPage() {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
+  const location = useLocation();
   const { t, language } = useLanguage();
+  const headerRef = useRef<HTMLElement>(null);
+
+  const returnHash =
+    (location.state as { returnHash?: string } | null)?.returnHash ?? "#universities";
+
+  const goBackHome = () => {
+    navigate({ pathname: "/", hash: returnHash.replace(/^#/, "") });
+  };
 
   const university = universities.find((u) => u.slug === slug);
 
   const mainImageUrl = university ? getUniversityImageUrl(university.imageKey) : undefined;
   const allImageUrls = useMemo(
     () => (university ? getUniversityGalleryUrls(university.imageKey) : []),
-    [university?.imageKey]
+    [university?.imageKey],
   );
 
   const [selectedImageUrl, setSelectedImageUrl] = useState<string | null>(null);
   const displayImageUrl = selectedImageUrl ?? mainImageUrl ?? allImageUrls[0];
 
-  if (!university) {
+  useGSAP(
+    () => {
+      const header = headerRef.current;
+      if (!header || prefersReducedMotion()) return;
+
+      gsap.from(header.querySelectorAll("[data-reveal]"), {
+        opacity: 0,
+        y: 20,
+        duration: 0.7,
+        stagger: 0.08,
+        ease: "power3.out",
+      });
+    },
+    { scope: headerRef, dependencies: [slug] },
+  );
+
+  if (!university || university.country !== "Austria") {
     return (
-      <div className="min-h-screen bg-background flex items-center justify-center">
-        <div className="container max-w-xl text-center">
-          <h1 className="text-2xl font-semibold mb-3">{t.universityPage.notFound}</h1>
-          <p className="text-muted-foreground mb-6">
-            {t.universityPage.notFoundDescription}
-          </p>
-          <Button onClick={() => navigate("/")}>{t.universityPage.backToHomepage}</Button>
-        </div>
+      <div className="min-h-screen bg-canvas flex flex-col">
+        <Navbar />
+        <main className="flex-1 flex items-center justify-center page-shell pt-24">
+          <div className="text-center max-w-xl">
+            <h1 className="font-display font-bold text-section-title text-ink mb-4">{t.universityPage.notFound}</h1>
+            <p className="text-lead text-muted-foreground mb-8">{t.universityPage.notFoundDescription}</p>
+            <Button variant="warm" size="lg" onClick={() => navigate("/")}>
+              {t.universityPage.backToHomepage}
+            </Button>
+          </div>
+        </main>
+        <Footer />
       </div>
     );
   }
 
   const isAustria = university.country === "Austria";
 
-  // Get translated content or fallback to original
-  const shortDescription = getUniversityTranslation(university.slug, language, "shortDescription") || university.shortDescription;
+  const shortDescription =
+    getUniversityTranslation(university.slug, language, "shortDescription") || university.shortDescription;
   const overview = getUniversityTranslation(university.slug, language, "overview") || university.overview;
   const keyFacts = getUniversityTranslation(university.slug, language, "keyFacts") || university.keyFacts;
-  const requirements = getUniversityTranslation(university.slug, language, "requirements") || university.requirements;
-  const helpfulInfo = getUniversityTranslation(university.slug, language, "helpfulInfo") || university.helpfulInfo;
+  const requirements =
+    getUniversityTranslation(university.slug, language, "requirements") || university.requirements;
+  const helpfulInfo =
+    getUniversityTranslation(university.slug, language, "helpfulInfo") || university.helpfulInfo;
   const tuition = getUniversityTranslation(university.slug, language, "tuition") || university.tuition;
-  const livingCosts = getUniversityTranslation(university.slug, language, "livingCosts") || university.livingCosts;
-  const livingCostsBreakdown = getUniversityTranslation(university.slug, language, "livingCostsBreakdown") || university.livingCostsBreakdown;
+  const livingCosts =
+    getUniversityTranslation(university.slug, language, "livingCosts") || university.livingCosts;
+  const livingCostsBreakdown =
+    getUniversityTranslation(university.slug, language, "livingCostsBreakdown") ||
+    university.livingCostsBreakdown;
   const cityInfo = getUniversityTranslation(university.slug, language, "cityInfo") || university.cityInfo;
   const whyChoose = getUniversityTranslation(university.slug, language, "whyChoose") || university.whyChoose;
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-canvas">
       <Navbar />
-      <main className="pt-20 md:pt-24">
-        <div className="container max-w-4xl py-10 md:py-16">
+
+      <header ref={headerRef} className="gradient-hero pt-24 md:pt-28 pb-12 md:pb-16">
+        <div className="page-shell w-full">
           <button
             type="button"
-            onClick={() => navigate(-1)}
-            className="text-sm text-muted-foreground hover:text-foreground mb-4 inline-flex items-center gap-1"
+            data-reveal
+            onClick={goBackHome}
+            className="text-sm font-medium text-white/60 hover:text-white mb-8 inline-flex items-center gap-1 transition-colors"
           >
             {t.universityPage.back}
           </button>
+          <h1 data-reveal className="font-display font-bold text-section-title text-white mb-4 max-w-4xl">
+            {university.name}
+          </h1>
+          <p data-reveal className="section-eyebrow text-white/50 mb-5">
+            {university.city && `${university.city}, `}
+            {university.country}
+          </p>
+          <p data-reveal className="text-lead text-white/75 max-w-3xl leading-relaxed">
+            {shortDescription}
+          </p>
+        </div>
+      </header>
 
-        {displayImageUrl && (
-          <div className="aspect-[21/9] rounded-xl overflow-hidden bg-muted mb-6">
-            <UniversityImage
-              src={displayImageUrl}
-              className="w-full h-full object-contain"
-              alt=""
-            />
-          </div>
-        )}
+      <main className="page-shell w-full section-fluid-y !pt-10 md:!pt-14">
+        <div className="grid lg:grid-cols-[1fr_280px] gap-10 lg:gap-14">
+          <div>
+            {displayImageUrl && (
+              <div className="aspect-[21/9] rounded-2xl overflow-hidden bg-muted mb-6">
+                <UniversityImage src={displayImageUrl} className="w-full h-full object-cover" alt="" />
+              </div>
+            )}
 
-        {allImageUrls.length > 0 && (
-          <div className="flex gap-2 overflow-x-auto pb-2 mb-6 scrollbar-thin" role="tablist" aria-label="Image gallery">
-            {allImageUrls.map((url, i) => (
-              <button
-                key={i}
-                type="button"
-                onClick={() => setSelectedImageUrl(url)}
-                className={`flex-shrink-0 w-24 sm:w-28 aspect-video rounded-lg overflow-hidden bg-muted border-2 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-ring ${
-                  url === displayImageUrl ? "border-primary ring-2 ring-primary/30" : "border-transparent hover:border-muted-foreground/40"
-                }`}
+            {allImageUrls.length > 0 && (
+              <div
+                className="flex gap-2 overflow-x-auto pb-2 mb-8"
+                role="tablist"
+                aria-label="Image gallery"
               >
-                <UniversityImage src={url} className="w-full h-full object-cover" alt="" />
-              </button>
-            ))}
-          </div>
-        )}
-
-        <h1 className="text-3xl md:text-4xl font-bold mb-2">{university.name}</h1>
-        <p className="text-sm uppercase tracking-wide text-muted-foreground mb-6">
-          {university.city && `${university.city}, `}
-          {university.country}
-        </p>
-
-        <p className="text-base text-muted-foreground mb-8">{overview}</p>
-
-        {/* Quick info blocks: Programs, Tuition, Living, City, Website, Why choose */}
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 mb-10">
-          {/* Programs */}
-          <div className="bg-card rounded-2xl p-5 shadow-card">
-            <div className="flex items-center gap-2 mb-3">
-              <GraduationCap className="w-5 h-5 text-primary" />
-              <h2 className="text-base font-semibold">{t.universityPage.programs}</h2>
-            </div>
-            <ul className="space-y-1.5 text-sm text-muted-foreground">
-              {university.programs.slice(0, 6).map((p) => (
-                <li key={p.name}>
-                  <span className="text-xs uppercase text-primary">{p.level}</span> · {p.name} ({p.field})
-                </li>
-              ))}
-              {university.programs.length > 6 && (
-                <li className="text-xs">+{university.programs.length - 6} {t.universityPage.moreProgrammes}</li>
-              )}
-            </ul>
-          </div>
-
-          {/* Tuition */}
-          {tuition && (
-            <div className="bg-card rounded-2xl p-5 shadow-card">
-              <div className="flex items-center gap-2 mb-3">
-                <Banknote className="w-5 h-5 text-primary" />
-                <h2 className="text-base font-semibold">{t.universityPage.tuition}</h2>
+                {allImageUrls.map((url, i) => (
+                  <button
+                    key={i}
+                    type="button"
+                    onClick={() => setSelectedImageUrl(url)}
+                    className={`flex-shrink-0 w-24 sm:w-28 aspect-video rounded-md overflow-hidden bg-muted border-2 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-ring ${
+                      url === displayImageUrl
+                        ? "border-primary"
+                        : "border-line hover:border-primary/40"
+                    }`}
+                  >
+                    <UniversityImage src={url} className="w-full h-full object-cover" alt="" />
+                  </button>
+                ))}
               </div>
-              <p className="text-sm text-muted-foreground">{tuition}</p>
-            </div>
-          )}
+            )}
 
-          {/* Living cost */}
-          {livingCosts && (
-            <div className="bg-card rounded-2xl p-5 shadow-card">
-              <div className="flex items-center gap-2 mb-3">
-                <Home className="w-5 h-5 text-primary" />
-                <h2 className="text-base font-semibold">{t.universityPage.livingCost}</h2>
+            <p className="text-base text-muted-foreground mb-10 leading-relaxed">{overview}</p>
+
+            {isAustria && (
+              <div className="bg-accent/40 rounded-md p-6 mb-10 border border-line">
+                <h2 className="font-display text-lg text-ink mb-3">{t.universityPage.realityNumbers}</h2>
+                <ul className="grid gap-2 sm:grid-cols-2 text-sm text-muted-foreground">
+                  <li>
+                    <strong className="text-foreground">{t.universityPage.averageLivingCosts}</strong>{" "}
+                    {AUSTRIA_LIVING_COSTS.range}
+                  </li>
+                  <li>{AUSTRIA_LIVING_COSTS.noteVienna}</li>
+                  <li>{AUSTRIA_LIVING_COSTS.noteSmaller}</li>
+                  <li>
+                    <strong className="text-foreground">{t.universityPage.accommodation}</strong>{" "}
+                    {t.universityPage.dorm} {AUSTRIA_LIVING_COSTS.accommodation.dorm},{" "}
+                    {t.universityPage.sharedFlat} {AUSTRIA_LIVING_COSTS.accommodation.sharedFlat}
+                  </li>
+                  <li>
+                    <strong className="text-foreground">{t.universityPage.tuitionPublic}</strong>{" "}
+                    {AUSTRIA_LIVING_COSTS.tuitionPublic}
+                  </li>
+                </ul>
               </div>
-              <p className="text-sm text-muted-foreground mb-2">{livingCosts}</p>
-              {livingCostsBreakdown && livingCostsBreakdown.length > 0 && (
-                <ul className="text-xs text-muted-foreground space-y-1">
-                  {livingCostsBreakdown.map((line) => (
-                    <li key={line}>{line}</li>
+            )}
+
+            <div className="grid gap-8 md:grid-cols-2 mb-10">
+              <div>
+                <h2 className="font-display text-lg text-ink mb-3">{t.universityPage.keyFacts}</h2>
+                <ul className="list-disc list-inside space-y-1 text-sm text-muted-foreground">
+                  {keyFacts.map((fact) => (
+                    <li key={fact}>{fact}</li>
                   ))}
                 </ul>
-              )}
-            </div>
-          )}
-
-          {/* City info */}
-          {cityInfo && (
-            <div className="bg-card rounded-2xl p-5 shadow-card">
-              <div className="flex items-center gap-2 mb-3">
-                <MapPin className="w-5 h-5 text-primary" />
-                <h2 className="text-base font-semibold">{t.universityPage.city}</h2>
               </div>
-              <p className="text-sm text-muted-foreground">{cityInfo}</p>
-            </div>
-          )}
-
-          {/* Official website */}
-          {university.website && (
-            <div className="bg-card rounded-2xl p-5 shadow-card">
-              <div className="flex items-center gap-2 mb-3">
-                <Globe className="w-5 h-5 text-primary" />
-                <h2 className="text-base font-semibold">{t.universityPage.officialWebsite}</h2>
+              <div>
+                <h2 className="font-display text-lg text-ink mb-3">{t.universityPage.entryRequirements}</h2>
+                <ul className="list-disc list-inside space-y-1 text-sm text-muted-foreground">
+                  {requirements.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
               </div>
-              <a
-                href={university.website}
-                target="_blank"
-                rel="noreferrer"
-                className="text-sm font-medium text-primary hover:underline break-all"
-              >
-                {university.website.replace(/^https?:\/\//, "")}
-              </a>
             </div>
-          )}
 
-          {/* Why choose */}
-          {whyChoose && whyChoose.length > 0 && (
-            <div className="bg-card rounded-2xl p-5 shadow-card sm:col-span-2 lg:col-span-1">
-              <div className="flex items-center gap-2 mb-3">
-                <Star className="w-5 h-5 text-primary" />
-                <h2 className="text-base font-semibold">{t.universityPage.whyChoose}</h2>
+            <div className="mb-10">
+              <h2 className="font-display text-lg text-ink mb-4">{t.universityPage.programmes}</h2>
+              <div className="grid gap-3 sm:grid-cols-2">
+                {university.programs.map((program) => (
+                  <div key={program.name} className="bg-canvas rounded-md p-4 border border-line">
+                    <p className="section-eyebrow text-muted-foreground mb-1">{program.level}</p>
+                    <h3 className="text-base font-semibold text-ink mb-1">{program.name}</h3>
+                    <p className="text-xs text-muted-foreground mb-1">{program.field}</p>
+                    <p className="text-xs text-muted-foreground">
+                      {program.duration && <span>{program.duration}</span>}
+                      {program.duration && program.language && <span> · </span>}
+                      {program.language && <span>{program.language}</span>}
+                    </p>
+                  </div>
+                ))}
               </div>
-              <ul className="space-y-1.5 text-sm text-muted-foreground">
-                {whyChoose.map((item) => (
-                  <li key={item} className="flex gap-2">
-                    <span className="text-primary">•</span> {item}
-                  </li>
+            </div>
+
+            <div className="mb-10">
+              <h2 className="font-display text-lg text-ink mb-3">{t.universityPage.usefulInformation}</h2>
+              <ul className="list-disc list-inside space-y-1 text-sm text-muted-foreground">
+                {helpfulInfo.map((item) => (
+                  <li key={item}>{item}</li>
                 ))}
               </ul>
             </div>
-          )}
-        </div>
 
-        {/* Austria: reality numbers block */}
-        {isAustria && (
-          <div className="bg-accent/50 rounded-2xl p-6 mb-10 border border-primary/10">
-            <h2 className="text-lg font-semibold mb-3">{t.universityPage.realityNumbers}</h2>
-            <ul className="grid gap-2 sm:grid-cols-2 text-sm text-muted-foreground">
-              <li><strong className="text-foreground">{t.universityPage.averageLivingCosts}</strong> {AUSTRIA_LIVING_COSTS.range}</li>
-              <li>{AUSTRIA_LIVING_COSTS.noteVienna}</li>
-              <li>{AUSTRIA_LIVING_COSTS.noteSmaller}</li>
-              <li><strong className="text-foreground">{t.universityPage.accommodation}</strong> {t.universityPage.dorm} {AUSTRIA_LIVING_COSTS.accommodation.dorm}, {t.universityPage.sharedFlat} {AUSTRIA_LIVING_COSTS.accommodation.sharedFlat}</li>
-              <li><strong className="text-foreground">{t.universityPage.tuitionPublic}</strong> {AUSTRIA_LIVING_COSTS.tuitionPublic}</li>
-            </ul>
+            <div className="flex flex-wrap items-center gap-4">
+              {university.website && (
+                <a
+                  href={university.website}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-sm font-medium text-primary hover:text-warm transition-colors"
+                >
+                  {t.universityPage.visitWebsite}
+                </a>
+              )}
+              <Button
+                variant="warm"
+                onClick={() => {
+                  const email = "education4students@outlook.com";
+                  const subject = encodeURIComponent(`Interest in ${university.name}`);
+                  const body = encodeURIComponent(
+                    `Hello,\n\nI am interested in studying at ${university.name}.\n\nPlease contact me with more details about suitable programs and next steps.\n\nBest regards,\n`,
+                  );
+                  window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
+                }}
+              >
+                {t.universityPage.askAboutUniversity}
+              </Button>
+            </div>
           </div>
-        )}
 
-        {/* Key facts & Requirements */}
-        <div className="grid gap-8 md:grid-cols-2 mb-10">
-          <div>
-            <h2 className="text-lg font-semibold mb-3">{t.universityPage.keyFacts}</h2>
-            <ul className="list-disc list-inside space-y-1 text-sm text-muted-foreground">
-              {keyFacts.map((fact) => (
-                <li key={fact}>{fact}</li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <h2 className="text-lg font-semibold mb-3">{t.universityPage.entryRequirements}</h2>
-            <ul className="list-disc list-inside space-y-1 text-sm text-muted-foreground">
-              {requirements.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-          </div>
-        </div>
+          <aside className="lg:sticky lg:top-24 lg:self-start space-y-4">
+            <InfoBlock icon={GraduationCap} title={t.universityPage.programs}>
+              <ul className="space-y-1.5 text-sm text-muted-foreground">
+                {university.programs.slice(0, 6).map((p) => (
+                  <li key={p.name}>
+                    <span className="text-xs uppercase text-primary">{p.level}</span> · {p.name} ({p.field})
+                  </li>
+                ))}
+                {university.programs.length > 6 && (
+                  <li className="text-xs">
+                    +{university.programs.length - 6} {t.universityPage.moreProgrammes}
+                  </li>
+                )}
+              </ul>
+            </InfoBlock>
 
-        {/* All programs (expandable list) */}
-        <div className="mb-10">
-          <h2 className="text-lg font-semibold mb-3">{t.universityPage.programmes}</h2>
-          <div className="grid gap-4 sm:grid-cols-2">
-            {university.programs.map((program) => (
-              <div key={program.name} className="bg-card rounded-xl p-4 shadow-card">
-                <p className="text-xs uppercase tracking-wide text-primary mb-1">{program.level}</p>
-                <h3 className="text-base font-semibold mb-1">{program.name}</h3>
-                <p className="text-xs text-muted-foreground mb-1">{program.field}</p>
-                <p className="text-xs text-muted-foreground">
-                  {program.duration && <span>{program.duration}</span>}
-                  {program.duration && program.language && <span> · </span>}
-                  {program.language && <span>{program.language}</span>}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
+            {tuition && (
+              <InfoBlock icon={Banknote} title={t.universityPage.tuition}>
+                <p className="text-sm text-muted-foreground">{tuition}</p>
+              </InfoBlock>
+            )}
 
-        {/* Useful information */}
-        <div className="mb-10">
-          <h2 className="text-lg font-semibold mb-3">{t.universityPage.usefulInformation}</h2>
-          <ul className="list-disc list-inside space-y-1 text-sm text-muted-foreground">
-            {helpfulInfo.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
-        </div>
+            {livingCosts && (
+              <InfoBlock icon={Home} title={t.universityPage.livingCost}>
+                <p className="text-sm text-muted-foreground mb-2">{livingCosts}</p>
+                {livingCostsBreakdown && livingCostsBreakdown.length > 0 && (
+                  <ul className="text-xs text-muted-foreground space-y-1">
+                    {livingCostsBreakdown.map((line) => (
+                      <li key={line}>{line}</li>
+                    ))}
+                  </ul>
+                )}
+              </InfoBlock>
+            )}
 
-        <div className="flex flex-wrap items-center gap-4">
-          {university.website && (
-            <a
-              href={university.website}
-              target="_blank"
-              rel="noreferrer"
-              className="text-sm font-medium text-primary hover:underline"
-            >
-              {t.universityPage.visitWebsite}
-            </a>
-          )}
-          <Button
-            variant="default"
-            onClick={() => {
-              const email = "education4students@outlook.com";
-              const subject = encodeURIComponent(`Interest in ${university.name}`);
-              const body = encodeURIComponent(
-                `Hello,\n\nI am interested in studying at ${university.name}.\n\nPlease contact me with more details about suitable programs and next steps.\n\nBest regards,\n`
-              );
-              window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
-            }}
-          >
-            {t.universityPage.askAboutUniversity}
-          </Button>
-        </div>
+            {cityInfo && (
+              <InfoBlock icon={MapPin} title={t.universityPage.city}>
+                <p className="text-sm text-muted-foreground">{cityInfo}</p>
+              </InfoBlock>
+            )}
+
+            {university.website && (
+              <InfoBlock icon={Globe} title={t.universityPage.officialWebsite}>
+                <a
+                  href={university.website}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-sm font-medium text-primary hover:text-warm break-all transition-colors"
+                >
+                  {university.website.replace(/^https?:\/\//, "")}
+                </a>
+              </InfoBlock>
+            )}
+
+            {whyChoose && whyChoose.length > 0 && (
+              <InfoBlock icon={Star} title={t.universityPage.whyChoose}>
+                <ul className="space-y-1.5 text-sm text-muted-foreground">
+                  {whyChoose.map((item) => (
+                    <li key={item} className="flex gap-2">
+                      <span className="text-warm">•</span> {item}
+                    </li>
+                  ))}
+                </ul>
+              </InfoBlock>
+            )}
+          </aside>
         </div>
       </main>
       <Footer />

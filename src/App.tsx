@@ -6,14 +6,7 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import WhatsAppButton from "@/components/WhatsAppButton";
-
-function ScrollToTop() {
-  const { pathname } = useLocation();
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
-  return null;
-}
+import { initSmoothScroll, scrollToTop, scrollToElement, ScrollTrigger } from "@/lib/scroll";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import UniversityPage from "./pages/UniversityPage";
@@ -24,6 +17,34 @@ import Vienna from "./pages/Vienna";
 
 const queryClient = new QueryClient();
 
+function ScrollToTop() {
+  const { pathname, hash } = useLocation();
+
+  useEffect(() => {
+    if (hash) {
+      const id = window.setTimeout(() => {
+        scrollToElement(hash, -80);
+        ScrollTrigger.refresh();
+      }, 50);
+      return () => window.clearTimeout(id);
+    }
+
+    scrollToTop(true);
+    ScrollTrigger.refresh();
+  }, [pathname, hash]);
+
+  return null;
+}
+
+function SmoothScrollProvider({ children }: { children: React.ReactNode }) {
+  useEffect(() => {
+    initSmoothScroll();
+    return () => {};
+  }, []);
+
+  return <>{children}</>;
+}
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
@@ -31,18 +52,19 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
-          <ScrollToTop />
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/documents" element={<Documents />} />
-            <Route path="/visa" element={<Visa />} />
-            <Route path="/vienna" element={<Vienna />} />
-            <Route path="/universities/:slug" element={<UniversityPage />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-          <WhatsAppButton />
+          <SmoothScrollProvider>
+            <ScrollToTop />
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/documents" element={<Documents />} />
+              <Route path="/visa" element={<Visa />} />
+              <Route path="/vienna" element={<Vienna />} />
+              <Route path="/universities/:slug" element={<UniversityPage />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+            <WhatsAppButton />
+          </SmoothScrollProvider>
         </BrowserRouter>
       </LanguageProvider>
     </TooltipProvider>

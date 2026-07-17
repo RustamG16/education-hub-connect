@@ -1,83 +1,129 @@
+import { useRef, useState } from "react";
+import { useGSAP } from "@gsap/react";
+import { ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { motion } from "framer-motion";
-import heroImage from "@/assets/hero-student.jpg";
+import { useMagneticButton } from "@/hooks/useMagneticButton";
+import { gsap, prefersReducedMotion, scrollToElement } from "@/lib/scroll";
+import heroPoster from "@/assets/hero-austria-poster.jpg";
+import heroVideo from "@/assets/Hero_video.mp4";
 
 export function HeroSection() {
   const { t } = useLanguage();
+  const sectionRef = useRef<HTMLElement>(null);
+  const mediaRef = useRef<HTMLDivElement>(null);
+  const ctaRef = useMagneticButton<HTMLDivElement>();
+  const [videoReady, setVideoReady] = useState(false);
+  const [videoFailed, setVideoFailed] = useState(false);
 
-  const scrollToContact = () => {
-    const contactSection = document.getElementById("contact");
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+  const scrollToContact = () => scrollToElement("#contact");
+
+  const headlineLines = [t.hero.headlineLine1, t.hero.headlineLine2];
+
+  useGSAP(
+    () => {
+      const section = sectionRef.current;
+      if (!section || prefersReducedMotion()) return;
+
+      const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+
+      tl.from(section.querySelector(".hero-eyebrow"), { opacity: 0, y: 20, duration: 0.7 })
+        .from(
+          section.querySelectorAll(".hero-line-inner"),
+          { opacity: 0, y: 48, duration: 0.9, stagger: 0.12 },
+          "-=0.3",
+        )
+        .from(section.querySelector(".hero-sub"), { opacity: 0, y: 30, duration: 0.7 }, "-=0.45")
+        .from(section.querySelector(".hero-cta"), { opacity: 0, y: 20, duration: 0.6 }, "-=0.35")
+        .from(section.querySelector(".hero-float-card"), { opacity: 0, y: 24, duration: 0.7 }, "-=0.4");
+
+      if (mediaRef.current) {
+        gsap.to(mediaRef.current, {
+          scale: 1.08,
+          ease: "none",
+          scrollTrigger: {
+            trigger: section,
+            start: "top top",
+            end: "bottom top",
+            scrub: true,
+          },
+        });
+      }
+    },
+    { scope: sectionRef },
+  );
 
   return (
-    <section className="relative">
-      <div className="gradient-hero pt-16 md:pt-20">
-        <div className="container py-20 md:py-28 lg:py-36">
-          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start lg:items-center">
-            {/* Text Content */}
-            <div className="text-center lg:text-left">
-              <motion.h1
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
-                className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6 [text-wrap:balance]"
-              >
-                {t.hero.headline}
-              </motion.h1>
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, delay: 0.15, ease: [0.25, 0.1, 0.25, 1] }}
-                className="text-lg md:text-xl text-primary-foreground/90 mb-10 max-w-lg mx-auto lg:mx-0"
-              >
-                {t.hero.subheadline}
-              </motion.p>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
-              >
-                <Button
-                  variant="hero"
-                  size="lg"
-                  className="shadow-button hover:scale-105 hover:shadow-lg active:scale-[0.98] transition-all duration-200"
-                  onClick={scrollToContact}
-                >
-                  {t.hero.cta}
-                </Button>
-              </motion.div>
-            </div>
+    <section
+      ref={sectionRef}
+      className="relative min-h-svh flex items-end overflow-hidden gradient-hero"
+    >
+      <div ref={mediaRef} className="absolute inset-0 will-change-transform">
+        <img
+          src={heroPoster}
+          alt=""
+          aria-hidden
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        {!videoFailed && !prefersReducedMotion() && (
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            poster={heroPoster}
+            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${videoReady ? "opacity-100" : "opacity-0"}`}
+            onCanPlay={() => setVideoReady(true)}
+            onError={() => setVideoFailed(true)}
+          >
+            <source src={heroVideo} type="video/mp4" />
+          </video>
+        )}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/35 to-black/20" />
+        <div className="absolute inset-0 noise-overlay" aria-hidden />
+      </div>
 
-            {/* Hero Image */}
-            <motion.div
-              initial={{ opacity: 0, x: 40 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
-              className="relative"
-            >
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl aspect-[4/5] max-w-md mx-auto">
-                <img
-                  src={heroImage}
-                  alt="International student exploring a modern European city"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy/20 to-transparent" />
-              </div>
-              {/* Decorative blur circles */}
-              <div className="absolute -bottom-6 -left-6 w-28 h-28 rounded-full bg-teal-light/40 blur-2xl -z-10" />
-              <div className="absolute -top-6 -right-6 w-20 h-20 rounded-full bg-primary-foreground/10 blur-xl -z-10" />
-            </motion.div>
+      <div className="page-shell relative z-10 w-full pb-12 md:pb-16 lg:pb-20 pt-28 md:pt-32">
+        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-10 lg:gap-16">
+          <div className="flex-1 min-w-0">
+            <p className="hero-eyebrow section-eyebrow text-white/70 mb-6 md:mb-8">{t.hero.eyebrow}</p>
+            <h1 className="font-display font-bold text-hero leading-none text-white mb-8 md:mb-10 max-w-[18ch]">
+              {headlineLines.map((line, i) => (
+                <span key={i} className="hero-line block overflow-hidden">
+                  <span
+                    className={`hero-line-inner ${i === headlineLines.length - 1 ? "text-white/45" : ""}`}
+                  >
+                    {line}
+                  </span>
+                </span>
+              ))}
+            </h1>
+            <p className="hero-sub text-lead text-white/80 mb-10 md:mb-12 max-w-xl leading-relaxed">
+              {t.hero.subheadline}
+            </p>
+            <div ref={ctaRef} className="hero-cta inline-block">
+              <Button variant="pill-light" size="xl" onClick={scrollToContact}>
+                {t.hero.cta}
+                <ArrowUpRight className="w-5 h-5" />
+              </Button>
+            </div>
           </div>
-        </div>
-        {/* Wave decoration */}
-        <div className="relative -mb-px">
-          <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full">
-            <path d="M0 60L1440 60L1440 30C1440 30 1140 0 720 0C300 0 0 30 0 30L0 60Z" fill="hsl(var(--gradient-hero-start))" />
-          </svg>
+
+          <button
+            type="button"
+            onClick={() => scrollToElement("#universities")}
+            className="hero-float-card hidden lg:flex flex-col items-start gap-4 bg-white/10 backdrop-blur-md border border-white/15 rounded-2xl p-6 w-[min(100%,320px)] text-left hover:bg-white/15 transition-colors duration-300"
+          >
+            <span className="text-[11px] font-semibold uppercase tracking-[0.16em] text-white/60">
+              Austria
+            </span>
+            <span className="font-display font-bold text-2xl text-white leading-tight">
+              22 partner universities
+            </span>
+            <span className="text-sm text-white/70 flex items-center gap-1">
+              Explore programmes <ArrowUpRight className="w-4 h-4" />
+            </span>
+          </button>
         </div>
       </div>
     </section>

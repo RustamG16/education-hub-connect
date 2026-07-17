@@ -3,15 +3,21 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { ScrollReveal } from "@/components/ScrollReveal";
+import { SectionShell } from "@/components/layout/SectionShell";
+import { useGsapReveal } from "@/hooks/useGsapReveal";
+import { useMagneticButton } from "@/hooks/useMagneticButton";
+import { useSplitTextReveal } from "@/hooks/useSplitTextReveal";
 
 export function ContactSection() {
   const { toast } = useToast();
   const { t } = useLanguage();
+  const sectionRef = useGsapReveal<HTMLElement>({ stagger: 0.1 });
+  const submitRef = useMagneticButton<HTMLDivElement>();
+  useSplitTextReveal<HTMLElement>({ selector: "[data-split-lines]" });
   const [formData, setFormData] = useState({
     name: "",
     country: "",
-    desiredCountry: "",
+    desiredCity: "",
     contact: "",
   });
 
@@ -21,106 +27,94 @@ export function ContactSection() {
     e.preventDefault();
     const subject = encodeURIComponent("Consultation Request - Education4Students");
     const body = encodeURIComponent(
-      `Name: ${formData.name}\nCountry: ${formData.country}\nDesired study country: ${formData.desiredCountry}\nContact (WhatsApp/Email): ${formData.contact}`
+      `Name: ${formData.name}\nCountry: ${formData.country}\nPreferred city in Austria: ${formData.desiredCity}\nContact (WhatsApp/Email): ${formData.contact}`,
     );
-    const mailtoUrl = `mailto:${CONSULTATION_EMAIL}?subject=${subject}&body=${body}`;
-    window.location.href = mailtoUrl;
+    window.location.href = `mailto:${CONSULTATION_EMAIL}?subject=${subject}&body=${body}`;
     toast({
       title: "Request Sent!",
       description: "We'll get back to you within 24 hours.",
     });
-    setFormData({ name: "", country: "", desiredCountry: "", contact: "" });
+    setFormData({ name: "", country: "", desiredCity: "", contact: "" });
   };
 
   return (
-    <section id="contact" className="py-20 md:py-28 gradient-subtle">
-      <div className="container">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          {/* Left - Text */}
-          <ScrollReveal direction="left">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+    <SectionShell id="contact" variant="canvas" className="!py-0">
+      <section ref={sectionRef} className="section-fluid-y">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-0 min-h-[min(80vh,900px)]">
+          <div data-reveal className="flex flex-col justify-center lg:pr-16 xl:pr-24">
+            <p className="section-eyebrow mb-5">Contact</p>
+            <h2 className="font-display font-bold text-section-title text-ink mb-6 md:mb-8" data-split-lines>
               {t.contact.title}
             </h2>
-            <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-              {t.contact.support}
-            </p>
-            <ul className="space-y-4 text-muted-foreground">
-              <li className="flex items-center gap-3">
-                <span className="w-2 h-2 rounded-full bg-primary" />
+            <p className="text-lead text-muted-foreground mb-8 leading-relaxed">{t.contact.support}</p>
+            <ul className="space-y-5 text-lead text-muted-foreground">
+              <li className="flex items-center gap-4">
+                <span className="w-2 h-2 rounded-full bg-warm shrink-0" />
                 {t.contact.noHiddenFees}
               </li>
-              <li className="flex items-center gap-3">
-                <span className="w-2 h-2 rounded-full bg-primary" />
+              <li className="flex items-center gap-4">
+                <span className="w-2 h-2 rounded-full bg-warm shrink-0" />
                 {t.contact.personalizedRecommendations}
               </li>
-              <li className="flex items-center gap-3">
-                <span className="w-2 h-2 rounded-full bg-primary" />
+              <li className="flex items-center gap-4">
+                <span className="w-2 h-2 rounded-full bg-warm shrink-0" />
                 {t.contact.supportInYourLanguage}
               </li>
             </ul>
-          </ScrollReveal>
+          </div>
 
-          {/* Right - Form */}
-          <ScrollReveal direction="right" delay={0.15}>
-            <div className="glass rounded-2xl p-8 shadow-card">
-              <h3 className="text-xl font-semibold mb-6">{t.contact.formTitle}</h3>
-              <form onSubmit={handleSubmit} className="space-y-5">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium mb-2">
-                    {t.contact.name}
+          <div
+            data-reveal
+            className="flex flex-col justify-center bg-primary text-white rounded-3xl lg:rounded-none lg:rounded-l-3xl p-8 md:p-12 lg:p-16 xl:p-20"
+          >
+            <h3 className="font-display font-bold text-subsection-title mb-8 md:mb-10">{t.contact.formTitle}</h3>
+            <form onSubmit={handleSubmit} className="space-y-6">
+              {(
+                [
+                  { id: "name", label: t.contact.name, placeholder: t.contact.name, key: "name" as const },
+                  {
+                    id: "country",
+                    label: t.contact.country,
+                    placeholder: "e.g., Azerbaijan, Kazakhstan",
+                    key: "country" as const,
+                  },
+                  {
+                    id: "desiredCity",
+                    label: t.contact.desiredCity,
+                    placeholder: "e.g. Vienna, Graz, Klagenfurt",
+                    key: "desiredCity" as const,
+                  },
+                  {
+                    id: "contact",
+                    label: t.contact.contactMethod,
+                    placeholder: `${t.contact.whatsapp} / ${t.contact.email}`,
+                    key: "contact" as const,
+                  },
+                ] as const
+              ).map((field) => (
+                <div key={field.id}>
+                  <label htmlFor={field.id} className="block text-sm font-semibold mb-2.5 text-white/80">
+                    {field.label}
                   </label>
                   <Input
-                    id="name"
-                    placeholder={t.contact.name}
-                    value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    id={field.id}
+                    placeholder={field.placeholder}
+                    value={formData[field.key]}
+                    onChange={(e) => setFormData({ ...formData, [field.key]: e.target.value })}
                     required
+                    className="h-14 text-base border-white/15 bg-white/5 text-white placeholder:text-white/40 rounded-xl"
                   />
                 </div>
-                <div>
-                  <label htmlFor="country" className="block text-sm font-medium mb-2">
-                    {t.contact.country}
-                  </label>
-                  <Input
-                    id="country"
-                    placeholder="e.g., Azerbaijan, Kazakhstan"
-                    value={formData.country}
-                    onChange={(e) => setFormData({ ...formData, country: e.target.value })}
-                    required
-                  />
-                </div>
-                <div>
-                  <label htmlFor="desiredCountry" className="block text-sm font-medium mb-2">
-                    {t.contact.desiredCountry}
-                  </label>
-                  <Input
-                    id="desiredCountry"
-                    placeholder="e.g., Austria, Germany"
-                    value={formData.desiredCountry}
-                    onChange={(e) => setFormData({ ...formData, desiredCountry: e.target.value })}
-                    required
-                  />
-                </div>
-                <div>
-                  <label htmlFor="contact" className="block text-sm font-medium mb-2">
-                    {t.contact.contactMethod}
-                  </label>
-                  <Input
-                    id="contact"
-                    placeholder={`${t.contact.whatsapp} / ${t.contact.email}`}
-                    value={formData.contact}
-                    onChange={(e) => setFormData({ ...formData, contact: e.target.value })}
-                    required
-                  />
-                </div>
-                <Button type="submit" className="w-full shadow-button" size="lg">
+              ))}
+              <div ref={submitRef} className="pt-2">
+                <Button type="submit" variant="warm" className="w-full" size="xl">
                   {t.contact.submit}
                 </Button>
-              </form>
-            </div>
-          </ScrollReveal>
+              </div>
+            </form>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </SectionShell>
   );
 }

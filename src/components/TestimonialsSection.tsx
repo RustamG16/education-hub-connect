@@ -1,130 +1,79 @@
 import { InfiniteFloatingCarousel } from "@/components/InfiniteFloatingCarousel";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { ScrollReveal } from "@/components/ScrollReveal";
+import { SectionHeader } from "@/components/layout/SectionHeader";
+import { SectionShell } from "@/components/layout/SectionShell";
+import AZ from "country-flag-icons/react/3x2/AZ";
 
 interface Testimonial {
   name: string;
   country?: string;
   university: string;
   program: string;
-  photo: string;
 }
 
 const testimonials: Testimonial[] = [
-  {
-    name: "Murad Qurbanov",
-    country: "Azerbaijan",
-    university: "Cardiff University",
-    program: "MSc Data Science and Analytics",
-    photo:
-      "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?w=160&h=160&fit=crop&auto=format&q=80&facepad=2",
-  },
-  {
-    name: "Gülya Qurbanova",
-    country: "Azerbaijan",
-    university: "University of Glasgow",
-    program: "MSc Software Development",
-    photo:
-      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=160&h=160&fit=crop&auto=format&q=80&facepad=2",
-  },
-  {
-    name: "Fərid Axundov",
-    country: "Azerbaijan",
-    university: "University of Sheffield",
-    program: "MSc Urban and Regional Planning",
-    photo:
-      "https://images.unsplash.com/photo-1544723795-3fb0b90ccb26?w=160&h=160&fit=crop&auto=format&q=80&facepad=2",
-  },
-  {
-    name: "Nərmin İsgəndərli",
-    country: "Azerbaijan",
-    university: "University of Bonn",
-    program: "MSc European Studies",
-    photo:
-      "https://images.unsplash.com/photo-1525134479668-1bee5c7c6845?w=160&h=160&fit=crop&auto=format&q=80&facepad=2",
-  },
-  {
-    name: "Aydan Soltanlı",
-    country: "Azerbaijan",
-    university: "University of Bonn",
-    program: "MSc European Studies",
-    photo:
-      "https://images.unsplash.com/photo-1525130413817-d45c1d127c42?w=160&h=160&fit=crop&auto=format&q=80&facepad=2",
-  },
-  {
-    name: "Nərmin Əliyeva",
-    country: "Azerbaijan",
-    university: "University of Cologne",
-    program: "MSc Business Administration",
-    photo:
-      "https://images.unsplash.com/photo-1546525848-3ce03ca516f6?w=160&h=160&fit=crop&auto=format&q=80&facepad=2",
-  },
-  {
-    name: "Stella Ağaşirinli",
-    country: "Azerbaijan",
-    university: "IU International University of Applied Sciences",
-    program: "MSc IT Management",
-    photo:
-      "https://images.unsplash.com/photo-1525130413817-d45c1d127c42?w=160&h=160&fit=crop&auto=format&q=80&facepad=2",
-  },
-  {
-    name: "Ülkər Abdullayeva",
-    country: "Azerbaijan",
-    university: "University of Milan",
-    program: "BSc Political Science",
-    photo:
-      "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=160&h=160&fit=crop&auto=format&q=80&facepad=2",
-  },
+  { name: "Murad Qurbanov", country: "Azerbaijan", university: "University of Vienna", program: "MSc Data Science" },
+  { name: "Gülya Qurbanova", country: "Azerbaijan", university: "TU Wien", program: "MSc Software Engineering" },
+  { name: "Fərid Axundov", country: "Azerbaijan", university: "University of Graz", program: "MSc Urban Planning" },
+  { name: "Nərmin İsgəndərli", country: "Azerbaijan", university: "University of Klagenfurt", program: "MSc European Studies" },
+  { name: "Aydan Soltanlı", country: "Azerbaijan", university: "University of Innsbruck", program: "MSc Management" },
+  { name: "Nərmin Əliyeva", country: "Azerbaijan", university: "University of Linz", program: "MSc Business Administration" },
+  { name: "Stella Ağaşirinli", country: "Azerbaijan", university: "MODUL University Vienna", program: "MSc International Management" },
+  { name: "Ülkər Abdullayeva", country: "Azerbaijan", university: "University of Salzburg", program: "BSc Political Science" },
 ];
+
+function getInitials(name: string): string {
+  return name
+    .split(" ")
+    .map((part) => part[0])
+    .slice(0, 2)
+    .join("")
+    .toUpperCase();
+}
 
 export function TestimonialsSection() {
   const { t } = useLanguage();
   const firstRow = testimonials.filter((_, index) => index % 2 === 0);
   const secondRow = testimonials.filter((_, index) => index % 2 === 1);
 
-  const renderCard = (t: Testimonial) => (
+  const renderCard = (item: Testimonial) => (
     <div
-      key={t.name}
-      className="relative glass rounded-2xl px-5 py-4 shadow-card hover:shadow-card-hover transition-all duration-300 w-64 md:w-72"
+      key={item.name}
+      className="relative bg-surface rounded-2xl px-6 py-5 w-[min(85vw,380px)] md:w-[400px] shadow-card border border-line"
     >
-      <div className="flex items-center gap-3 mb-3">
-        <div className="relative">
-          <img
-            src={t.photo}
-            alt={t.name}
-            className="w-12 h-12 rounded-full object-cover border-2 border-primary/20 shadow-sm"
-          />
+      <div className="flex items-center gap-4 mb-4">
+        <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+          <span className="text-sm font-bold text-primary">{getInitials(item.name)}</span>
         </div>
-        <div>
-          <p className="text-sm font-semibold">
-            {t.name}
-            {t.country && <span className="text-muted-foreground"> · {t.country}</span>}
-          </p>
-          <p className="text-[11px] text-muted-foreground">{t.university}</p>
+        <div className="min-w-0">
+          <p className="text-base font-bold text-ink truncate">{item.name}</p>
+          {item.country && (
+            <div className="flex items-center gap-1.5 mt-0.5">
+              <AZ className="w-4 h-3 rounded-sm shrink-0" title={item.country} />
+              <span className="text-xs text-muted-foreground">{item.country}</span>
+            </div>
+          )}
         </div>
       </div>
-
-      <p className="text-xs text-secondary font-medium leading-snug">{t.program}</p>
+      <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-1">{item.university}</p>
+      <p className="text-sm text-ink leading-snug font-medium">{item.program}</p>
     </div>
   );
 
   return (
-    <section id="students" className="py-20 md:py-28 gradient-hero">
-      <div className="container">
-        <ScrollReveal className="text-center mb-14">
-          <h2 className="text-3xl md:text-4xl font-bold mb-5 text-primary-foreground">{t.testimonials.title}</h2>
-          <p className="text-primary-foreground/90 max-w-2xl mx-auto text-lg">
-            {t.testimonials.subtitle}
-          </p>
-        </ScrollReveal>
+    <SectionShell id="students" variant="light" className="bg-accent/40">
+      <section className="section-fluid-y">
+        <SectionHeader
+          eyebrow="Students"
+          title={t.testimonials.title}
+          subtitle={t.testimonials.subtitle}
+        />
 
-        <ScrollReveal delay={0.15}>
-          <div className="space-y-8 max-w-5xl mx-auto">
-            <InfiniteFloatingCarousel items={firstRow.map(renderCard)} speedPxPerSec={35} />
-            <InfiniteFloatingCarousel items={secondRow.map(renderCard)} speedPxPerSec={42} />
-          </div>
-        </ScrollReveal>
-      </div>
-    </section>
+        <div className="space-y-6 overflow-hidden">
+          <InfiniteFloatingCarousel items={firstRow.map(renderCard)} speedPxPerSec={45} />
+          <InfiniteFloatingCarousel items={secondRow.map(renderCard)} speedPxPerSec={55} />
+        </div>
+      </section>
+    </SectionShell>
   );
 }

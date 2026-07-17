@@ -11,7 +11,9 @@ interface Translations {
     contact: string;
   };
   hero: {
-    headline: string;
+    eyebrow: string;
+    headlineLine1: string;
+    headlineLine2: string;
     subheadline: string;
     cta: string;
   };
@@ -39,6 +41,7 @@ interface Translations {
     name: string;
     country: string;
     desiredCountry: string;
+    desiredCity: string;
     contactMethod: string;
     whatsapp: string;
     email: string;
@@ -59,6 +62,9 @@ interface Translations {
     subtitle: string;
     ourPicks: string;
     viewProfile: string;
+    university: string;
+    universities: string;
+    filterByCity: string;
   };
   universityPage: {
     notFound: string;
@@ -108,29 +114,32 @@ const translations: Record<Language, Translations> = {
     nav: {
       home: "Home",
       howItWorks: "How It Works",
-      destinations: "Destinations",
+      destinations: "Universities",
       about: "About",
       contact: "Contact",
     },
     hero: {
-      headline: "Study Abroad. Simplified.",
-      subheadline: "We help students apply to universities abroad, prepare documents, and move with confidence.",
+      eyebrow: "Study in Austria",
+      headlineLine1: "Get your degree for free.",
+      headlineLine2: "In Austria.",
+      subheadline:
+        "We guide international students through university choice, applications, residence permits, and arrival — in your language.",
       cta: "Get Free Consultation",
     },
     services: {
       title: "What We Help With",
-      subtitle: "Comprehensive support for every step of your study abroad journey.",
+      subtitle: "Full support for every step of studying at an Austrian university.",
       university: {
         title: "University & Program Selection",
-        description: "Find the perfect university and program that matches your goals and qualifications.",
+        description: "Find the right Austrian university and program for your goals and qualifications.",
       },
       documents: {
         title: "Documents & Applications",
         description: "Professional assistance with all paperwork, from transcripts to motivation letters.",
       },
       visa: {
-        title: "Visa Guidance",
-        description: "Step-by-step support through the visa application process with expert advice.",
+        title: "Residence Permit Guidance",
+        description: "Step-by-step support for your Austrian student residence permit application.",
       },
       planning: {
         title: "Pre-Arrival Planning",
@@ -138,17 +147,17 @@ const translations: Record<Language, Translations> = {
       },
     },
     destinations: {
-      title: "Study Destinations",
-      subtitle: "Explore top European countries with world-class education and vibrant student communities.",
+      title: "Study in Austria",
+      subtitle: "Affordable tuition, English-taught programmes, and a clear path from application to arrival.",
     },
     howItWorks: {
       title: "How It Works",
-      subtitle: "Your journey to studying abroad in four simple steps.",
+      subtitle: "Your path to an Austrian university in four clear steps.",
       steps: [
         { title: "Free Consultation", description: "Share your goals and we'll guide you through your options." },
         { title: "Personal Study Plan", description: "Get a customized roadmap tailored to your aspirations." },
         { title: "Application & Documents", description: "We handle the paperwork while you focus on preparing." },
-        { title: "Admission & Next Steps", description: "Celebrate your acceptance and prepare for your journey." },
+        { title: "Admission & Arrival", description: "Celebrate your acceptance and prepare for life in Austria." },
       ],
     },
     contact: {
@@ -157,27 +166,31 @@ const translations: Record<Language, Translations> = {
       formTitle: "Get Free Consultation",
       name: "Your Name",
       country: "Your Country",
-      desiredCountry: "Desired Study Country",
+      desiredCountry: "Preferred city in Austria",
+      desiredCity: "Preferred city in Austria",
       contactMethod: "Preferred Contact Method",
       whatsapp: "WhatsApp",
       email: "Email",
       submit: "Get Consultation",
       support: "Our team provides personal support at every step. We'll help you navigate the entire process with clarity and confidence.",
       noHiddenFees: "No hidden fees or obligations",
-      personalizedRecommendations: "Personalized university recommendations",
+      personalizedRecommendations: "Personalized Austrian university recommendations",
       supportInYourLanguage: "Support in your language",
     },
     footer: {
-      tagline: "Your trusted partner for studying abroad",
+      tagline: "Your trusted partner for studying in Austria",
       rights: "All rights reserved.",
       phone: "Phone",
       email: "Email",
     },
     universities: {
-      title: "Partner Universities & Programs",
-      subtitle: "Explore universities by country. Each profile includes programs, requirements, and practical information.",
+      title: "Austrian Universities & Programmes",
+      subtitle: "Explore our partner universities across Austria. Each profile includes programmes, requirements, and practical information.",
       ourPicks: "Our picks",
       viewProfile: "View university profile →",
+      university: "university",
+      universities: "universities",
+      filterByCity: "Filter by city",
     },
     universityPage: {
       notFound: "University not found",
@@ -218,36 +231,39 @@ const translations: Record<Language, Translations> = {
     },
     testimonials: {
       title: "Success Stories",
-      subtitle: "Students we've helped achieve their dreams",
+      subtitle: "Students we've helped start their degrees in Austria",
     },
   },
   az: {
     nav: {
       home: "Ana Səhifə",
       howItWorks: "Necə İşləyir",
-      destinations: "Ölkələr",
+      destinations: "Universitetlər",
       about: "Haqqımızda",
       contact: "Əlaqə",
     },
     hero: {
-      headline: "Xaricdə Təhsil. Sadələşdirilmiş.",
-      subheadline: "Tələbələrə universitetlərə müraciət etməyə, sənədlər hazırlamağa və əminliklə köçməyə kömək edirik.",
+      eyebrow: "Avstriyada təhsil",
+      headlineLine1: "Avstriyada pulsuz təhsil,",
+      headlineLine2: "Əldə edin.",
+      subheadline:
+        "Tələbələrə universitet seçimi, müraciət, yaşayış icazəsi və gəliş prosesində hər cür köməklik edirik.",
       cta: "Pulsuz Məsləhət Alın",
     },
     services: {
       title: "Nə ilə Kömək Edirik",
-      subtitle: "Xaricdə təhsil səyahətinizin hər addımı üçün hərtərəfli dəstək.",
+      subtitle: "Avstriya universitetində təhsil üçün hər addımda tam dəstək.",
       university: {
         title: "Universitet və Proqram Seçimi",
-        description: "Hədəflərinizə və keyfiyyətlərinizə uyğun mükəmməl universitet və proqram tapın.",
+        description: "Hədəflərinizə və keyfiyyətlərinizə uyğun Avstriya universiteti və proqramı tapın.",
       },
       documents: {
         title: "Sənədlər və Müraciətlər",
         description: "Transkriptlərdən motivasiya məktublarına qədər bütün sənədləşmədə peşəkar yardım.",
       },
       visa: {
-        title: "Viza Dəstəyi",
-        description: "Ekspert məsləhəti ilə viza müraciət prosesində addım-addım dəstək.",
+        title: "Yaşayış İcazəsi Dəstəyi",
+        description: "Avstriya tələbə yaşayış icazəsi müraciətində addım-addım dəstək.",
       },
       planning: {
         title: "Gəlmədən Əvvəl Planlaşdırma",
@@ -255,17 +271,17 @@ const translations: Record<Language, Translations> = {
       },
     },
     destinations: {
-      title: "Təhsil Ölkələri",
-      subtitle: "Dünya səviyyəli təhsil və canlı tələbə icmaları olan aparıcı Avropa ölkələrini kəşf edin.",
+      title: "Avstriyada təhsil",
+      subtitle: "Sərfəli təhsil haqqı, ingilisdilli proqramlar və müraciətdən gəlişə qədər aydın yol.",
     },
     howItWorks: {
       title: "Necə İşləyir",
-      subtitle: "Dörd sadə addımda xaricdə təhsil səyahətiniz.",
+      subtitle: "Avstriya universitetinə aparan dörd aydın addım.",
       steps: [
         { title: "Pulsuz Məsləhət", description: "Hədəflərinizi paylaşın, biz seçimləriniz üzrə rəhbərlik edəcəyik." },
         { title: "Fərdi Təhsil Planı", description: "Arzularınıza uyğunlaşdırılmış fərdi yol xəritəsi alın." },
         { title: "Müraciət və Sənədlər", description: "Siz hazırlaşarkən biz sənədləşmə ilə məşğul oluruq." },
-        { title: "Qəbul və Növbəti Addımlar", description: "Qəbulunuzu qeyd edin və səyahətinizə hazırlaşın." },
+        { title: "Qəbul və Gəliş", description: "Qəbulunuzu qeyd edin və Avstriyada həyata hazırlaşın." },
       ],
     },
     contact: {
@@ -274,27 +290,31 @@ const translations: Record<Language, Translations> = {
       formTitle: "Pulsuz Məsləhət Alın",
       name: "Adınız",
       country: "Ölkəniz",
-      desiredCountry: "İstədiyiniz Təhsil Ölkəsi",
+      desiredCountry: "Avstriyada üstünlük verilən şəhər",
+      desiredCity: "Avstriyada üstünlük verilən şəhər",
       contactMethod: "Üstünlük Verilən Əlaqə Üsulu",
       whatsapp: "WhatsApp",
       email: "E-poçt",
       submit: "Məsləhət Alın",
       support: "Komandamız hər addımda fərdi dəstək təqdim edir. Bütün prosesdə aydınlıq və inamla hərəkət etməyinizə kömək edəcəyik.",
       noHiddenFees: "Gizli ödəniş və öhdəliklər yoxdur",
-      personalizedRecommendations: "Fərdi universitet tövsiyələri",
+      personalizedRecommendations: "Fərdi Avstriya universitet tövsiyələri",
       supportInYourLanguage: "Dilinizdə dəstək",
     },
     footer: {
-      tagline: "Xaricdə təhsil üçün etibarlı tərəfdaşınız",
+      tagline: "Avstriyada təhsil üçün etibarlı tərəfdaşınız",
       rights: "Bütün hüquqlar qorunur.",
       phone: "Telefon",
       email: "E-poçt",
     },
     universities: {
-      title: "Tərəfdaş Universitetlər və Proqramlar",
-      subtitle: "Ölkə üzrə universitetləri araşdırın. Hər profil proqramlar, tələblər və praktiki məlumatları əhatə edir.",
+      title: "Avstriya Universitetləri və Proqramları",
+      subtitle: "Avstriyanın tərəfdaş universitetlərini araşdırın. Hər profil proqramlar, tələblər və praktiki məlumatları əhatə edir.",
       ourPicks: "Seçimlərimiz",
       viewProfile: "Universitet profilini göstər →",
+      university: "universitet",
+      universities: "universitet",
+      filterByCity: "Şəhərə görə filtr",
     },
     universityPage: {
       notFound: "Universitet tapılmadı",
@@ -335,36 +355,39 @@ const translations: Record<Language, Translations> = {
     },
     testimonials: {
       title: "Uğur Hekayələri",
-      subtitle: "Arzularına çatmaqda kömək etdiyimiz tələbələr",
+      subtitle: "Avstriyada təhsilinə başlamaqda kömək etdiyimiz tələbələr",
     },
   },
   tr: {
     nav: {
       home: "Ana Sayfa",
       howItWorks: "Nasıl Çalışır",
-      destinations: "Ülkeler",
+      destinations: "Üniversiteler",
       about: "Hakkımızda",
       contact: "İletişim",
     },
     hero: {
-      headline: "Yurtdışında Eğitim. Basitleştirildi.",
-      subheadline: "Öğrencilerin yurtdışındaki üniversitelere başvurmasına, belge hazırlamasına ve güvenle taşınmasına yardımcı oluyoruz.",
+      eyebrow: "Avusturya'da eğitim",
+      headlineLine1: "Avusturya'da ücretsiz",
+      headlineLine2: "Eğitim alın.",
+      subheadline:
+        "Uluslararası öğrencilere üniversite seçimi, başvuru, oturma izni ve varış sürecinde — kendi dilinizde — rehberlik ediyoruz.",
       cta: "Ücretsiz Danışmanlık Alın",
     },
     services: {
       title: "Nelerle Yardımcı Oluyoruz",
-      subtitle: "Yurtdışı eğitim yolculuğunuzun her adımı için kapsamlı destek.",
+      subtitle: "Avusturya'da üniversite eğitimi için her adımda tam destek.",
       university: {
         title: "Üniversite ve Program Seçimi",
-        description: "Hedeflerinize ve niteliklerinize uygun mükemmel üniversite ve programı bulun.",
+        description: "Hedeflerinize ve niteliklerinize uygun Avusturya üniversitesi ve programını bulun.",
       },
       documents: {
         title: "Belgeler ve Başvurular",
         description: "Transkriptlerden motivasyon mektuplarına kadar tüm evrak işlerinde profesyonel yardım.",
       },
       visa: {
-        title: "Vize Rehberliği",
-        description: "Uzman tavsiyesiyle vize başvuru sürecinde adım adım destek.",
+        title: "Oturma İzni Rehberliği",
+        description: "Avusturya öğrenci oturma izni başvurusunda adım adım destek.",
       },
       planning: {
         title: "Varış Öncesi Planlama",
@@ -372,17 +395,17 @@ const translations: Record<Language, Translations> = {
       },
     },
     destinations: {
-      title: "Eğitim Destinasyonları",
-      subtitle: "Dünya standartlarında eğitim ve canlı öğrenci topluluklarına sahip önde gelen Avrupa ülkelerini keşfedin.",
+      title: "Avusturya'da eğitim",
+      subtitle: "Uygun öğrenim ücretleri, İngilizce programlar ve başvurudan varışa net bir yol.",
     },
     howItWorks: {
       title: "Nasıl Çalışır",
-      subtitle: "Dört basit adımda yurtdışında eğitim yolculuğunuz.",
+      subtitle: "Avusturya üniversitesine giden dört net adım.",
       steps: [
         { title: "Ücretsiz Danışmanlık", description: "Hedeflerinizi paylaşın, seçenekleriniz konusunda size rehberlik edelim." },
         { title: "Kişisel Eğitim Planı", description: "Hedeflerinize özel hazırlanmış bir yol haritası alın." },
         { title: "Başvuru ve Belgeler", description: "Siz hazırlanırken biz evrak işlerini hallediyoruz." },
-        { title: "Kabul ve Sonraki Adımlar", description: "Kabulünüzü kutlayın ve yolculuğunuza hazırlanın." },
+        { title: "Kabul ve Varış", description: "Kabulünüzü kutlayın ve Avusturya'daki hayata hazırlanın." },
       ],
     },
     contact: {
@@ -391,27 +414,31 @@ const translations: Record<Language, Translations> = {
       formTitle: "Ücretsiz Danışmanlık Alın",
       name: "Adınız",
       country: "Ülkeniz",
-      desiredCountry: "İstediğiniz Eğitim Ülkesi",
+      desiredCountry: "Avusturya'da tercih edilen şehir",
+      desiredCity: "Avusturya'da tercih edilen şehir",
       contactMethod: "Tercih Edilen İletişim Yöntemi",
       whatsapp: "WhatsApp",
       email: "E-posta",
       submit: "Danışmanlık Alın",
       support: "Ekibimiz her adımda kişisel destek sağlar. Tüm süreçte netlik ve güvenle ilerlemenize yardımcı olacağız.",
       noHiddenFees: "Gizli ücret veya yükümlülük yok",
-      personalizedRecommendations: "Kişiselleştirilmiş üniversite önerileri",
+      personalizedRecommendations: "Kişiselleştirilmiş Avusturya üniversite önerileri",
       supportInYourLanguage: "Dilinizde destek",
     },
     footer: {
-      tagline: "Yurtdışında eğitim için güvenilir ortağınız",
+      tagline: "Avusturya'da eğitim için güvenilir ortağınız",
       rights: "Tüm hakları saklıdır.",
       phone: "Telefon",
       email: "E-posta",
     },
     universities: {
-      title: "Partner Üniversiteler ve Programlar",
-      subtitle: "Üniversiteleri ülkelere göre keşfedin. Her profil programları, gereksinimleri ve pratik bilgileri içerir.",
+      title: "Avusturya Üniversiteleri ve Programları",
+      subtitle: "Avusturya'daki partner üniversitelerimizi keşfedin. Her profil programları, gereksinimleri ve pratik bilgileri içerir.",
       ourPicks: "Seçimlerimiz",
       viewProfile: "Üniversite profilini görüntüle →",
+      university: "üniversite",
+      universities: "üniversite",
+      filterByCity: "Şehre göre filtrele",
     },
     universityPage: {
       notFound: "Üniversite bulunamadı",
@@ -452,36 +479,39 @@ const translations: Record<Language, Translations> = {
     },
     testimonials: {
       title: "Başarı Hikayeleri",
-      subtitle: "Hayallerine ulaşmalarına yardımcı olduğumuz öğrenciler",
+      subtitle: "Avusturya'da eğitimlerine başlamalarına yardımcı olduğumuz öğrenciler",
     },
   },
   ru: {
     nav: {
       home: "Главная",
       howItWorks: "Как это работает",
-      destinations: "Направления",
+      destinations: "Университеты",
       about: "О нас",
       contact: "Контакты",
     },
     hero: {
-      headline: "Обучение за рубежом. Просто.",
-      subheadline: "Мы помогаем студентам поступить в университеты за рубежом, подготовить документы и переехать с уверенностью.",
+      eyebrow: "Учёба в Австрии",
+      headlineLine1: "Получите бесплатное образование.",
+      headlineLine2: "В Австрии.",
+      subheadline:
+        "Мы помогаем иностранным студентам с выбором университета, подачей документов, видом на жительство и переездом — на вашем языке.",
       cta: "Бесплатная консультация",
     },
     services: {
       title: "Чем мы помогаем",
-      subtitle: "Комплексная поддержка на каждом этапе вашего пути к обучению за рубежом.",
+      subtitle: "Полная поддержка на каждом этапе обучения в австрийском университете.",
       university: {
         title: "Выбор университета и программы",
-        description: "Найдите идеальный университет и программу, соответствующие вашим целям и квалификации.",
+        description: "Найдите подходящий австрийский университет и программу под ваши цели и квалификацию.",
       },
       documents: {
         title: "Документы и заявления",
         description: "Профессиональная помощь со всеми документами, от выписок до мотивационных писем.",
       },
       visa: {
-        title: "Визовая поддержка",
-        description: "Пошаговая поддержка в процессе подачи визы с экспертными советами.",
+        title: "Вид на жительство",
+        description: "Пошаговая поддержка при оформлении студенческого вида на жительство в Австрии.",
       },
       planning: {
         title: "Подготовка к отъезду",
@@ -489,17 +519,17 @@ const translations: Record<Language, Translations> = {
       },
     },
     destinations: {
-      title: "Направления обучения",
-      subtitle: "Откройте для себя ведущие европейские страны с образованием мирового класса и яркими студенческими сообществами.",
+      title: "Учёба в Австрии",
+      subtitle: "Доступная плата за обучение, программы на английском и понятный путь от заявки до переезда.",
     },
     howItWorks: {
       title: "Как это работает",
-      subtitle: "Ваш путь к обучению за рубежом в четырех простых шагах.",
+      subtitle: "Четыре шага к австрийскому университету.",
       steps: [
         { title: "Бесплатная консультация", description: "Поделитесь своими целями, и мы поможем вам разобраться в вариантах." },
         { title: "Личный план обучения", description: "Получите индивидуальную дорожную карту, адаптированную к вашим стремлениям." },
         { title: "Заявление и документы", description: "Мы занимаемся документами, пока вы готовитесь." },
-        { title: "Зачисление и следующие шаги", description: "Отпразднуйте зачисление и подготовьтесь к путешествию." },
+        { title: "Зачисление и переезд", description: "Отпразднуйте зачисление и подготовьтесь к жизни в Австрии." },
       ],
     },
     contact: {
@@ -508,27 +538,31 @@ const translations: Record<Language, Translations> = {
       formTitle: "Бесплатная консультация",
       name: "Ваше имя",
       country: "Ваша страна",
-      desiredCountry: "Желаемая страна обучения",
+      desiredCountry: "Предпочитаемый город в Австрии",
+      desiredCity: "Предпочитаемый город в Австрии",
       contactMethod: "Предпочтительный способ связи",
       whatsapp: "WhatsApp",
       email: "Эл. почта",
       submit: "Получить консультацию",
       support: "Наша команда обеспечивает личную поддержку на каждом этапе. Мы поможем вам пройти весь процесс с ясностью и уверенностью.",
       noHiddenFees: "Без скрытых платежей и обязательств",
-      personalizedRecommendations: "Персональные рекомендации университетов",
+      personalizedRecommendations: "Персональные рекомендации австрийских университетов",
       supportInYourLanguage: "Поддержка на вашем языке",
     },
     footer: {
-      tagline: "Ваш надежный партнер для обучения за рубежом",
+      tagline: "Ваш надёжный партнёр для учёбы в Австрии",
       rights: "Все права защищены.",
       phone: "Телефон",
       email: "Эл. почта",
     },
     universities: {
-      title: "Университеты-партнеры и программы",
-      subtitle: "Изучайте университеты по странам. Каждый профиль включает программы, требования и практическую информацию.",
+      title: "Австрийские университеты и программы",
+      subtitle: "Изучайте наши партнёрские университеты в Австрии. Каждый профиль включает программы, требования и практическую информацию.",
       ourPicks: "Наш выбор",
       viewProfile: "Посмотреть профиль университета →",
+      university: "университет",
+      universities: "университетов",
+      filterByCity: "Фильтр по городу",
     },
     universityPage: {
       notFound: "Университет не найден",
@@ -569,7 +603,7 @@ const translations: Record<Language, Translations> = {
     },
     testimonials: {
       title: "Истории успеха",
-      subtitle: "Студенты, которым мы помогли достичь своей мечты",
+      subtitle: "Студенты, которым мы помогли начать учёбу в Австрии",
     },
   },
 };
