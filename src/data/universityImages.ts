@@ -3,8 +3,18 @@
  * Structure: universities/austria/vienna/photo.jpg, universities/germany/berlin/photo.jpg, etc.
  * Vienna: city*, boku-wien-*, tu-wien-*, uni-wien-*, med-wien-*, vet-*, uaa_*, uaav-*, ufav-*. Graz: ug-*, gut-*, medg-*, umpg-*, city*. Innsbruck: uoi-*, meduoi-*, city*. Klagenfurt: aau-*, city*. Leoben: leo-*. Linz: jku-*, uoa-*, abu-*, uofe-*, city*. Salzburg: uos-* (University of Salzburg), city*. Other: e.g. feldkirch/vue-*.
  */
+/**
+ * Austria only. The site renders exclusively Austrian universities
+ * (`getAustriaUniversitiesByCity()`); the German, Italian, Czech and Polish
+ * folders are unreachable from any route.
+ *
+ * This glob is `eager`, so every path it matches is imported and emitted into
+ * the build. The previous `*​/*​/*` pattern therefore shipped ~74 MB of images
+ * for pages nobody can open. Scoping it to `austria` drops them from the bundle
+ * without touching the files on disk — delete those folders when convenient.
+ */
 const glob = import.meta.glob<string>(
-  "../assets/universities/*/*/*.{svg,jpg,jpeg,png,webp,avif,jfif}",
+  "../assets/universities/austria/*/*.{svg,jpg,jpeg,png,webp,avif,jfif}",
   { eager: true, as: "url" }
 );
 

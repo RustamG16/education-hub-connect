@@ -31,10 +31,9 @@ export function ContactSection() {
     );
     window.location.href = `mailto:${CONSULTATION_EMAIL}?subject=${subject}&body=${body}`;
     toast({
-      title: "Request Sent!",
-      description: "We'll get back to you within 24 hours.",
+      title: "Email draft opened",
+      description: "Review and send the request from your email app.",
     });
-    setFormData({ name: "", country: "", desiredCity: "", contact: "" });
   };
 
   return (

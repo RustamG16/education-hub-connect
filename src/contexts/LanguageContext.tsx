@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, ReactNode } from "react";
+import { createContext, useContext, useEffect, useState, ReactNode } from "react";
 
 export type Language = "en" | "az" | "tr" | "ru";
 
@@ -16,6 +16,9 @@ interface Translations {
     headlineLine2: string;
     subheadline: string;
     cta: string;
+    statLabel: string;
+    statValue: string;
+    statCta: string;
   };
   services: {
     title: string;
@@ -103,9 +106,11 @@ interface Translations {
     description: string;
     support: string;
   };
-  testimonials: {
+  founder: {
+    eyebrow: string;
     title: string;
-    subtitle: string;
+    paragraphs: [string, string, string];
+    facts: [string, string, string];
   };
 }
 
@@ -125,6 +130,9 @@ const translations: Record<Language, Translations> = {
       subheadline:
         "We guide international students through university choice, applications, residence permits, and arrival — in your language.",
       cta: "Get Free Consultation",
+      statLabel: "Austria",
+      statValue: "34 universities we advise on",
+      statCta: "Explore programmes",
     },
     services: {
       title: "What We Help With",
@@ -185,7 +193,7 @@ const translations: Record<Language, Translations> = {
     },
     universities: {
       title: "Austrian Universities & Programmes",
-      subtitle: "Explore our partner universities across Austria. Each profile includes programmes, requirements, and practical information.",
+      subtitle: "Explore Austrian universities we advise on. Each profile includes programmes, requirements, and practical information.",
       ourPicks: "Our picks",
       viewProfile: "View university profile →",
       university: "university",
@@ -229,9 +237,15 @@ const translations: Record<Language, Translations> = {
       description: "Navigating visa requirements can be complex. We guide you through the entire visa application process, from understanding requirements to preparing for your interview.",
       support: "Visa Application Support",
     },
-    testimonials: {
-      title: "Success Stories",
-      subtitle: "Students we've helped start their degrees in Austria",
+    founder: {
+      eyebrow: "About",
+      title: "A clearer way to study in Austria.",
+      paragraphs: [
+        "Education4Students helps applicants from Azerbaijan and the region find realistic study options in Austria.",
+        "We turn admission rules, document requirements, and deadlines into a practical plan you can follow.",
+        "From your first questions to arrival, you get personal guidance in a language you understand.",
+      ],
+      facts: ["Austria-focused guidance", "Clear next steps", "Support through arrival"],
     },
   },
   az: {
@@ -249,6 +263,9 @@ const translations: Record<Language, Translations> = {
       subheadline:
         "Tələbələrə universitet seçimi, müraciət, yaşayış icazəsi və gəliş prosesində hər cür köməklik edirik.",
       cta: "Pulsuz Məsləhət Alın",
+      statLabel: "Avstriya",
+      statValue: "Məsləhət verdiyimiz 34 universitet",
+      statCta: "Proqramlara baxın",
     },
     services: {
       title: "Nə ilə Kömək Edirik",
@@ -309,7 +326,7 @@ const translations: Record<Language, Translations> = {
     },
     universities: {
       title: "Avstriya Universitetləri və Proqramları",
-      subtitle: "Avstriyanın tərəfdaş universitetlərini araşdırın. Hər profil proqramlar, tələblər və praktiki məlumatları əhatə edir.",
+      subtitle: "Məsləhət verdiyimiz Avstriya universitetlərini araşdırın. Hər profil proqramlar, tələblər və praktiki məlumatları əhatə edir.",
       ourPicks: "Seçimlərimiz",
       viewProfile: "Universitet profilini göstər →",
       university: "universitet",
@@ -353,9 +370,15 @@ const translations: Record<Language, Translations> = {
       description: "Viza tələbləri mürəkkəb ola bilər. Biz tələbləri başa düşməkdən müsahibəyə hazırlaşmağa qədər bütün viza müraciət prosesində sizə rəhbərlik edirik.",
       support: "Viza Müraciət Dəstəyi",
     },
-    testimonials: {
-      title: "Uğur Hekayələri",
-      subtitle: "Avstriyada təhsilinə başlamaqda kömək etdiyimiz tələbələr",
+    founder: {
+      eyebrow: "Haqqımızda",
+      title: "Avstriyada təhsil üçün daha aydın yol.",
+      paragraphs: [
+        "Education4Students Azərbaycandan və regiondan olan müraciətçilərə Avstriyada real təhsil seçimləri tapmağa kömək edir.",
+        "Qəbul qaydalarını, sənəd tələblərini və son tarixləri izləyə biləcəyiniz praktik plana çeviririk.",
+        "İlk suallarınızdan Avstriyaya gəlişinizədək başa düşdüyünüz dildə fərdi dəstək alırsınız.",
+      ],
+      facts: ["Avstriya üzrə ixtisaslaşma", "Aydın növbəti addımlar", "Gəlişədək dəstək"],
     },
   },
   tr: {
@@ -373,6 +396,9 @@ const translations: Record<Language, Translations> = {
       subheadline:
         "Uluslararası öğrencilere üniversite seçimi, başvuru, oturma izni ve varış sürecinde — kendi dilinizde — rehberlik ediyoruz.",
       cta: "Ücretsiz Danışmanlık Alın",
+      statLabel: "Avusturya",
+      statValue: "Danışmanlık verdiğimiz 34 üniversite",
+      statCta: "Programları inceleyin",
     },
     services: {
       title: "Nelerle Yardımcı Oluyoruz",
@@ -433,7 +459,7 @@ const translations: Record<Language, Translations> = {
     },
     universities: {
       title: "Avusturya Üniversiteleri ve Programları",
-      subtitle: "Avusturya'daki partner üniversitelerimizi keşfedin. Her profil programları, gereksinimleri ve pratik bilgileri içerir.",
+      subtitle: "Danışmanlık verdiğimiz Avusturya üniversitelerini keşfedin. Her profil programları, gereksinimleri ve pratik bilgileri içerir.",
       ourPicks: "Seçimlerimiz",
       viewProfile: "Üniversite profilini görüntüle →",
       university: "üniversite",
@@ -477,9 +503,15 @@ const translations: Record<Language, Translations> = {
       description: "Vize gereksinimleri karmaşık olabilir. Gereksinimleri anlamaktan mülakatınıza hazırlanmaya kadar tüm vize başvuru sürecinde size rehberlik ediyoruz.",
       support: "Vize Başvuru Desteği",
     },
-    testimonials: {
-      title: "Başarı Hikayeleri",
-      subtitle: "Avusturya'da eğitimlerine başlamalarına yardımcı olduğumuz öğrenciler",
+    founder: {
+      eyebrow: "Hakkımızda",
+      title: "Avusturya'da eğitim için daha net bir yol.",
+      paragraphs: [
+        "Education4Students, Azerbaycan ve bölgeden başvuran öğrencilerin Avusturya'da gerçekçi eğitim seçenekleri bulmasına yardımcı olur.",
+        "Kabul kurallarını, belge gereksinimlerini ve son tarihleri takip edilebilir pratik bir plana dönüştürüyoruz.",
+        "İlk sorularınızdan Avusturya'ya varışınıza kadar, anladığınız dilde kişisel destek alırsınız.",
+      ],
+      facts: ["Avusturya odaklı rehberlik", "Net sonraki adımlar", "Varışa kadar destek"],
     },
   },
   ru: {
@@ -497,6 +529,9 @@ const translations: Record<Language, Translations> = {
       subheadline:
         "Мы помогаем иностранным студентам с выбором университета, подачей документов, видом на жительство и переездом — на вашем языке.",
       cta: "Бесплатная консультация",
+      statLabel: "Австрия",
+      statValue: "34 университета, по которым консультируем",
+      statCta: "Смотреть программы",
     },
     services: {
       title: "Чем мы помогаем",
@@ -557,7 +592,7 @@ const translations: Record<Language, Translations> = {
     },
     universities: {
       title: "Австрийские университеты и программы",
-      subtitle: "Изучайте наши партнёрские университеты в Австрии. Каждый профиль включает программы, требования и практическую информацию.",
+      subtitle: "Университеты Австрии, по которым мы консультируем. Каждый профиль включает программы, требования и практическую информацию.",
       ourPicks: "Наш выбор",
       viewProfile: "Посмотреть профиль университета →",
       university: "университет",
@@ -601,9 +636,15 @@ const translations: Record<Language, Translations> = {
       description: "Визовые требования могут быть сложными. Мы проводим вас через весь процесс подачи визы, от понимания требований до подготовки к собеседованию.",
       support: "Поддержка визового заявления",
     },
-    testimonials: {
-      title: "Истории успеха",
-      subtitle: "Студенты, которым мы помогли начать учёбу в Австрии",
+    founder: {
+      eyebrow: "О нас",
+      title: "Понятный путь к учёбе в Австрии.",
+      paragraphs: [
+        "Education4Students помогает абитуриентам из Азербайджана и региона находить реалистичные варианты учёбы в Австрии.",
+        "Мы превращаем правила приёма, требования к документам и сроки в практичный пошаговый план.",
+        "От первых вопросов до приезда в Австрию вы получаете персональную поддержку на понятном вам языке.",
+      ],
+      facts: ["Фокус на Австрии", "Понятные следующие шаги", "Поддержка до приезда"],
     },
   },
 };
@@ -635,6 +676,10 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     setLanguage(lang);
     localStorage.setItem("language", lang);
   };
+
+  useEffect(() => {
+    document.documentElement.lang = language;
+  }, [language]);
 
   return (
     <LanguageContext.Provider value={{ language, setLanguage: handleSetLanguage, t: translations[language], languageNames }}>

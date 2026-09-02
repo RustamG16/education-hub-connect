@@ -6,7 +6,7 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import WhatsAppButton from "@/components/WhatsAppButton";
-import { initSmoothScroll, scrollToTop, scrollToElement, ScrollTrigger } from "@/lib/scroll";
+import { initSmoothScroll, onScrollReady, scrollToTop, scrollToElement, ScrollTrigger } from "@/lib/scroll";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import UniversityPage from "./pages/UniversityPage";
@@ -16,21 +16,33 @@ import Visa from "./pages/Visa";
 import Vienna from "./pages/Vienna";
 
 const queryClient = new QueryClient();
+const routerBase = import.meta.env.BASE_URL === "/" ? undefined : import.meta.env.BASE_URL;
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
 
   useEffect(() => {
-    if (hash) {
-      const id = window.setTimeout(() => {
-        scrollToElement(hash, -80);
-        ScrollTrigger.refresh();
-      }, 50);
-      return () => window.clearTimeout(id);
-    }
+    let handled = false;
 
-    scrollToTop(true);
-    ScrollTrigger.refresh();
+    const applyRouteScroll = () => {
+      if (handled) return;
+      handled = true;
+      ScrollTrigger.refresh();
+
+      if (hash) {
+        scrollToElement(hash, -80);
+      } else {
+        scrollToTop(true);
+      }
+    };
+
+    const unsubscribe = onScrollReady(applyRouteScroll);
+    const fallbackId = window.setTimeout(applyRouteScroll, 250);
+
+    return () => {
+      unsubscribe();
+      window.clearTimeout(fallbackId);
+    };
   }, [pathname, hash]);
 
   return null;
@@ -51,7 +63,10 @@ const App = () => (
       <LanguageProvider>
         <Toaster />
         <Sonner />
-        <BrowserRouter>
+        <BrowserRouter
+          basename={routerBase}
+          future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
+        >
           <SmoothScrollProvider>
             <ScrollToTop />
             <Routes>

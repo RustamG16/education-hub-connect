@@ -61,7 +61,10 @@ export function UniversitySlideshow({ className, imageClassName }: UniversitySli
           imageClassName,
         )}
         decoding="async"
-        fetchPriority={activeIndex === 0 ? "high" : "low"}
+        // React 18 does not recognise the camelCase `fetchPriority` prop and
+        // warns while passing it straight through to the DOM. React 18 types
+        // do not declare the lowercase attribute either, so spread it.
+        {...{ fetchpriority: activeIndex === 0 ? "high" : "low" }}
       />
     </div>
   );

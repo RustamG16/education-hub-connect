@@ -1,17 +1,48 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import Lottie, { LottieRefCurrentProps } from "lottie-react";
 import logo from "@/assets/logo.png";
 import loadingAnimation from "@/assets/loading.json";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { prefersReducedMotion } from "@/lib/scroll";
 
 export function Footer() {
   const { t } = useLanguage();
   const [logoHover, setLogoHover] = useState(false);
+  const [reduceMotion] = useState(() =>
+    typeof window !== "undefined" ? prefersReducedMotion() : false,
+  );
   const lottieRef = useRef<LottieRefCurrentProps>(null);
+  const logoWrapRef = useRef<HTMLAnchorElement>(null);
+  const playedOnceRef = useRef(false);
   const isMobile = useIsMobile();
-  const showLottie = isMobile || logoHover;
+  const showLottie = !reduceMotion && (isMobile || logoHover);
+
+  const playOnceFromStart = () => {
+    if (playedOnceRef.current) return;
+    const anim = lottieRef.current;
+    if (!anim) return;
+    playedOnceRef.current = true;
+    anim.goToAndPlay(0, true);
+  };
+
+  useEffect(() => {
+    if (reduceMotion || !isMobile) return;
+
+    const node = logoWrapRef.current;
+    if (!node) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry?.isIntersecting) playOnceFromStart();
+      },
+      { threshold: 0.4 },
+    );
+
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, [reduceMotion, isMobile, showLottie]);
 
   return (
     <footer className="bg-depth text-white">
@@ -19,13 +50,16 @@ export function Footer() {
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-12 lg:gap-20 mb-16 md:mb-20">
           <div>
             <Link
+              ref={logoWrapRef}
               to="/"
               className="relative inline-flex h-16 w-20 items-center justify-center mb-8"
               onMouseEnter={() => {
+                if (reduceMotion || isMobile) return;
                 setLogoHover(true);
                 lottieRef.current?.play();
               }}
               onMouseLeave={() => {
+                if (reduceMotion || isMobile) return;
                 setLogoHover(false);
                 lottieRef.current?.stop();
               }}
@@ -35,18 +69,28 @@ export function Footer() {
                 alt="Education4Students"
                 className={`h-16 w-auto transition-opacity duration-200 ${showLottie ? "opacity-0 absolute" : "opacity-100"}`}
               />
-              <span
-                className={`pointer-events-none absolute inset-0 flex items-center justify-center transition-opacity duration-200 ${showLottie ? "opacity-100" : "opacity-0"}`}
-                aria-hidden
-              >
-                <Lottie
-                  lottieRef={lottieRef}
-                  animationData={loadingAnimation}
-                  loop
-                  autoplay={isMobile}
-                  className="h-14 w-14"
-                />
-              </span>
+              {showLottie && (
+                <span
+                  className="pointer-events-none absolute inset-0 flex items-center justify-center opacity-100"
+                  aria-hidden
+                >
+                  <Lottie
+                    lottieRef={lottieRef}
+                    animationData={loadingAnimation}
+                    loop={!isMobile}
+                    autoplay={false}
+                    className="h-14 w-14"
+                    onDOMLoaded={() => {
+                      if (!isMobile || reduceMotion) return;
+                      const node = logoWrapRef.current;
+                      if (!node) return;
+                      const rect = node.getBoundingClientRect();
+                      const inView = rect.top < window.innerHeight && rect.bottom > 0;
+                      if (inView) playOnceFromStart();
+                    }}
+                  />
+                </span>
+              )}
             </Link>
             <p className="font-display font-bold text-[clamp(2.5rem,5vw,4.5rem)] leading-none tracking-tight max-w-lg">
               Education4Students

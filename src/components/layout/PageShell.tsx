@@ -60,7 +60,7 @@ export function PageShell({
   return (
     <div className="min-h-screen bg-canvas">
       <Navbar />
-      <header ref={headerRef} className="gradient-hero pt-24 md:pt-28 pb-12 md:pb-16">
+      <header ref={headerRef} className="gradient-hero pt-6 md:pt-8 pb-12 md:pb-16">
         <div className="page-shell w-full">
           <button
             type="button"

@@ -5,6 +5,9 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
+  // GitHub Pages serves the production site from the repository subpath.
+  // Keep local development at `/` so the existing developer workflow is unchanged.
+  base: mode === "production" ? "/education-hub-connect/" : "/",
   server: {
     host: "::",
     port: 8080,

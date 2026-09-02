@@ -77,7 +77,7 @@ export default function UniversityPage() {
     return (
       <div className="min-h-screen bg-canvas flex flex-col">
         <Navbar />
-        <main className="flex-1 flex items-center justify-center page-shell pt-24">
+        <main className="flex-1 flex items-center justify-center page-shell pt-6">
           <div className="text-center max-w-xl">
             <h1 className="font-display font-bold text-section-title text-ink mb-4">{t.universityPage.notFound}</h1>
             <p className="text-lead text-muted-foreground mb-8">{t.universityPage.notFoundDescription}</p>
@@ -114,7 +114,7 @@ export default function UniversityPage() {
     <div className="min-h-screen bg-canvas">
       <Navbar />
 
-      <header ref={headerRef} className="gradient-hero pt-24 md:pt-28 pb-12 md:pb-16">
+      <header ref={headerRef} className="gradient-hero pt-6 md:pt-8 pb-12 md:pb-16">
         <div className="page-shell w-full">
           <button
             type="button"
