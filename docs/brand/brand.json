@@ -1,0 +1,38 @@
+{
+  "name": "Education4Students",
+  "palette": [
+    {
+      "name": "Primary",
+      "hex": "#18b1bf",
+      "role": "Actions, highlights"
+    },
+    {
+      "name": "Depth",
+      "hex": "#316272",
+      "role": "Hero, navigation pill"
+    },
+    {
+      "name": "Warm",
+      "hex": "#f6bd13",
+      "role": "Accents"
+    },
+    {
+      "name": "Ink",
+      "hex": "#283848",
+      "role": "Text"
+    },
+    {
+      "name": "Canvas",
+      "hex": "#f6f6f3",
+      "role": "Page ground"
+    }
+  ],
+  "fonts": [
+    {
+      "family": "Plus Jakarta Sans",
+      "role": "All text",
+      "weight": 600,
+      "sample": "Get your degree for free."
+    }
+  ]
+}

@@ -1,73 +1,90 @@
-# Welcome to your Lovable project
+<p align="center">
+  <img src="src/assets/logo.png" alt="Education4Students" height="72">
+</p>
 
-## Project info
+<h1 align="center">Education4Students</h1>
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+<p align="center">Free guidance for students from Azerbaijan and the region who want to study in Austria: university choice, applications, residence permits and arrival.</p>
 
-## How can I edit this code?
+<p align="center">
+  <a href="https://rustamg16.github.io/education-hub-connect/"><img alt="Live site" src="https://img.shields.io/badge/live-rustamg16.github.io%2Feducation--hub--connect-18b1bf?style=flat-square"></a>
+  <img alt="Status" src="https://img.shields.io/badge/status-live-555?style=flat-square">
+  <img alt="Stack" src="https://img.shields.io/badge/stack-React%20%C2%B7%20Tailwind-555?style=flat-square">
+</p>
 
-There are several ways of editing your application.
+---
 
-**Use Lovable**
+## Screens
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+<table>
+  <tr>
+    <td width="74%"><img src="docs/screenshots/desktop.webp" alt="Education4Students: desktop, first screen"></td>
+    <td width="26%"><img src="docs/screenshots/mobile.webp" alt="Education4Students: phone, first screen"></td>
+  </tr>
+</table>
 
-Changes made via Lovable will be committed automatically to this repo.
+<table>
+  <tr>
+    <td><img src="docs/screenshots/section-1.webp" alt="How it works: four steps"></td>
+    <td><img src="docs/screenshots/section-2.webp" alt="Universities in Vienna"></td>
+  </tr>
+</table>
 
-**Use your preferred IDE**
+## Brand
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+**Palette**
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+<img src="docs/brand/palette.svg" alt="Education4Students colour palette">
 
-Follow these steps:
+**Typography**
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+<img src="docs/brand/type.svg" alt="Education4Students typefaces">
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+| Role | Typeface | Use |
+|---|---|---|
+| All text | Plus Jakarta Sans | Headlines, body and interface |
 
-# Step 3: Install the necessary dependencies.
-npm i
+**Marks.** Graduate-cap logo (`src/assets/logo.png`) with an animated Lottie version (`src/assets/loading.json`) used on phones and on hover.
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+**Voice.** Warm, practical and multilingual (EN, AZ, TR, RU): every step explained plainly.
+
+Design tokens are the HSL custom properties in [`src/index.css`](src/index.css) and [`tailwind.config.ts`](tailwind.config.ts).
+
+## Stack
+
+| Layer | Choice |
+|---|---|
+| App | React 18, TypeScript, Vite 5, react-router 6 |
+| UI | Tailwind 3, shadcn/ui (Radix) |
+| Motion | GSAP + ScrollTrigger, Lenis smooth scroll, Lottie |
+
+## Run locally
+
+```bash
+npm ci
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+`npm run build` builds to `dist/` and writes the SPA fallback for GitHub Pages.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Deploy
 
-**Use GitHub Codespaces**
+Every push to `main` builds and publishes to GitHub Pages (`.github/workflows/deploy-pages.yml`).
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Structure
 
-## What technologies are used for this project?
+```
+src/pages/          routes (home, about, universities)
+src/components/     sections, Navbar, shadcn/ui
+src/lib/scroll.ts   Lenis + ScrollTrigger setup
+src/contexts/       language (EN/AZ/TR/RU)
+scripts/            university data tooling
+```
 
-This project is built with:
+## Status
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+Live. The one real commission among these projects.
 
-## How can I deploy this project?
+---
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+<sub>Designed and built by Convenium Studio, Klagenfurt. Brand assets regenerate with `templates/readme/make_readme_assets.py` from `docs/brand/brand.json`.</sub>
