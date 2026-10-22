@@ -56,7 +56,7 @@ export function HeroSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-[max(100svh,680px)] overflow-hidden bg-depth text-white"
+      className="relative min-h-[100svh] overflow-hidden bg-depth text-white"
     >
       <div ref={mediaRef} className="absolute -inset-[4%] will-change-transform bg-depth" aria-hidden>
         <img src={heroPoster} alt="" className="absolute inset-0 h-full w-full object-cover" />
@@ -80,7 +80,7 @@ export function HeroSection() {
       <div className="hero-scrim absolute inset-0" aria-hidden />
       <div className="absolute inset-0 bg-black/10" aria-hidden />
 
-      <div className="page-shell relative z-10 flex min-h-[max(100svh,680px)] items-end pb-10 pt-28 sm:pb-14 md:pt-32 lg:items-center lg:py-32">
+      <div className="page-shell relative z-10 flex min-h-[100svh] items-end pb-10 pt-28 sm:pb-14 md:pt-32 lg:items-center lg:py-32">
         <div className="flex w-full max-w-[42rem] flex-col">
           <p className="hero-eyebrow mb-5 text-xs font-semibold uppercase tracking-[0.16em] text-white/70 md:mb-7">
             {t.hero.eyebrow}
@@ -115,7 +115,7 @@ export function HeroSection() {
             className="hero-stat group mt-8 flex w-full max-w-lg items-center justify-between gap-6 border-t border-white/25 pt-5 pr-20 text-left transition-colors duration-300 hover:border-white/50 sm:pr-0 md:mt-11"
           >
             <span className="flex flex-col gap-1.5">
-              <span className="text-[11px] font-semibold uppercase tracking-[0.16em] text-white/55">
+              <span className="text-xs font-semibold uppercase tracking-[0.16em] text-white/55">
                 {t.hero.statLabel}
               </span>
               <span className="font-display font-bold text-xl md:text-2xl text-white leading-tight">

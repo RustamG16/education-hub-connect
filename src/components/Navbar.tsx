@@ -12,12 +12,16 @@ import { useLanguage, Language } from "@/contexts/LanguageContext";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { Link, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
+import { setScrollLocked } from "@/lib/scroll";
 import logo from "@/assets/logo.png";
 import loadingAnimation from "@/assets/loading.json";
 
+const SCROLL_ON = 80;
+const SCROLL_OFF = 40;
+
 export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+  const [scrolled, setScrolled] = useState(() => typeof window !== "undefined" && window.scrollY > SCROLL_ON);
   const [logoHover, setLogoHover] = useState(false);
   const lottieRef = useRef<LottieRefCurrentProps>(null);
   const isMobile = useIsMobile();
@@ -27,12 +31,48 @@ export function Navbar() {
   const showLottie = isMobile ? true : logoHover;
   const usePill = scrolled || !isHome;
 
+  // Hysteresis: a single 60px threshold flipped the bar back and forth while Lenis eased
+  // across it. It turns on past 80px and off only below 40px.
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 60);
+    let frame = 0;
+    const onScroll = () => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(() => {
+        const y = window.scrollY;
+        setScrolled((was) => (was ? y > SCROLL_OFF : y > SCROLL_ON));
+      });
+    };
     window.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
-    return () => window.removeEventListener("scroll", onScroll);
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", onScroll);
+    };
   }, []);
+
+  // Mobile menu: close on navigation, Escape and outside taps; the page underneath stays put.
+  const menuRef = useRef<HTMLDivElement>(null);
+  const toggleRef = useRef<HTMLButtonElement>(null);
+  useEffect(() => setMobileOpen(false), [location.pathname, location.hash]);
+  useEffect(() => {
+    if (!mobileOpen) return;
+    setScrollLocked(true);
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setMobileOpen(false);
+    const onPointer = (e: PointerEvent) => {
+      const target = e.target as Node;
+      if (!menuRef.current?.contains(target) && !toggleRef.current?.contains(target)) setMobileOpen(false);
+    };
+    const onResize = () => window.innerWidth >= 1024 && setMobileOpen(false);
+    window.addEventListener("keydown", onKey);
+    document.addEventListener("pointerdown", onPointer);
+    window.addEventListener("resize", onResize);
+    return () => {
+      setScrollLocked(false);
+      window.removeEventListener("keydown", onKey);
+      document.removeEventListener("pointerdown", onPointer);
+      window.removeEventListener("resize", onResize);
+    };
+  }, [mobileOpen]);
 
   const navLinks = [
     { label: t.nav.home, to: "/" },
@@ -42,29 +82,26 @@ export function Navbar() {
     { label: t.nav.contact, to: "/#contact" },
   ];
 
-  const linkClass = usePill
-    ? "text-white/75 hover:text-white text-sm font-medium transition-colors"
-    : "text-white/80 hover:text-white text-sm font-medium transition-colors";
+  const linkClass = cn(
+    "py-3 text-sm font-medium transition-colors hover:text-white",
+    usePill ? "text-white/75" : "text-white/80",
+  );
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-50 pointer-events-none">
-        <div
-          className={cn(
-            "pointer-events-auto transition-all duration-500 ease-out",
-            usePill
-              ? "mx-auto mt-4 md:mt-6 max-w-[min(calc(100%-2rem),1200px)] px-2"
-              : "w-full mt-0 px-[var(--pad-inline)]",
-          )}
-        >
-          <nav
-            className={cn(
-              "flex items-center justify-between gap-4 transition-all duration-500",
-              usePill
-                ? "bg-depth/85 backdrop-blur-xl border border-white/15 rounded-full px-4 md:px-6 py-2.5 md:py-3 shadow-lg"
-                : "py-4 md:py-5 bg-transparent",
-            )}
-          >
+      {/* One geometry in both states. The old bar animated width, margin and padding between a
+          full-width strip and a pill with transition-all; width, max-width and backdrop-filter
+          cannot animate, so it jumped and then morphed. Now only the pill surface fades. */}
+      <header className="fixed top-0 left-0 right-0 z-[60] pointer-events-none px-4 pt-3 md:pt-4">
+        <div className="pointer-events-auto mx-auto max-w-[1200px]">
+          <nav className="relative isolate flex items-center justify-between gap-4 rounded-full px-4 md:px-6 py-2.5 md:py-3">
+            <span
+              aria-hidden
+              className={cn(
+                "absolute inset-0 -z-10 rounded-full border bg-depth/85 shadow-lg backdrop-blur-xl transition-[opacity,border-color] duration-300 ease-out",
+                usePill ? "opacity-100 border-white/15" : "opacity-0 border-transparent",
+              )}
+            />
             <Link
               to="/"
               className="flex items-center gap-2.5 shrink-0"
@@ -96,7 +133,7 @@ export function Navbar() {
                   <Lottie
                     lottieRef={lottieRef}
                     animationData={loadingAnimation}
-                    loop
+                    loop={!isMobile}
                     autoplay={isMobile}
                     className="h-8 w-8 md:h-10 md:w-10"
                   />
@@ -125,7 +162,7 @@ export function Navbar() {
             </div>
 
             <div className="flex items-center gap-2">
-              <div className="hidden md:block">
+              <div className="hidden lg:block">
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
                     <Button
@@ -158,10 +195,13 @@ export function Navbar() {
               </div>
 
               <button
+                ref={toggleRef}
                 type="button"
-                className={cn("lg:hidden p-2 rounded-full", usePill ? "text-white" : "text-white")}
+                className="lg:hidden inline-flex h-11 w-11 items-center justify-center rounded-full text-white"
                 onClick={() => setMobileOpen(!mobileOpen)}
-                aria-label="Toggle menu"
+                aria-label={mobileOpen ? "Close menu" : "Open menu"}
+                aria-expanded={mobileOpen}
+                aria-controls="mobile-menu"
               >
                 {mobileOpen ? <X size={22} /> : <Menu size={22} />}
               </button>
@@ -170,7 +210,7 @@ export function Navbar() {
         </div>
 
         {mobileOpen && (
-          <div className="pointer-events-auto lg:hidden mx-4 mt-2 bg-depth/90 backdrop-blur-xl border border-white/15 rounded-2xl animate-fade-in overflow-hidden">
+          <div ref={menuRef} id="mobile-menu" className="pointer-events-auto lg:hidden mx-auto max-w-[1200px] mt-2 max-h-[calc(100svh-6rem)] overflow-y-auto bg-depth/95 backdrop-blur-xl border border-white/15 rounded-2xl animate-fade-in overflow-hidden">
             <div className="p-5 flex flex-col gap-1">
               {navLinks.map((link) => (
                 <Link

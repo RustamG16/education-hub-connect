@@ -102,6 +102,15 @@ export function initSmoothScroll(): () => void {
   };
 }
 
+/** Pauses smooth scrolling (e.g. while the mobile menu is open). */
+export function setScrollLocked(locked: boolean): void {
+  if (lenisInstance) {
+    if (locked) lenisInstance.stop();
+    else lenisInstance.start();
+  }
+  document.documentElement.style.overflow = locked ? "hidden" : "";
+}
+
 export function scrollToTop(immediate = true): void {
   if (lenisInstance) {
     lenisInstance.scrollTo(0, { immediate });
