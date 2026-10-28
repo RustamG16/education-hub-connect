@@ -7,7 +7,7 @@ const WhatsAppButton = () => {
   const instagramUrl = `https://instagram.com/${instagramUsername}`;
 
   return (
-    <div className="fixed right-6 z-50 flex flex-col gap-3 bottom-[max(1.5rem,env(safe-area-inset-bottom))]">
+    <div className="m-float-dock fixed right-6 z-50 flex flex-col gap-3 bottom-[max(1.5rem,env(safe-area-inset-bottom))]">
       <a
         href={whatsappUrl}
         target="_blank"
@@ -16,7 +16,7 @@ const WhatsAppButton = () => {
         aria-label="Chat on WhatsApp"
       >
         <MessageCircle className="w-5 h-5" />
-        <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-1 bg-depth text-white text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap pointer-events-none">
+        <span className="max-md:hidden absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-1 bg-depth text-white text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap pointer-events-none">
           Chat with us
         </span>
       </a>
@@ -25,11 +25,11 @@ const WhatsAppButton = () => {
         href={instagramUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="bg-white hover:bg-white/95 rounded-xl p-3.5 shadow-card hover:-translate-y-0.5 transition-all duration-200 group relative border border-line"
+        className="max-md:hidden bg-white hover:bg-white/95 rounded-xl p-3.5 shadow-card hover:-translate-y-0.5 transition-all duration-200 group relative border border-line"
         aria-label="Follow us on Instagram"
       >
         <Instagram className="w-5 h-5 text-[#E4405F]" />
-        <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-1 bg-depth text-white text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap pointer-events-none">
+        <span className="max-md:hidden absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-1 bg-depth text-white text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap pointer-events-none">
           Follow us
         </span>
       </a>

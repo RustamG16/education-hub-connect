@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import { MobileTabBar } from "@/components/MobileTabBar";
 import { initSmoothScroll, onScrollReady, scrollToTop, scrollToElement, ScrollTrigger } from "@/lib/scroll";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
@@ -79,6 +80,7 @@ const App = () => (
               <Route path="*" element={<NotFound />} />
             </Routes>
             <WhatsAppButton />
+            <MobileTabBar />
           </SmoothScrollProvider>
         </BrowserRouter>
       </LanguageProvider>

@@ -65,7 +65,7 @@ export function FounderSection() {
         <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] gap-10 lg:gap-16 xl:gap-20 items-start">
           <div
             data-founder-reveal
-            className="relative aspect-[3/4] max-w-md mx-auto lg:mx-0 w-full overflow-hidden rounded-2xl bg-depth text-white"
+            className="m-hide-phone relative aspect-[3/4] max-w-md mx-auto lg:mx-0 w-full overflow-hidden rounded-2xl bg-depth text-white"
           >
             <div className="absolute inset-0 opacity-35 noise-overlay" aria-hidden />
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_35%,hsl(var(--primary)/0.28),transparent_48%)]" aria-hidden />

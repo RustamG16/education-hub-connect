@@ -105,6 +105,15 @@ export function Footer() {
             <a href="mailto:education4students@outlook.com" className="hover:text-white transition-colors">
               {t.footer.email}: education4students@outlook.com
             </a>
+            {/* Phones: the floating Instagram button gives way to the tab bar; the link lives here. */}
+            <a
+              href="https://instagram.com/education4students"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="md:hidden hover:text-white transition-colors"
+            >
+              Instagram: @education4students
+            </a>
           </div>
         </div>
 

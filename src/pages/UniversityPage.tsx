@@ -120,7 +120,7 @@ export default function UniversityPage() {
             type="button"
             data-reveal
             onClick={goBackHome}
-            className="text-sm font-medium text-white/60 hover:text-white mb-8 inline-flex items-center gap-1 transition-colors"
+            className="text-sm font-medium text-white/60 hover:text-white mb-8 inline-flex items-center gap-1 transition-colors max-md:mb-4 max-md:min-h-11"
           >
             {t.universityPage.back}
           </button>
@@ -138,7 +138,7 @@ export default function UniversityPage() {
       </header>
 
       <main className="page-shell w-full section-fluid-y !pt-10 md:!pt-14">
-        <div className="grid lg:grid-cols-[1fr_280px] gap-10 lg:gap-14">
+        <div className="grid max-md:grid-cols-[minmax(0,1fr)] lg:grid-cols-[1fr_280px] gap-10 lg:gap-14">
           <div>
             {displayImageUrl && (
               <div className="aspect-[21/9] rounded-2xl overflow-hidden bg-muted mb-6">
@@ -246,7 +246,7 @@ export default function UniversityPage() {
                   href={university.website}
                   target="_blank"
                   rel="noreferrer"
-                  className="text-sm font-medium text-primary hover:text-warm transition-colors"
+                  className="text-sm font-medium text-primary hover:text-warm transition-colors max-md:inline-flex max-md:min-h-11 max-md:items-center"
                 >
                   {t.universityPage.visitWebsite}
                 </a>
@@ -314,7 +314,7 @@ export default function UniversityPage() {
                   href={university.website}
                   target="_blank"
                   rel="noreferrer"
-                  className="text-sm font-medium text-primary hover:text-warm break-all transition-colors"
+                  className="text-sm font-medium text-primary hover:text-warm break-all transition-colors max-md:inline-flex max-md:min-h-11 max-md:items-center"
                 >
                   {university.website.replace(/^https?:\/\//, "")}
                 </a>

@@ -66,7 +66,7 @@ export function PageShell({
             type="button"
             data-reveal
             onClick={handleBack}
-            className="text-sm font-medium text-white/60 hover:text-white mb-8 inline-flex items-center gap-1 transition-colors"
+            className="text-sm font-medium text-white/60 hover:text-white mb-8 inline-flex items-center gap-1 transition-colors max-md:mb-4 max-md:min-h-11"
           >
             ← {backLabel}
           </button>

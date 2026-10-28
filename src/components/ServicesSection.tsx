@@ -85,7 +85,7 @@ export function ServicesSection() {
           </div>
         </button>
 
-        <div className="grid md:grid-cols-3 gap-4">
+        <div className="m-rail grid md:grid-cols-3 gap-4">
           {others.map((service, index) => (
             <button
               key={index}

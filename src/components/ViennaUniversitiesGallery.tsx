@@ -12,7 +12,7 @@ export function ViennaUniversitiesGallery() {
           group.images.length > 0 && (
             <section key={group.prefix} className="space-y-4">
               <h2 className="text-xl font-semibold tracking-tight">{group.title}</h2>
-              <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 list-none p-0 m-0">
+              <ul className="m-rail grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 list-none p-0 m-0">
                 {group.images.map((img, i) => (
                   <li key={i} className="rounded-xl overflow-hidden bg-card shadow-card border border-border">
                     <div className="aspect-[4/3] bg-muted">

@@ -1,0 +1,128 @@
+/* ---------- Mobile app shell (≤ 767 px) ------------------------------------------------------
+   Ported from Convenium.Design `mobile-app-shell` (reference/shell/). Desktop is untouched:
+   everything here lives inside one media query, plus three display rules that are inert above it.
+   The site's tokens (src/index.css) are raw HSL triplets with names the kit also uses (--accent,
+   --surface, --ink, --muted), so the shell reads its own --m-* names and never redefines them. */
+
+.m-fold { display: contents; }
+.m-fold-summary { display: none; }
+.m-tabbar { display: none; }
+
+@media (max-width: 767px) {
+  :root {
+    --m-tab-h: 64px;
+    --m-safe-b: env(safe-area-inset-bottom, 0px);
+    --m-accent: hsl(var(--primary));
+    --m-on-accent: hsl(var(--primary-foreground));
+    --m-surface: hsl(var(--surface));
+    --m-ink: hsl(var(--ink));
+    --m-muted: hsl(var(--muted-foreground));
+    --m-rule: hsl(var(--line));
+    --m-gutter: var(--pad-inline);
+    /* Phone section rhythm: the desktop clamp(5rem, 10vh, 9rem) is 84 px per side at 844. */
+    --section-y: 48px;
+  }
+
+  html { scroll-padding-bottom: calc(var(--m-tab-h) + var(--m-safe-b)); }
+  body { padding-bottom: calc(var(--m-tab-h) + var(--m-safe-b)); }
+  .page-shell {
+    padding-left: max(var(--pad-inline), env(safe-area-inset-left));
+    padding-right: max(var(--pad-inline), env(safe-area-inset-right));
+  }
+
+  /* --- Tab bar ------------------------------------------------------------------------------ */
+  .m-tabbar {
+    position: fixed; z-index: 55; left: 0; right: 0; bottom: 0;
+    display: grid; grid-template-columns: repeat(5, minmax(0, 1fr));
+    height: calc(var(--m-tab-h) + var(--m-safe-b));
+    padding: 0 max(4px, env(safe-area-inset-left)) var(--m-safe-b) max(4px, env(safe-area-inset-right));
+    background: color-mix(in srgb, var(--m-surface) 94%, transparent);
+    border-top: 1px solid var(--m-rule);
+    transform: translateY(0); transition: transform .28s ease;
+  }
+  .m-tabbar a {
+    display: grid; grid-template-rows: auto auto; justify-items: center; align-content: center; gap: 3px;
+    min-width: 0; min-height: 44px; padding: 6px 2px; color: var(--m-muted); text-decoration: none;
+    font: 600 11px/1.1 "Plus Jakarta Sans", system-ui, sans-serif; letter-spacing: .01em; border-radius: 10px;
+    text-align: center;
+  }
+  .m-tabbar a span {
+    max-width: 100%; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+  }
+  .m-tabbar svg { width: 22px; height: 22px; }
+  .m-tabbar a[aria-current="page"] { color: var(--m-ink); }
+  .m-tabbar a[aria-current="page"] svg { color: var(--m-accent); }
+  .m-tabbar .m-tab-primary { color: var(--m-on-accent); background: var(--m-accent); margin: 7px 2px; padding: 4px 2px; }
+  .m-tabbar .m-tab-primary svg, .m-tabbar .m-tab-primary[aria-current="page"] svg { color: currentColor; }
+  .m-tabbar a:focus-visible { outline: 2px solid var(--m-accent); outline-offset: -2px; }
+  body.m-overlay-open .m-tabbar { transform: translateY(110%); }
+
+  /* WhatsApp / Instagram dock sits above the tab bar instead of under it. */
+  .m-float-dock { bottom: calc(var(--m-tab-h) + var(--m-safe-b) + 12px); right: 16px; }
+
+  /* --- Rails: card lists become a horizontal snap rail, next card peeking ------------------- */
+  .m-rail {
+    display: flex; gap: 12px; overflow-x: auto; overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory; scroll-padding-inline: var(--m-gutter);
+    margin-inline: calc(-1 * var(--m-gutter)); padding-inline: var(--m-gutter); padding-bottom: 6px;
+    scrollbar-width: none; list-style: none;
+  }
+  .m-rail::-webkit-scrollbar { display: none; }
+  .m-rail > * { flex: 0 0 min(82vw, 340px); scroll-snap-align: start; min-width: 0; }
+
+  .m-hide-phone { display: none !important; }
+
+  /* --- 2026 floor: 16 px inputs -------------------------------------------------------------- */
+  input, select, textarea { font-size: max(16px, 1em); }
+
+  /* --- Motion: no backdrop blur over the hero video ----------------------------------------- */
+  header .backdrop-blur-xl { backdrop-filter: none; -webkit-backdrop-filter: none; }
+}
+
+/* ---- Site block (Education4Students) ------------------------------------------------------ */
+@media (max-width: 767px) {
+  /* The xl pill is nowrap and 311 px wide; at 320 it ran past the gutter and was clipped. */
+  .hero-cta { max-width: 100%; }
+  .hero-cta > button { max-width: 100%; white-space: normal; text-align: left; }
+  /* Footer wordmark: 40 px "Education4Students" is ~365 px wide and pushed every subpage to a
+     405 px layout (home only hid it behind overflow-x-hidden). Scale it to the column. */
+  footer .font-display.leading-none { font-size: min(2.5rem, 8.4vw); }
+  footer a { overflow-wrap: anywhere; }
+  /* "Education4Students" in a 32 px title is wider than the 280 px column at 320; no-op from 356 px. */
+  .text-section-title { font-size: min(var(--text-section), 9vw); }
+  /* SectionHeader passes text-section-title through cn(); tailwind-merge reads it as a text colour
+     beside text-ink and drops it, so every section h2 rendered at 16 px. Restore the ramp on phones. */
+  h2[data-split-lines] { font-size: min(var(--text-section), 9vw); line-height: .95; letter-spacing: -.04em; }
+
+  /* Hero copy is bottom-aligned on a 100svh stage; keep the last line clear of the tab bar. */
+  section.min-h-\[100svh\] > .page-shell { padding-bottom: calc(var(--m-tab-h) + var(--m-safe-b) + 24px); }
+
+  /* How it works: the stacked-card min-h-svh and the inner py-8 left ~110 px gaps either side. */
+  #how-it-works.min-h-svh { min-height: 0; }
+  #how-it-works > .page-shell > section,
+  #students > .page-shell > section { padding-block: 0; }   /* founder: shell + inner both padded */
+
+  /* Rails: content-height cards (flex stretch keeps a rail even); drop the hover-only arrow's
+     reserved 52 px; white-on-white university cards get an edge so the rail reads as cards. */
+  .m-rail > button { min-height: 0; padding: 24px; }
+  .m-rail > button > svg:last-child { display: none; }
+  #universities .m-rail > a { min-height: 0; border: 1px solid var(--m-rule); }
+  #universities .m-rail > a > div:last-child { padding: 20px; }
+  #universities [role="tablist"] { margin-bottom: 24px; }
+  #universities [role="tabpanel"] > div:first-child { margin-bottom: 20px; padding-bottom: 16px; }
+
+  /* Subpages (PageShell): body copy sat flush against the gradient band; the icon column pushed
+     the title 76 px off the shared left edge; aside info cards matched the page and read as indents. */
+  main.page-shell.\!pt-0 { padding-top: 32px !important; }
+  header.gradient-hero .page-shell > .flex.items-start { flex-direction: column; gap: 16px; }
+  aside > .bg-canvas { border: 1px solid var(--m-rule); }
+
+  /* Footer rhythm: 64 px + 48 px gaps collapse to the 32 px phone step. */
+  footer .page-shell > div:first-child { gap: 32px; margin-bottom: 32px; }
+  footer .page-shell > div:first-child a.mb-8 { margin-bottom: 16px; }
+  footer .page-shell > div:first-child p.mt-6 { margin-top: 12px; }
+}
+
+@media (max-width: 767px) and (prefers-reduced-motion: reduce) {
+  .m-tabbar { transition: none; }
+}

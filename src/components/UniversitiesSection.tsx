@@ -112,7 +112,7 @@ export function UniversitiesSection() {
             </div>
             <div
               key={activeGroup.city}
-              className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5 md:gap-6 animate-fade-in"
+              className="m-rail grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5 md:gap-6 animate-fade-in"
             >
               {activeGroup.universities.map((uni) => (
                 <UniversityCard key={uni.slug} uni={uni} />
